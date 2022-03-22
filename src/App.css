@@ -1,38 +1,386 @@
-.App {
+.main {
+  background-image: url('./assets/background.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/*                             PLANET CHANGER */
+
+.planet-changer {
+  position: absolute;
+  display: flex;
+  width: 5%;
+  margin: 2% 5%;
+}
+
+.planet-changer img {
+  width: 50%;
+}
+
+.planet-changer select {
+ font-size: 1vw;
+ background-color: rgb(102, 102, 102);
+ border-radius: 0.2vw
+}
+
+/*                             NAVIGATION */
+
+.navigation {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 7%;
+  font-size: 1vw;
+  left: 2%;
+  margin-top: 5%;
+  padding: 3% 1%;
+}
+
+.navigation ul {
+  padding: 0;
+}
+
+.navigation li {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 1px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #fff;
+}
+
+.navigation a {
+  color: #fff;
+  
+  text-decoration: none;
+  margin: 1% 5%;
+}
+
+.navigation li:hover {
+  transform: scale(1.1);
+}
+
+/*                             RESOURCER */
+
+.resources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 1%;
+  padding-left: 30%;
+  width: 50%;
+  color: #fff;
+}
+
+.resource {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  align-items: center;
+  width: 15%;
+}
+
+.resource img {
+  width: 40%;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.resource p {
+  padding-right: 3%;
+  font-size: 0.8vw;
+  margin: 1%;
+}
+
+/*                             CONTENT */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 3% 15% 0 15%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding-bottom: 5%;
+}
+
+/*                             PREVIEW */
+
+.planet-name {
+  padding-top: 5%;
+  font-size: 2vw;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.events {
+  text-align: center;
+  font-size: 1.5vw;
+  padding: 1%;
+  background: linear-gradient(90deg, rgba(5, 5, 66, 0) 0%, rgba(0, 0, 3, 0.5) 50%, rgba(5, 5, 66, 0) 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.chosen-planet {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chosen-planet_img {
+  width: 40%;
+  border-radius: 2vw;
+}
+
+.chosen-planet_points {
+  margin-left: 2%;
+}
+
+.planet-group {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 2vw;
+  width: 90%;
+  margin: 5%;
+}
+
+.planet-single {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 1%;
+  width: 10%;
+  cursor: pointer;
+  font-size: 1vw;
 }
 
-.App-link {
-  color: #61dafb;
+.planet-single img {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.points-main p {
+  text-align: center;
+  font-size: 1vw;
+  text-decoration: underline;
+}
+
+.points-main_table {
+  font-size: 0.8vw;
+}
+
+.points-main_point {
+  text-align: center;
+}
+
+/*                             BUILDING */
+
+.building {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  font-size: 1vw;
+}
+
+.building-name {
+  font-size: 2vw;
+  font-weight: 700;
+  text-align: center;
+}
+
+.building-title {
+  display: flex;
+}
+
+.building-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.building-cost {
+  display: flex;
+  flex-direction: column;
+}
+
+.building-cost:first-child {
+  margin-top: 3%;
+}
+
+.building-cost p {
+  margin: 0 5%;
+}
+
+.building-img {
+  width: 15%;
+  border-radius: 3%;
+}
+
+.building-level {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 2vw;
+  padding: 0.3%;
+}
+
+.building-time {
+  display: flex;
+  margin: 0 5%;
+}
+
+.building-button {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.building_button-up {
+  background-color: green;
+  font-size: 1vw;
+}
+
+.building_button-down {
+  background-color: red;
+  font-size: 1vw;
+}
+
+.building-description {
+  margin: 1%;
+}
+
+.building-function {
+  width: 100%;
+  padding: 1% 5%;
+}
+
+/*                             TESTS */
+
+.test-chosen_container {
+  padding: 5%;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+}
+
+.test h1 {
+  color: #fff;
+  font-size: 2vw;
+  display: block;
+  text-align: center;
+}
+
+.test-title {
+  display: flex;
+}
+
+.test-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  font-size: 1vw;
+}
+
+.test-cost {
+  display: flex;
+  flex-direction: column;
+}
+
+.test-cost:first-child {
+  margin-top: 3%;
+}
+
+.test-cost p {
+  margin: 1% 5%;
+}
+
+.test-img {
+  width: 20%;
+  border-radius: 3%;
+}
+
+.test-level {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 2vw;
+  padding: 0.3%;
+}
+
+.test-time {
+  display: flex;
+  margin: 2% 5%;
+}
+
+.test-button {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.test_button-up {
+  background-color: green;
+  font-size: 1vw;
+}
+
+.test_button-down {
+  background-color: red;
+  font-size: 1vw;
+}
+
+.test-description {
+  margin: 1%;
+  font-size: 1vw;
+}
+
+.test-function {
+  width: 100%;
+  padding: 1% 5%;
+  font-size: 1vw;
+}
+
+.test-map_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.test-map_single {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 15%;
+  margin-top: 5%;
+  padding: 1%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(255, 17, 17, 0.1) 33%, rgba(11, 13, 46, 0.4) 53%, rgba(64, 0, 13, 0.2) 100%);
+}
+
+.test-map_single p {
+  text-align: center;
+  margin: 3%;
+  font-size: 1vw;
+}
+
+.test-map_level {
+  text-align: center;
+  font-size: 1vw;
+}
+
+.test-map_img {
+  width: 100%;
+}
+
+.test-map_button button {
+  width: 50%;
+  font-size: 1vw;
 }

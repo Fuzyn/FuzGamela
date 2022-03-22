@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import update from "react-addons-update";
+// import { useEffect, useState } from "react"
+// import update from "react-addons-update";
 import metalImg from '../assets/metal.png'
 import cristalImg from '../assets/cristal.png'
 import deuterImg from '../assets/deuter.png'
@@ -82,7 +82,7 @@ const ResourcerBar = (props) => {
   return (
     <div className="resources">
       <div className="resource">
-        <img src={metalImg} />
+        <img alt='metal-logo' src={metalImg} />
         <div className="value">
           <p>Metal:</p>
           {/* {metal} */}
@@ -90,7 +90,7 @@ const ResourcerBar = (props) => {
         </div>
       </div>
       <div className="resource">
-        <img src={cristalImg} />
+        <img alt='cristal-logo' src={cristalImg} />
         <div className="value">
           <p>Kryształ:</p>
           {/* {cristal} */}
@@ -98,7 +98,7 @@ const ResourcerBar = (props) => {
         </div>
       </div>
       <div className="resource">
-        <img src={deuterImg} />
+        <img alt='deuter-logo' src={deuterImg} />
         <div className="value">
           <p>Deuter:</p>
           {/* {deuter} */}
@@ -106,7 +106,7 @@ const ResourcerBar = (props) => {
         </div>
       </div >
       <div className="resource">
-        <img src={energyImg} />
+        <img alt='energy-logo' src={energyImg} />
         <div className="value">
           <p>Energia:</p>
           <p>{props.planet.energy}</p>

@@ -8,7 +8,7 @@ const PlanetChanger = (props) => {
 
   return (
     <div className="planet-changer">
-      <img src={planetImg[props.planet.id - 1]}/>
+      <img alt='planet-logo' src={planetImg[props.planet.id - 1]}/>
       <select id="planet"
         onChange={handleChange.bind(this)}>
         <option value='0'>{props.user.planet[0].name}</option>

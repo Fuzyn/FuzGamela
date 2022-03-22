@@ -49,15 +49,15 @@ function App() {
   //   console.log(date.toLocaleTimeString())
   // }
 
-    const UpdateResourcer = () => {
-      // for (let i=0; i < user.planet.length; i++) {
-        const newUserMetal = update(user, {planet: {0: { metal: { $set: 1 }} }})
-        setUser(newUserMetal)
-        update(user.planet[0], { metal: { $set: 1 } })
-        update(user.planet[0], { cristal: { $set: 1 } })
-        update(user.planet[0], { deuter: { $set: 1 } })
-      // }
-    }
+    // const UpdateResourcer = () => {
+    //   // for (let i=0; i < user.planet.length; i++) {
+    //     const newUserMetal = update(user, {planet: {0: { metal: { $set: 1 }} }})
+    //     setUser(newUserMetal)
+    //     update(user.planet[0], { metal: { $set: 1 } })
+    //     update(user.planet[0], { cristal: { $set: 1 } })
+    //     update(user.planet[0], { deuter: { $set: 1 } })
+    //   // }
+    // }
 
     // useEffect(() => {
     //   {UpdateResourcer()}

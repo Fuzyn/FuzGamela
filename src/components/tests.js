@@ -7,7 +7,7 @@ const Tests = (props) => {
     useEffect(() => {
         let refreshChosenTest = props.planet.tests[chosenTest.id-1];
         setChosenTest(refreshChosenTest)
-    }, [props.planet.tests[chosenTest.id-1].level]);
+    }, [props.planet.tests[chosenTest.id-1]]);
 
     const handleUp = (e, section) => {
         props.handleUp(e, section)

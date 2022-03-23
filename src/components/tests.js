@@ -5,9 +5,10 @@ const Tests = (props) => {
     const [chosenTest, setChosenTest] = useState(props.planet.tests[0]);
 
     useEffect(() => {
-        let refreshChosenTest = props.planet.tests[chosenTest.id-1];
+        let id = chosenTest.id-1;
+        let refreshChosenTest = props.planet.tests[id];
         setChosenTest(refreshChosenTest)
-    }, [props.planet.tests[chosenTest.id-1]]);
+    }, [chosenTest.id, props.planet.tests]);
 
     const handleUp = (e, section) => {
         props.handleUp(e, section)

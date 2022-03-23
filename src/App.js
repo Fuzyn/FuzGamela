@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import update from "react-addons-update";
 import User from './components/user'
 import './App.css';
@@ -16,9 +16,9 @@ function App() {
   const [planet, setPlanet] = useState(user.planet[0])
 
   // Odpala się gdy zmienia się cokolwiek w konkretnej planecie
-  useEffect(() => {
-    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
-  }, [planet])
+  // useEffect(() => {
+  //   setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
+  // }, [planet])
 
   // Zmiana planety (wliczając zasoby, budynki, badania itp.)
   const handleChange = (value) => {
@@ -34,12 +34,14 @@ function App() {
     const newDeuter = update(newCristal, {deuter: {$apply: function (x) { return x - planet[section][index].cost[0].deuter; } }})
     const newEnergy = update(newDeuter, {energy: {$apply: function (x) { return x - planet[section][index].cost[0].energy; } }})
     setPlanet(newEnergy)
+    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
   }}
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
   const handleDown = (index, section) => {
     const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
     setPlanet(newLevel)
+    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
   }
 
   //   const myInterval = setInterval(myTimer, 1000);

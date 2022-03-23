@@ -19,6 +19,9 @@ function App() {
   // useEffect(() => {
   //   setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
   // }, [planet])
+  const refreshChosenPlanet = () => {
+    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
+  }
 
   // Zmiana planety (wliczając zasoby, budynki, badania itp.)
   const handleChange = (value) => {
@@ -34,14 +37,14 @@ function App() {
     const newDeuter = update(newCristal, {deuter: {$apply: function (x) { return x - planet[section][index].cost[0].deuter; } }})
     const newEnergy = update(newDeuter, {energy: {$apply: function (x) { return x - planet[section][index].cost[0].energy; } }})
     setPlanet(newEnergy)
-    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
+    refreshChosenPlanet()
   }}
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
   const handleDown = (index, section) => {
     const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
     setPlanet(newLevel)
-    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
+    refreshChosenPlanet()
   }
 
   //   const myInterval = setInterval(myTimer, 1000);

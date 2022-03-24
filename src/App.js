@@ -16,11 +16,8 @@ function App() {
   const [planet, setPlanet] = useState(user.planet[0])
 
   // Odpala się gdy zmienia się cokolwiek w konkretnej planecie
-  // useEffect(() => {
-  //   setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
-  // }, [planet])
-  const refreshChosenPlanet = () => {
-    setUser(update(user, {planet: { [planet.id-1]: {$set: planet}}}) )
+  const refreshChosenPlanet = (updatePlanet) => {
+    setUser(update(user, { planet: { [planet.id - 1]: { $set: updatePlanet } } }))
   }
 
   // Zmiana planety (wliczając zasoby, budynki, badania itp.)
@@ -30,21 +27,21 @@ function App() {
 
   //Funkcja odpowiedzialna za zwiększanie poziomu, puki co nie skończona
   const handleUp = (index, section) => {
-    if(planet[section][index].cost[0].metal < planet.metal) {
-    const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } })
-    const newMetal = update(newLevel, {metal: {$apply: function (x) { return x - planet[section][index].cost[0].metal; } }})
-    const newCristal = update(newMetal, {cristal: {$apply: function (x) { return x - planet[section][index].cost[0].cristal; } }})
-    const newDeuter = update(newCristal, {deuter: {$apply: function (x) { return x - planet[section][index].cost[0].deuter; } }})
-    const newEnergy = update(newDeuter, {energy: {$apply: function (x) { return x - planet[section][index].cost[0].energy; } }})
-    setPlanet(newEnergy)
-    refreshChosenPlanet()
-  }}
+    let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } })
+    let updateMetal = update(updateLevel, { resources: { [0]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[0][1]; } }}} })
+    let updateCristal = update(updateMetal, { resources: { [1]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[1][1]; } }}} })
+    let updateDeuter = update(updateCristal, { resources: { [2]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[2][1]; } }}} })
+    let updateEnergy = update(updateDeuter, { resources: { [3]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[3][1]; } }}} })
+
+    setPlanet(updateEnergy)
+    refreshChosenPlanet(updateEnergy)
+  }
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
   const handleDown = (index, section) => {
     const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
     setPlanet(newLevel)
-    refreshChosenPlanet()
+    refreshChosenPlanet(newLevel)
   }
 
   //   const myInterval = setInterval(myTimer, 1000);
@@ -54,19 +51,19 @@ function App() {
   //   console.log(date.toLocaleTimeString())
   // }
 
-    // const UpdateResourcer = () => {
-    //   // for (let i=0; i < user.planet.length; i++) {
-    //     const newUserMetal = update(user, {planet: {0: { metal: { $set: 1 }} }})
-    //     setUser(newUserMetal)
-    //     update(user.planet[0], { metal: { $set: 1 } })
-    //     update(user.planet[0], { cristal: { $set: 1 } })
-    //     update(user.planet[0], { deuter: { $set: 1 } })
-    //   // }
-    // }
+  // const UpdateResourcer = () => {
+  //   // for (let i=0; i < user.planet.length; i++) {
+  //     const newUserMetal = update(user, {planet: {0: { metal: { $set: 1 }} }})
+  //     setUser(newUserMetal)
+  //     update(user.planet[0], { metal: { $set: 1 } })
+  //     update(user.planet[0], { cristal: { $set: 1 } })
+  //     update(user.planet[0], { deuter: { $set: 1 } })
+  //   // }
+  // }
 
-    // useEffect(() => {
-    //   {UpdateResourcer()}
-    // }, [myInterval])
+  // useEffect(() => {
+  //   {UpdateResourcer()}
+  // }, [myInterval])
 
 
   return (
@@ -75,9 +72,9 @@ function App() {
       <NavBar />
       <ResourcesBar planet={planet} />
       <Routes>
-        <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)}/>} />
-        <Route path='buildings' element={<Buildings planet={planet} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)}/>} />
-        <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)}/>} />
+        <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
+        <Route path='buildings' element={<Buildings planet={planet} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
+        <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route
           path="*"
           element={

@@ -32,9 +32,9 @@ const Tests = (props) => {
                             <div className='test-level'>{chosenTest.level}</div>
                             <div className='test-middle'>
                                 <div className='test-cost'>
-                                    <p>Metal: {chosenTest.cost[0].metal}</p>
-                                    <p>Kryształ: {chosenTest.cost[0].cristal}</p>
-                                    <p>Deuter: {chosenTest.cost[0].deuter}</p>
+                                    <p>Metal: {chosenTest.cost[0][1]}</p>
+                                    <p>Kryształ: {chosenTest.cost[1][1]}</p>
+                                    <p>Deuter: {chosenTest.cost[2][1]}</p>
                                 </div>
                                 <div className='test-time'>Czas badania: {chosenTest.time} s</div>
                             </div>

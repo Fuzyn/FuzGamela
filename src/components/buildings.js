@@ -25,9 +25,9 @@ const handleDown = (e, section) => {
                   {build.description}
                 </div>
                 <div className='building-cost'>
-                  <p>Metal: {build.cost[0].metal}</p>
-                  <p>Kryształ: {build.cost[0].cristal}</p>
-                  <p>Deuter: {build.cost[0].deuter}</p>
+                  <p>Metal: {build.cost[0][1]}</p>
+                  <p>Kryształ: {build.cost[1][1]}</p>
+                  <p>Deuter: {build.cost[2][1]}</p>
                 </div>
                 <div className='building-time'>Czas budowy: {build.time} s</div>
                 

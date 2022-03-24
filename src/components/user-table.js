@@ -8,12 +8,12 @@ const User =
       id: 1,
       name: 'Khan',
       resources:
-        {
-          metal: 2000,
-          cristal: 2000,
-          deuter: 2000,
-          energy: 1000
-        },
+        [
+          ['metal', 2000],
+          ['cristal', 2000],
+          ['deuter', 2000],
+          ['energy', 1000]
+        ],
       buildings: [
         {
           id: 1,
@@ -21,12 +21,12 @@ const User =
           points: 10,
           name: 'Kopalnia metalu',
           description: 'Metal to podstawowy surowiec wykorzystywany do wznoszenia budowli, odkrywania nowych technologii i budowania floty. Wykorzystując niewolniczo ludność tubylczą na swojej planecie wydobywasz w kopalniach ten cenny surowiec.',
-          cost: {
-            metal: 10,
-            cristal: 5,
-            deuter: 0,
-            energy: 10
-          },
+          cost: [
+              ['metal', 10],
+              ['cristal', 5],
+              ['deuter', 0],
+              ['energy', 10]
+            ],
           function: [
             {
               description: 'Wydobycie metalu: ',
@@ -45,12 +45,12 @@ const User =
           points: 10,
           name: 'Kopalnia kryształu',
           description: 'Kryształ jest towarem luksusowym. Przy pomocy drogich infrastruktur i wyszkolonych pracowników wydobywasz tutaj ten rzadki materiał.',
-          cost: {
-            metal: 13,
-            cristal: 7,
-            deuter: 0,
-            energy: 12
-          },
+          cost: [
+            ['metal', 13],
+            ['cristal', 7],
+            ['deuter', 0],
+            ['energy', 12]
+          ],
           function: [
             {
               description: 'Wydobycie kryształu: ',
@@ -69,12 +69,12 @@ const User =
           points: 10,
           name: 'Kopalnia deuteru',
           description: 'Deuter odkryto już dawno temu w czasach kryzysu naftowego, kiedy ludzie szukali zasobów zastępczych do napędzania swoich maszyn. Teraz kiedy technologia się rozwinęła nie jest to niczym nadzwyczajnym. Wydobycie Deuteru jest stosunkowo proste lecz czasochłonne. Po odpowiedniej przeróbce napędza on Twoją flotę.',
-          cost: {
-            metal: 15,
-            cristal: 10,
-            deuter: 0,
-            energy: 18
-        },
+          cost: [
+              ['metal', 15],
+              ['cristal', 10],
+              ['deuter', 0],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Wydobycie deuteru: ',
@@ -93,12 +93,12 @@ const User =
           points: 10,
           name: 'Elektrownia',
           description: 'Każda planeta zawiera jakieś naturalne źródło, które może zaopatrzyć ją w energię. Czasami są to promienie słonecze, czasami woda, węgiel, czy inne zasoby. Ten potężny budynek zapewnia pozyskiwanie energii z wszystkich tych dóbr.',
-          cost: {
-            metal: 15,
-            cristal: 10,
-            deuter: 0,
-            energy: -18
-          },
+          cost: [
+              ['metal', 15],
+              ['cristal', 10],
+              ['deuter', 0],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Produkcja energii: ',
@@ -117,12 +117,12 @@ const User =
           points: 10,
           name: 'Centrum dowodzenia',
           description: 'Miejsce, w którym przebywa cała administracja Twojej planety. Centrum zarządzania, dzięki któremu utrzymujesz władzę na planecie. Rozbudowa tego budynku przyspieszy także wydajność wśród ludności tubylczej, którą wykorzystujesz do wznoszenia budowli.',
-          cost: {
-            metal: 35,
-            cristal: 20,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 35],
+              ['cristal', 20],
+              ['deuter', 10],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy budynków: ',
@@ -141,12 +141,12 @@ const User =
           points: 10,
           name: 'Hangar',
           description: 'Potęga, władza, surowce. To i wiele więcej zapewni Ci Twoja flota, Twoje własne imperium. Tylko dzięki swoim statkom podbijesz całe układy słoneczne, galaktyki, a nawet wszechświat! Baty w dłoń i pogoń tubylców do budowy swoich krążowników!',
-          cost: {
-            metal: 30,
-            cristal: 22,
-            deuter: 12,
-            energy: 0
-        },
+          cost: [
+              ['metal', 30],
+              ['cristal', 22],
+              ['deuter', 12],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy floty: ',
@@ -165,12 +165,12 @@ const User =
           points: 10,
           name: 'Fabryka robotów',
           description: 'Fabryka robotów dostarcza tanią siłę roboczą dzięki której możliwa jest rozbudowa infrastruktury na planecie. Każdy kolejny poziom Fabryki robotów zwiększa szybkość powstawania budowli.',
-          cost: {
-            metal: 20,
-            cristal: 20,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 20],
+              ['deuter', 10],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy budynków: ',
@@ -202,12 +202,12 @@ const User =
           points: 10,
           name: 'Fabryka nanitów',
           description: 'Wysoko zaawansowana technologia umożliwia budowę mikrorobotów, które są znacznie wydajniejsze przy produkcji od żyjących istot. Nie strajkują, nie narzekają i należycie wykonują powierzone im zadania. Rozbuduj fabrykę nanitów żeby przyspieszyć wznoszenie swojej floty i budynków!',
-          cost: {
-            metal: 50,
-            cristal: 40,
-            deuter: 35,
-            energy: 0
-          },
+          cost: [
+              ['metal', 50],
+              ['cristal', 40],
+              ['deuter', 35],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy budynków: ',
@@ -235,12 +235,12 @@ const User =
           points: 10,
           name: 'Magazyn',
           description: 'Brak miejsca - odwieczny problem ludzkości i ograniczonych powierzchni planet. Ale i na to jest sposób, na stosunkowo małej powierzchni budowane są wysokie magazyny do składowania Tytanu, Kwarcu i Uranu. Rozbudowuj swój magazyn żeby już nigdy nie zabrakło Ci miejsca na drogocenne surowce.',
-          cost: {
-            metal: 20,
-            cristal: 20,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 20],
+              ['deuter', 15],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Pojemność magazynów: ',
@@ -259,12 +259,12 @@ const User =
           points: 10,
           name: 'Labolatorium',
           description: 'Rakiety, lasery, napędy nadprzestrzenne. Czym byłby świat bez naukowców i technologii nad którymi wciąż pracują? Zapewne nie chcesz się dowiedzieć, dlatego wybuduj im godne miejsce pracy i wyprzedź swoich wrogów w wyścigu technologicznym.',
-          cost: {
-            metal: 30,
-            cristal: 35,
-            deuter: 25,
-            energy: 0
-          },
+          cost: [
+              ['metal', 30],
+              ['cristal', 35],
+              ['deuter', 25],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas badań: ',
@@ -297,12 +297,12 @@ const User =
           points: 15,
           name: 'Technologia energetyczna',
           description: 'Odkąd wynaleziono prąd człowiek stara się udoskonalać technologie energetyczna żeby pozyskiwać ją jeszcze wydajniej. Popędź swoich naukowców a może wynajdą perpetum mobile?',
-          cost: {
-            metal: 20,
-            cristal: 22,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 22],
+              ['deuter', 15],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Produkcja energii: ',
@@ -326,12 +326,12 @@ const User =
           points: 15,
           name: 'Technologia szpiegowska',
           description: 'Dzięki rozwoju tej technologii będziesz w stanie wydobyć za pomocą Planetarium więcej informacji o planecie przeciwnika.',
-          cost: {
-            metal: 21,
-            cristal: 15,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 21],
+              ['cristal', 15],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Dokładność szpiegowania: ',
@@ -359,12 +359,12 @@ const User =
           points: 15,
           name: 'Technologia komputerowa',
           description: 'Technologia komputerowa zajmuje się podwyższaniem dostępnej wydajności komputerów. Tylko wydajne i efektywne systemy komputerowe są budowane.',
-          cost: {
-            metal: 15,
-            cristal: 19,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 15],
+              ['cristal', 19],
+              ['deuter', 15],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Ilość flot: ',
@@ -392,12 +392,12 @@ const User =
           points: 15,
           name: 'Technologia bojowa',
           description: 'Technologia bojowa zajmuje się przede wszystkim dalszym rozwojem istniejących już systemów obronnych. Podczas rozwoju szczególny nacisk będzie kładziony na to, aby dostępne systemy wyposażyć w większą moc i dokładniej nią sterować.',
-          cost: {
-            metal: 20,
-            cristal: 19,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 19],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -425,12 +425,12 @@ const User =
           points: 18,
           name: 'Technologia ochronna',
           description: 'Technologia ochronna zajmuje się odkrywaniem coraz nowszych możliwości, aby powłoki zaopatrywać w coraz więcej energii, usprawniać je i sprawiać bardziej wytrzymałymi.',
-          cost: {
-            metal: 22,
-            cristal: 17,
-            deuter: 13,
-            energy: 0
-          },
+          cost: [
+              ['metal', 22],
+              ['cristal', 17],
+              ['deuter', 13],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość obrony: ',
@@ -458,12 +458,12 @@ const User =
           points: 18,
           name: 'Opancerzenie',
           description: 'Specjalny stop metali polepsza właściwości opancerzenia. Jeśli stop o bardzo dobrej odporności został raz wynaleziony, struktura molekularna systemów militarnych i statków zostanie zmieniona przez specjalne promieniowanie i uzyska postać najlepszego odkrytego stopu.',
-          cost: {
-            metal: 30,
-            cristal: 5,
-            deuter: 2,
-            energy: 0
-          },
+          cost: [
+              ['metal', 30],
+              ['cristal', 5],
+              ['deuter', 2],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Opancerzenie: ',
@@ -487,12 +487,12 @@ const User =
           points: 18,
           name: 'Napęd spalinowy',
           description: 'Napędy spalinowe bazują na zasadzie odrzutu. Materia o wysokiej temperaturze zostaje wyrzucona i napędza statek w kierunku przeciwnym do kierunku wyrzutu.',
-          cost: {
-            metal: 14,
-            cristal: 10,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 14],
+              ['cristal', 10],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Predkość: ',
@@ -520,12 +520,12 @@ const User =
           points: 20,
           name: 'Napęd impulsowy',
           description: 'Napęd impulsowy bazuje na zasadzie odrzutu, przy czym masa promienista powstaje w dużej części jako produkt uboczny, wykorzystywanych do uzyskania energii reakcji jądrowych.',
-          cost: {
-            metal: 20,
-            cristal: 30,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 30],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Predkość: ',
@@ -553,12 +553,12 @@ const User =
           points: 20,
           name: 'Napęd nadprzestrzenny',
           description: 'Zakrzywia czasoprzestrzeń bezpośrednio w okolicy statku. Przestrzeń ta zostanie skompresowana, dzięki czemu można bardzo szybko pokonać duże odległości.',
-          cost: {
-            metal: 30,
-            cristal: 35,
-            deuter: 20,
-            energy: 0
-          },
+          cost: [
+              ['metal', 30],
+              ['cristal', 35],
+              ['deuter', 20],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Predkość: ',
@@ -590,12 +590,12 @@ const User =
           points: 20,
           name: 'Technologia nadprzestrzenna',
           description: 'Przez połączenie 4-tego i 5-tego wymiaru jest teraz możliwe zbudowanie nowatorskiego napędu, który jest oszczędniejszy i wydajniejszy.',
-          cost: {
-            metal: 20,
-            cristal: 25,
-            deuter: 20,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 25],
+              ['deuter', 20],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Skuteczność badań: ',
@@ -631,12 +631,12 @@ const User =
           points: 20,
           name: 'Technologia laserowa',
           description: 'Laser wytwarza intensywny, wysokoenergetyczny, spójny promień świetlny. Te urządzenia znajdują zastosowania we wszystkich możliwych dziedzinach - od komputerów optycznych po ciężka broń laserową.',
-          cost: {
-            metal: 22,
-            cristal: 20,
-            deuter: 12,
-            energy: 0
-          },
+          cost: [
+              ['metal', 22],
+              ['cristal', 20],
+              ['deuter', 12],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -664,12 +664,12 @@ const User =
           points: 21,
           name: 'Technologia jonowa',
           description: 'Rozwija skuteczność śmiertelnego promieniowania przyspieszonych jonów. Rozpędzone jony wyrządzają ogromne szkody obiektom, na które trafiają.',
-          cost: {
-            metal: 15,
-            cristal: 18,
-            deuter: 9,
-            energy: 0
-          },
+          cost: [
+              ['metal', 15],
+              ['cristal', 18],
+              ['deuter', 9],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -701,12 +701,12 @@ const User =
           points: 20,
           name: 'Technologia plazmowa',
           description: 'Dalszy etap rozwoju technologii jonowej, która nie przyspiesza już jonów, lecz wysokoenergetyczną plazmę. Taka plazma posiada niszczycielską moc podczas atakowania wyznaczonych obiektów.',
-          cost: {
-            metal: 20,
-            cristal: 30,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 30],
+              ['deuter', 15],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -742,12 +742,12 @@ const User =
           points: 25,
           name: 'Międzygalaktyczna Sieć Badań Naukowych',
           description: 'Naukowcy z różnych planet komunikują się ze sobą przez tę sieć. Wraz z rozbudową na kolejny poziom, do sieci zostanie przyłączone dodatkowe laboratoria, przy czym przyłączane będą zawsze laboratoria o najwyższym poziomie. ',
-          cost: {
-            metal: 21,
-            cristal: 20,
-            deuter: 25,
-            energy: 0
-          },
+          cost: [
+              ['metal', 21],
+              ['cristal', 20],
+              ['deuter', 25],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Ilość laboratoriów: ',
@@ -783,12 +783,12 @@ const User =
       id: 2,
       name: 'Whan',
       resources:
-        {
-          metal: 2000,
-          cristal: 2000,
-          deuter: 2000,
-          energy: 1000
-        },
+        [
+          ['metal', 1000],
+          ['cristal', 1000],
+          ['deuter', 1000],
+          ['energy', 1000]
+        ],
       buildings: [
         {
           id: 1,
@@ -796,12 +796,12 @@ const User =
           points: 10,
           name: 'Kopalnia metalu',
           description: 'Metal to podstawowy surowiec wykorzystywany do wznoszenia budowli, odkrywania nowych technologii i budowania floty. Wykorzystując niewolniczo ludność tubylczą na swojej planecie wydobywasz w kopalniach ten cenny surowiec.',
-          cost: {
-            metal: 10,
-            cristal: 5,
-            deuter: 0,
-            energy: 10
-          },
+          cost: [
+              ['metal', 10],
+              ['cristal', 5],
+              ['deuter', 0],
+              ['energy', 10]
+            ],
           function: [
             {
               description: 'Wydobycie metalu: ',
@@ -820,12 +820,12 @@ const User =
           points: 10,
           name: 'Kopalnia kryształu',
           description: 'Kryształ jest towarem luksusowym. Przy pomocy drogich infrastruktur i wyszkolonych pracowników wydobywasz tutaj ten rzadki materiał.',
-          cost: {
-            metal: 13,
-            cristal: 7,
-            deuter: 0,
-            energy: 12
-          },
+          cost: [
+            ['metal', 13],
+            ['cristal', 7],
+            ['deuter', 0],
+            ['energy', 12]
+          ],
           function: [
             {
               description: 'Wydobycie kryształu: ',
@@ -844,12 +844,12 @@ const User =
           points: 10,
           name: 'Kopalnia deuteru',
           description: 'Deuter odkryto już dawno temu w czasach kryzysu naftowego, kiedy ludzie szukali zasobów zastępczych do napędzania swoich maszyn. Teraz kiedy technologia się rozwinęła nie jest to niczym nadzwyczajnym. Wydobycie Deuteru jest stosunkowo proste lecz czasochłonne. Po odpowiedniej przeróbce napędza on Twoją flotę.',
-          cost: {
-            metal: 15,
-            cristal: 10,
-            deuter: 0,
-            energy: 18
-        },
+          cost: [
+              ['metal', 15],
+              ['cristal', 10],
+              ['deuter', 0],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Wydobycie deuteru: ',
@@ -868,12 +868,12 @@ const User =
           points: 10,
           name: 'Elektrownia',
           description: 'Każda planeta zawiera jakieś naturalne źródło, które może zaopatrzyć ją w energię. Czasami są to promienie słonecze, czasami woda, węgiel, czy inne zasoby. Ten potężny budynek zapewnia pozyskiwanie energii z wszystkich tych dóbr.',
-          cost: {
-            metal: 15,
-            cristal: 10,
-            deuter: 0,
-            energy: -18
-          },
+          cost: [
+              ['metal', 15],
+              ['cristal', 10],
+              ['deuter', 0],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Produkcja energii: ',
@@ -892,12 +892,12 @@ const User =
           points: 10,
           name: 'Centrum dowodzenia',
           description: 'Miejsce, w którym przebywa cała administracja Twojej planety. Centrum zarządzania, dzięki któremu utrzymujesz władzę na planecie. Rozbudowa tego budynku przyspieszy także wydajność wśród ludności tubylczej, którą wykorzystujesz do wznoszenia budowli.',
-          cost: {
-            metal: 35,
-            cristal: 20,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 35],
+              ['cristal', 20],
+              ['deuter', 10],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy budynków: ',
@@ -916,12 +916,12 @@ const User =
           points: 10,
           name: 'Hangar',
           description: 'Potęga, władza, surowce. To i wiele więcej zapewni Ci Twoja flota, Twoje własne imperium. Tylko dzięki swoim statkom podbijesz całe układy słoneczne, galaktyki, a nawet wszechświat! Baty w dłoń i pogoń tubylców do budowy swoich krążowników!',
-          cost: {
-            metal: 30,
-            cristal: 22,
-            deuter: 12,
-            energy: 0
-        },
+          cost: [
+              ['metal', 30],
+              ['cristal', 22],
+              ['deuter', 12],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy floty: ',
@@ -940,12 +940,12 @@ const User =
           points: 10,
           name: 'Fabryka robotów',
           description: 'Fabryka robotów dostarcza tanią siłę roboczą dzięki której możliwa jest rozbudowa infrastruktury na planecie. Każdy kolejny poziom Fabryki robotów zwiększa szybkość powstawania budowli.',
-          cost: {
-            metal: 20,
-            cristal: 20,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 20],
+              ['deuter', 10],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy budynków: ',
@@ -977,12 +977,12 @@ const User =
           points: 10,
           name: 'Fabryka nanitów',
           description: 'Wysoko zaawansowana technologia umożliwia budowę mikrorobotów, które są znacznie wydajniejsze przy produkcji od żyjących istot. Nie strajkują, nie narzekają i należycie wykonują powierzone im zadania. Rozbuduj fabrykę nanitów żeby przyspieszyć wznoszenie swojej floty i budynków!',
-          cost: {
-            metal: 50,
-            cristal: 40,
-            deuter: 35,
-            energy: 0
-          },
+          cost: [
+              ['metal', 50],
+              ['cristal', 40],
+              ['deuter', 35],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas budowy budynków: ',
@@ -1010,12 +1010,12 @@ const User =
           points: 10,
           name: 'Magazyn',
           description: 'Brak miejsca - odwieczny problem ludzkości i ograniczonych powierzchni planet. Ale i na to jest sposób, na stosunkowo małej powierzchni budowane są wysokie magazyny do składowania Tytanu, Kwarcu i Uranu. Rozbudowuj swój magazyn żeby już nigdy nie zabrakło Ci miejsca na drogocenne surowce.',
-          cost: {
-            metal: 20,
-            cristal: 20,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 20],
+              ['deuter', 15],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Pojemność magazynów: ',
@@ -1034,12 +1034,12 @@ const User =
           points: 10,
           name: 'Labolatorium',
           description: 'Rakiety, lasery, napędy nadprzestrzenne. Czym byłby świat bez naukowców i technologii nad którymi wciąż pracują? Zapewne nie chcesz się dowiedzieć, dlatego wybuduj im godne miejsce pracy i wyprzedź swoich wrogów w wyścigu technologicznym.',
-          cost: {
-            metal: 30,
-            cristal: 35,
-            deuter: 25,
-            energy: 0
-          },
+          cost: [
+              ['metal', 30],
+              ['cristal', 35],
+              ['deuter', 25],
+              ['energy', 18]
+          ],
           function: [
             {
               description: 'Czas badań: ',
@@ -1072,12 +1072,12 @@ const User =
           points: 15,
           name: 'Technologia energetyczna',
           description: 'Odkąd wynaleziono prąd człowiek stara się udoskonalać technologie energetyczna żeby pozyskiwać ją jeszcze wydajniej. Popędź swoich naukowców a może wynajdą perpetum mobile?',
-          cost: {
-            metal: 20,
-            cristal: 22,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 22],
+              ['deuter', 15],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Produkcja energii: ',
@@ -1101,12 +1101,12 @@ const User =
           points: 15,
           name: 'Technologia szpiegowska',
           description: 'Dzięki rozwoju tej technologii będziesz w stanie wydobyć za pomocą Planetarium więcej informacji o planecie przeciwnika.',
-          cost: {
-            metal: 21,
-            cristal: 15,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 21],
+              ['cristal', 15],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Dokładność szpiegowania: ',
@@ -1134,12 +1134,12 @@ const User =
           points: 15,
           name: 'Technologia komputerowa',
           description: 'Technologia komputerowa zajmuje się podwyższaniem dostępnej wydajności komputerów. Tylko wydajne i efektywne systemy komputerowe są budowane.',
-          cost: {
-            metal: 15,
-            cristal: 19,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 15],
+              ['cristal', 19],
+              ['deuter', 15],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Ilość flot: ',
@@ -1167,12 +1167,12 @@ const User =
           points: 15,
           name: 'Technologia bojowa',
           description: 'Technologia bojowa zajmuje się przede wszystkim dalszym rozwojem istniejących już systemów obronnych. Podczas rozwoju szczególny nacisk będzie kładziony na to, aby dostępne systemy wyposażyć w większą moc i dokładniej nią sterować.',
-          cost: {
-            metal: 20,
-            cristal: 19,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 19],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -1200,12 +1200,12 @@ const User =
           points: 18,
           name: 'Technologia ochronna',
           description: 'Technologia ochronna zajmuje się odkrywaniem coraz nowszych możliwości, aby powłoki zaopatrywać w coraz więcej energii, usprawniać je i sprawiać bardziej wytrzymałymi.',
-          cost: {
-            metal: 22,
-            cristal: 17,
-            deuter: 13,
-            energy: 0
-          },
+          cost: [
+              ['metal', 22],
+              ['cristal', 17],
+              ['deuter', 13],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość obrony: ',
@@ -1233,12 +1233,12 @@ const User =
           points: 18,
           name: 'Opancerzenie',
           description: 'Specjalny stop metali polepsza właściwości opancerzenia. Jeśli stop o bardzo dobrej odporności został raz wynaleziony, struktura molekularna systemów militarnych i statków zostanie zmieniona przez specjalne promieniowanie i uzyska postać najlepszego odkrytego stopu.',
-          cost: {
-            metal: 30,
-            cristal: 5,
-            deuter: 2,
-            energy: 0
-          },
+          cost: [
+              ['metal', 30],
+              ['cristal', 5],
+              ['deuter', 2],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Opancerzenie: ',
@@ -1262,12 +1262,12 @@ const User =
           points: 18,
           name: 'Napęd spalinowy',
           description: 'Napędy spalinowe bazują na zasadzie odrzutu. Materia o wysokiej temperaturze zostaje wyrzucona i napędza statek w kierunku przeciwnym do kierunku wyrzutu.',
-          cost: {
-            metal: 14,
-            cristal: 10,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 14],
+              ['cristal', 10],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Predkość: ',
@@ -1295,12 +1295,12 @@ const User =
           points: 20,
           name: 'Napęd impulsowy',
           description: 'Napęd impulsowy bazuje na zasadzie odrzutu, przy czym masa promienista powstaje w dużej części jako produkt uboczny, wykorzystywanych do uzyskania energii reakcji jądrowych.',
-          cost: {
-            metal: 20,
-            cristal: 30,
-            deuter: 10,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 30],
+              ['deuter', 10],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Predkość: ',
@@ -1328,12 +1328,12 @@ const User =
           points: 20,
           name: 'Napęd nadprzestrzenny',
           description: 'Zakrzywia czasoprzestrzeń bezpośrednio w okolicy statku. Przestrzeń ta zostanie skompresowana, dzięki czemu można bardzo szybko pokonać duże odległości.',
-          cost: {
-            metal: 30,
-            cristal: 35,
-            deuter: 20,
-            energy: 0
-          },
+          cost: [
+              ['metal', 30],
+              ['cristal', 35],
+              ['deuter', 20],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Predkość: ',
@@ -1365,12 +1365,12 @@ const User =
           points: 20,
           name: 'Technologia nadprzestrzenna',
           description: 'Przez połączenie 4-tego i 5-tego wymiaru jest teraz możliwe zbudowanie nowatorskiego napędu, który jest oszczędniejszy i wydajniejszy.',
-          cost: {
-            metal: 20,
-            cristal: 25,
-            deuter: 20,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 25],
+              ['deuter', 20],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Skuteczność badań: ',
@@ -1406,12 +1406,12 @@ const User =
           points: 20,
           name: 'Technologia laserowa',
           description: 'Laser wytwarza intensywny, wysokoenergetyczny, spójny promień świetlny. Te urządzenia znajdują zastosowania we wszystkich możliwych dziedzinach - od komputerów optycznych po ciężka broń laserową.',
-          cost: {
-            metal: 22,
-            cristal: 20,
-            deuter: 12,
-            energy: 0
-          },
+          cost: [
+              ['metal', 22],
+              ['cristal', 20],
+              ['deuter', 12],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -1439,12 +1439,12 @@ const User =
           points: 21,
           name: 'Technologia jonowa',
           description: 'Rozwija skuteczność śmiertelnego promieniowania przyspieszonych jonów. Rozpędzone jony wyrządzają ogromne szkody obiektom, na które trafiają.',
-          cost: {
-            metal: 15,
-            cristal: 18,
-            deuter: 9,
-            energy: 0
-          },
+          cost: [
+              ['metal', 15],
+              ['cristal', 18],
+              ['deuter', 9],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -1476,12 +1476,12 @@ const User =
           points: 20,
           name: 'Technologia plazmowa',
           description: 'Dalszy etap rozwoju technologii jonowej, która nie przyspiesza już jonów, lecz wysokoenergetyczną plazmę. Taka plazma posiada niszczycielską moc podczas atakowania wyznaczonych obiektów.',
-          cost: {
-            metal: 20,
-            cristal: 30,
-            deuter: 15,
-            energy: 0
-          },
+          cost: [
+              ['metal', 20],
+              ['cristal', 30],
+              ['deuter', 15],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Wartość ataku: ',
@@ -1517,12 +1517,12 @@ const User =
           points: 25,
           name: 'Międzygalaktyczna Sieć Badań Naukowych',
           description: 'Naukowcy z różnych planet komunikują się ze sobą przez tę sieć. Wraz z rozbudową na kolejny poziom, do sieci zostanie przyłączone dodatkowe laboratoria, przy czym przyłączane będą zawsze laboratoria o najwyższym poziomie. ',
-          cost: {
-            metal: 21,
-            cristal: 20,
-            deuter: 25,
-            energy: 0
-          },
+          cost: [
+              ['metal', 21],
+              ['cristal', 20],
+              ['deuter', 25],
+              ['energy', 0]
+          ],
           function: [
             {
               description: 'Ilość laboratoriów: ',

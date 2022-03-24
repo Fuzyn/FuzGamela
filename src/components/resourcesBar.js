@@ -86,7 +86,7 @@ const ResourcerBar = (props) => {
         <div className="value">
           <p>Metal:</p>
           {/* {metal} */}
-          <p>{props.planet.resources[0][1]}</p>
+          <p>{props.planet.resources.metal}</p>
         </div>
       </div>
       <div className="resource">
@@ -94,7 +94,7 @@ const ResourcerBar = (props) => {
         <div className="value">
           <p>Kryształ:</p>
           {/* {cristal} */}
-          <p>{props.planet.resources[1][1]}</p>
+          <p>{props.planet.resources.cristal}</p>
         </div>
       </div>
       <div className="resource">
@@ -102,14 +102,14 @@ const ResourcerBar = (props) => {
         <div className="value">
           <p>Deuter:</p>
           {/* {deuter} */}
-          <p>{props.planet.resources[2][1]}</p>
+          <p>{props.planet.resources.deuter}</p>
         </div>
       </div >
       <div className="resource">
         <img alt='energy-logo' src={energyImg} />
         <div className="value">
           <p>Energia:</p>
-          <p>{props.planet.resources[3][1]}</p>
+          <p>{props.planet.resources.energy}</p>
         </div>
       </div >
     </div >

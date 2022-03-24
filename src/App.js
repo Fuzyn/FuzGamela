@@ -28,10 +28,10 @@ function App() {
   //Funkcja odpowiedzialna za zwiększanie poziomu, puki co nie skończona
   const handleUp = (index, section) => {
     let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } })
-    let updateMetal = update(updateLevel, { resources: { [0]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[0][1]; } }}} })
-    let updateCristal = update(updateMetal, { resources: { [1]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[1][1]; } }}} })
-    let updateDeuter = update(updateCristal, { resources: { [2]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[2][1]; } }}} })
-    let updateEnergy = update(updateDeuter, { resources: { [3]: { [1]: { $apply: function (x) { return x - planet[section][index].cost[3][1]; } }}} })
+    let updateMetal = update(updateLevel, { resources: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal; } }} })
+    let updateCristal = update(updateMetal, { resources: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal; } }} })
+    let updateDeuter = update(updateCristal, { resources: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter; } }} })
+    let updateEnergy = update(updateDeuter, { resources: { energy: { $apply: function (x) { return x - planet[section][index].cost.energy; } }} })
 
     setPlanet(updateEnergy)
     refreshChosenPlanet(updateEnergy)

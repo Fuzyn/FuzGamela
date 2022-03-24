@@ -25,11 +25,11 @@ const PointsTable = (props) => {
                     </tr>
                     <tr>
                         <td>Budynki:</td>
-                        <td className="points-main_point">{pointFlatSum(buildingPoints)}</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(buildingPoints))}</td>
                     </tr>
                     <tr>
                         <td>Badania:</td>
-                        <td className="points-main_point">{pointFlatSum(testPoints)}</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(testPoints))}</td>
                     </tr>
                 </tbody>
             </table>
@@ -42,11 +42,11 @@ const PointsTable = (props) => {
                     </tr>
                     <tr>
                         <td>Budynki:</td>
-                        <td className="points-main_point">{pointFlatSum(buildingPoints[props.planet.id - 1])}</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(buildingPoints[props.planet.id - 1]))}</td>
                     </tr>
                     <tr>
                         <td>Badania:</td>
-                        <td className="points-main_point">{pointFlatSum(testPoints[props.planet.id - 1])}</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(testPoints[props.planet.id - 1]))}</td>
                     </tr>
                 </tbody>
             </table>

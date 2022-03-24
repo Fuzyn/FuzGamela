@@ -25,11 +25,11 @@ const handleDown = (e, section) => {
                   {build.description}
                 </div>
                 <div className='building-cost'>
-                  <p>Metal: {build.cost.metal}</p>
-                  <p>Kryształ: {build.cost.cristal}</p>
-                  <p>Deuter: {build.cost.deuter}</p>
+                  <p>Metal: {Math.round(build.cost.metal)}</p>
+                  <p>Kryształ: {Math.round(build.cost.cristal)}</p>
+                  <p>Deuter: {Math.round(build.cost.deuter)}</p>
                 </div>
-                <div className='building-time'>Czas budowy: {build.time} s</div>
+                <div className='building-time'>Czas budowy: {Math.round(build.time)} s</div>
                 
               </div>
               <div className='building-button'>
@@ -44,7 +44,7 @@ const handleDown = (e, section) => {
 
           </div>
           <div className='building-function'>
-            {build.function[0].description}{build.function[0].value}
+            {build.function[0].description}{Math.round(build.function[0].value)}
           </div>
         </div>
       ))}

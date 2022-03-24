@@ -27,14 +27,21 @@ function App() {
 
   //Funkcja odpowiedzialna za zwiększanie poziomu, puki co nie skończona
   const handleUp = (index, section) => {
-    let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } })
-    let updateMetal = update(updateLevel, { resources: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal; } }} })
-    let updateCristal = update(updateMetal, { resources: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal; } }} })
-    let updateDeuter = update(updateCristal, { resources: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter; } }} })
-    let updateEnergy = update(updateDeuter, { resources: { energy: { $apply: function (x) { return x - planet[section][index].cost.energy; } }} })
-
-    setPlanet(updateEnergy)
-    refreshChosenPlanet(updateEnergy)
+    let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; }}}}});
+    let updateMetal = update(updateLevel, { resources: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal; }}}});
+    let updateCristal = update(updateMetal, { resources: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal; }}}});
+    let updateDeuter = update(updateCristal, { resources: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter; }}}});
+    let updateEnergy = update(updateDeuter, { resources: { energy: { $apply: function (x) { return x - planet[section][index].cost.energy; }}}});
+    let updateMetalCost = update(updateEnergy, { [section]: { [index]: { cost: { metal: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
+    let updateCristalCost = update(updateMetalCost, { [section]: { [index]: { cost: { cristal: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
+    let updateDeuterCost = update(updateCristalCost, { [section]: { [index]: { cost: { deuter: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
+    let updateEnergyCost = update(updateDeuterCost, { [section]: { [index]: { cost: { energy: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
+    let updatePoints = update(updateEnergyCost, { [section]: { [index]: { points: { $apply: function (x) { return x * planet[section][index].factor; }}}}});
+    let updateTime = update(updatePoints, { [section]: { [index]: { time: { $apply: function (x) { return x * planet[section][index].factor; }}}}});
+    let updateFunction = update(updateTime, { [section]: { [index]: { function: { [0]: { value: { $apply: function (x) { return x * planet[section][index].factor; }}}}}}});
+   console.log(updateFunction.buildings[6].function[0].value)
+    setPlanet(updateFunction)
+    refreshChosenPlanet(updateFunction)
   }
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona

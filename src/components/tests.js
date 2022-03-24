@@ -32,11 +32,11 @@ const Tests = (props) => {
                             <div className='test-level'>{chosenTest.level}</div>
                             <div className='test-middle'>
                                 <div className='test-cost'>
-                                    <p>Metal: {chosenTest.cost.metal}</p>
-                                    <p>Kryształ: {chosenTest.cost.cristal}</p>
-                                    <p>Deuter: {chosenTest.cost.deuter}</p>
+                                    <p>Metal: {Math.round(chosenTest.cost.metal)}</p>
+                                    <p>Kryształ: {Math.round(chosenTest.cost.cristal)}</p>
+                                    <p>Deuter: {Math.round(chosenTest.cost.deuter)}</p>
                                 </div>
-                                <div className='test-time'>Czas badania: {chosenTest.time} s</div>
+                                <div className='test-time'>Czas badania: {Math.round(chosenTest.time)} s</div>
                             </div>
                             <div className='test-button'>
                                 <button className='test_button-up' onClick={() => handleUp(chosenTest.id - 1, 'tests')}>
@@ -52,7 +52,7 @@ const Tests = (props) => {
                         </div>
                     </div>
                     <div className='test-function'>
-                        {chosenTest.function[0].description}{chosenTest.function[0].value}
+                        {chosenTest.function[0].description}{Math.round(chosenTest.function[0].value)}
                     </div>
                 </div>
             </div>

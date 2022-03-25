@@ -21,9 +21,9 @@
 }
 
 .planet-changer select {
- font-size: 1vw;
- background-color: rgb(102, 102, 102);
- border-radius: 0.2vw
+  font-size: 1vw;
+  background-color: rgb(102, 102, 102);
+  border-radius: 0.2vw
 }
 
 /*                             NAVIGATION */
@@ -53,7 +53,7 @@
 
 .navigation a {
   color: #fff;
-  
+
   text-decoration: none;
   margin: 1% 5%;
 }
@@ -175,6 +175,58 @@
 
 .points-main_point {
   text-align: center;
+}
+
+/*                             EMPIRE */
+
+.empire {
+  flex-direction: row;
+}
+
+.empire-column {
+  width: 20%;
+}
+
+.empire-column img {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.empire-column h1 {
+  font-size: 2vw;
+  text-align: center;
+}
+
+.empire-column table {
+  width: 100%;
+}
+
+.empire-column tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.empire-column td {
+  font-size: 1vw;
+  padding: 0 1vw;
+}
+
+.empire_title,
+.empire_title-is-open {
+  font-size: 1vw;
+  cursor: pointer;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgb(10, 12, 82) 50%, rgba(0,0,0,0) 100%);
+}
+
+.empire_title:before {
+  display: inline-block;
+  width: 1em;
+  content: '▸';
+}
+
+.empire_title-is-open:before {
+  padding-right: 2%;
+  content: '▾';
 }
 
 /*                             BUILDING */

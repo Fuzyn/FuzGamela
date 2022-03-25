@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/navBar';
 import ResourcesBar from './components/resourcesBar';
 import Preview from './components/preview';
+import Empire from './components/empire';
 import Buildings from './components/buildings';
 import Tests from './components/tests';
 import PlanetChanger from './components/planetChanger';
@@ -44,17 +45,17 @@ function App() {
          updateValue = update(updateValue, { [section]: { [index]: { function: { [i]: { value: { $apply: function (x) { return x * planet[section][index].factor; } }}}}}});
       } return updateValue
     }
-    console.log(updateFunction())
     setPlanet(updateFunction())
     refreshChosenPlanet(updateFunction())
   }
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
   const handleDown = (index, section) => {
+    if(planet[section][index].level !== 0){
     const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
     setPlanet(newLevel)
     refreshChosenPlanet(newLevel)
-  }
+  }}
 
   //   const myInterval = setInterval(myTimer, 1000);
 
@@ -85,6 +86,7 @@ function App() {
       <ResourcesBar planet={planet} />
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
+        <Route path='empire' element={<Empire user={user} />} />
         <Route path='buildings' element={<Buildings planet={planet} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route

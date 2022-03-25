@@ -22,6 +22,7 @@
 
 .planet-changer select {
   font-size: 1vw;
+  min-width: 5vw;
   background-color: rgb(102, 102, 102);
   border-radius: 0.2vw
 }
@@ -46,7 +47,7 @@
   list-style: none;
   text-align: center;
   margin-bottom: 1px;
-  border-width: 3px;
+  border-width: 0.1vw;
   border-style: solid;
   border-color: #fff;
 }
@@ -104,7 +105,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  margin: 3% 15% 0 15%;
+  margin: 3% 20% 0 20%;
   color: #fff;
   background: rgba(0, 0, 0, 0.7);
   padding-bottom: 5%;
@@ -132,7 +133,7 @@
 }
 
 .chosen-planet_img {
-  width: 40%;
+  width: 35%;
   border-radius: 2vw;
 }
 
@@ -160,7 +161,7 @@
 }
 
 .planet-single img {
-  width: 100%;
+  width: 80%;
 }
 
 .points-main p {
@@ -214,8 +215,9 @@
 .empire_title,
 .empire_title-is-open {
   font-size: 1vw;
+  padding-left: 5%;
   cursor: pointer;
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgb(10, 12, 82) 50%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(10, 12, 82) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
 .empire_title:before {
@@ -435,4 +437,89 @@
 .test-map_button button {
   width: 50%;
   font-size: 1vw;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  /*                             PLANET CHANGER */
+
+  .planet-changer img {
+    width: 80%;
+  }
+
+  .planet-changer select {
+    font-size: 1.5vw;
+    min-width: 8vw;
+  }
+
+  /*                             NAVIGATION */
+
+  .navigation {
+    width: 12%;
+    font-size: 1.6vw;
+    margin-top: 5%;
+  }
+
+
+  /*                             RESOURCER */
+
+  .resource p {
+    font-size: 1.2vw;
+  }
+
+  .resource img {
+    width: 60%;
+  }
+
+  /*                             CONTENT */
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 10% 0 25%;
+    background: rgba(0, 0, 0, 0.7);
+    padding-bottom: 5%;
+  }
+
+  /*                             PREVIEW */
+
+  .planet-name {
+    font-size: 3vw;
+  }
+
+  .chosen-planet_img {
+    width: 50%;
+  }
+
+  .points-main p {
+    font-size: 1.4vw;
+  }
+
+  .points-main_table {
+    font-size: 1.2vw;
+  }
+
+  /*                             EMPIRE */
+
+  .empire {
+    flex-direction: row;
+  }
+
+  .empire-column {
+    width: 30%;
+  }
+
+  .empire-column h1 {
+    font-size: 2.5vw;
+  }
+
+  .empire_title,
+  .empire_title-is-open {
+    font-size: 1.5vw;
+    cursor: pointer;
+  }
+
+  .empire-column td {
+    font-size: 1.3vw;
+  }
 }

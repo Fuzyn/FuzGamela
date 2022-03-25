@@ -9,7 +9,7 @@ const Empire = (props) => {
         <div className="content empire">
             {props.user.planet.map((planet, index) => (
                 <div key={index} className='empire-column'>
-                    <img src={planetImg[index]} />
+                    <img alt="planet" src={planetImg[index]} />
                     <h1>{planet.name}</h1>
                     <p
                         onClick={() => setOpenResources((prev) => !prev)}

@@ -38,15 +38,15 @@ function App() {
     let updateEnergyCost = update(updateDeuterCost, { [section]: { [index]: { cost: { energy: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
     let updatePoints = update(updateEnergyCost, { [section]: { [index]: { points: { $apply: function (x) { return x * planet[section][index].factor; }}}}});
     let updateTime = update(updatePoints, { [section]: { [index]: { time: { $apply: function (x) { return x * planet[section][index].factor; }}}}});
-    let updateTimes = () => {
+    let updateFunction = () => {
       let updateValue = updateTime
       for(let i = 0; i < updateTime[section][index].function.length; i++){
          updateValue = update(updateValue, { [section]: { [index]: { function: { [i]: { value: { $apply: function (x) { return x * planet[section][index].factor; } }}}}}});
       } return updateValue
     }
-    
-    setPlanet(updateTimes)
-    refreshChosenPlanet(updateTimes)
+    console.log(updateFunction())
+    setPlanet(updateFunction())
+    refreshChosenPlanet(updateFunction())
   }
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona

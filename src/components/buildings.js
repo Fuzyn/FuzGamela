@@ -5,11 +5,11 @@ const Buildings = (props) => {
 
   const handleUp = (e, section) => {
     props.handleUp(e, section)
-};
+  };
 
-const handleDown = (e, section) => {
+  const handleDown = (e, section) => {
     props.handleDown(e, section)
-};
+  };
 
   return (
     <div className="content">
@@ -21,7 +21,7 @@ const handleDown = (e, section) => {
               <img src={imgBuilding[index]} alt={build.name} className='building-img' />
               <div className='building-level'>{build.level}</div>
               <div className='building-middle'>
-              <div className='building-description'>
+                <div className='building-description'>
                   {build.description}
                 </div>
                 <div className='building-cost'>
@@ -30,7 +30,7 @@ const handleDown = (e, section) => {
                   <p>Deuter: {Math.round(build.cost.deuter)}</p>
                 </div>
                 <div className='building-time'>Czas budowy: {Math.round(build.time)} s</div>
-                
+
               </div>
               <div className='building-button'>
                 <button className='building_button-up' onClick={() => handleUp(index, 'buildings')}>
@@ -41,10 +41,14 @@ const handleDown = (e, section) => {
                 </button>
               </div>
             </div>
-
           </div>
           <div className='building-function'>
-            {build.function[0].description}{Math.round(build.function[0].value)}
+            {build.function.map((func, index) => (
+              <div key={index}>
+                {func.description}
+                {Math.round(func.value)}
+              </div>
+            ))}
           </div>
         </div>
       ))}

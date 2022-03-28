@@ -811,7 +811,7 @@ const User =
           time: 2,
           factor: 1.05,
           available: true,
-          requirements: 'none',
+          requirements: [],
 
         },
         {
@@ -835,7 +835,7 @@ const User =
           time: 2,
           factor: 1.06,
           available: true,
-          requirements: 'none',
+          requirements: [],
 
         },
         {
@@ -859,7 +859,7 @@ const User =
           time: 2,
           factor: 1.02,
           available: true,
-          requirements: 'none',
+          requirements: [],
 
         },
         {
@@ -883,7 +883,7 @@ const User =
           time: 2,
           factor: 1.03,
           available: true,
-          requirements: 'none',
+          requirements: [],
 
         },
         {
@@ -907,7 +907,7 @@ const User =
           time: 3,
           factor: 1.07,
           available: true,
-          requirements: 'none',
+          requirements: [],
 
         },
         {
@@ -931,7 +931,7 @@ const User =
           time: 3,
           factor: 1.1,
           available: true,
-          requirements: 'none',
+          requirements: [],
 
         },
         {
@@ -1025,7 +1025,7 @@ const User =
           time: 5,
           factor: 1.10,
           available: true,
-          requirements: 'none'
+          requirements: []
 
         },
         {

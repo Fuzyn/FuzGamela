@@ -38,7 +38,7 @@ const Tests = (props) => {
                                 </div>
                                 <div className='test-time'>Czas badania: {Math.round(chosenTest.time)} s</div>
                             </div>
-                            <div className='test-button'>
+                            <div className={chosenTest.available ? 'test-button' : 'test-button-false'}>
                                 <button className='test_button-up' onClick={() => handleUp(chosenTest.id - 1, 'tests')}>
                                     up
                                 </button>
@@ -58,7 +58,7 @@ const Tests = (props) => {
             </div>
             <div className="test-map_container">
                 {props.planet.tests.map((test, index) => (
-                    <div key={test.name} className="test-map_single">
+                    <div key={test.name} className={test.available ? "test-map_single" : "test-map_single-false"}>
                         <div className="test-map_level">{test.level}</div>
                         <img src={imgTest[index]} alt={test.name} className='test-map_img' onClick={() => setChosenTest(props.planet.tests[index])} />
                         <p>{test.name}</p>

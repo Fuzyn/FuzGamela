@@ -26,6 +26,11 @@ const NavBar = () => {
               BADANIA
             </Link>
           </li>
+          <li>
+            <Link to='tech'>
+              TECHNOLOGIA
+            </Link>
+          </li>
         </ul>
       </div>
     )

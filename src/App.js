@@ -10,6 +10,7 @@ import Empire from './components/empire';
 import Buildings from './components/buildings';
 import Tests from './components/tests';
 import PlanetChanger from './components/planetChanger';
+import Tech from './components/tech';
 
 function App() {
 
@@ -89,6 +90,7 @@ function App() {
         <Route path='empire' element={<Empire user={user} />} />
         <Route path='buildings' element={<Buildings planet={planet} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
+        <Route path='tech' element={<Tech planet={planet} />} />
         <Route
           path="*"
           element={

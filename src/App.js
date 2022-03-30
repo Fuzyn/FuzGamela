@@ -11,6 +11,7 @@ import Buildings from './components/buildings';
 import Tests from './components/tests';
 import PlanetChanger from './components/planetChanger';
 import Tech from './components/tech';
+import {checkRequirements} from './components/requirements'
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
     }
     setPlanet(updateFunction())
     refreshChosenPlanet(updateFunction())
+    console.log(checkRequirements(updateFunction(), 'buildings'))
   }
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
@@ -57,6 +59,7 @@ function App() {
     setPlanet(newLevel)
     refreshChosenPlanet(newLevel)
   }}
+  
 
   //   const myInterval = setInterval(myTimer, 1000);
 

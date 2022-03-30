@@ -58,7 +58,7 @@ const Tests = (props) => {
             </div>
             <div className="test-map_container">
                 {props.planet.tests.map((test, index) => (
-                    <div key={test.name} className={test.available ? "test-map_single" : "test-map_single-false"}>
+                    <div id={test.name} key={test.name} className={test.available ? "test-map_single" : "test-map_single-false"}>
                         <div className="test-map_level">{test.level}</div>
                         <img src={imgTest[index]} alt={test.name} className='test-map_img' onClick={() => setChosenTest(props.planet.tests[index])} />
                         <p>{test.name}</p>

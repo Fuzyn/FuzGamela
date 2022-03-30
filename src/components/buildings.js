@@ -14,7 +14,7 @@ const Buildings = (props) => {
   return (
     <div className="content">
       {props.planet.buildings.map((build, index) => (
-        <div key={index} className={build.available ? 'building' : 'building-false'}>
+        <div id={build.name} key={index} className={build.available ? 'building' : 'building-false'}>
           <div>
             <div className='building-name'>{build.name}</div>
             <div className='building-title'>

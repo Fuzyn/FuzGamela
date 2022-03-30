@@ -187,10 +187,12 @@ const User =
           requirements: [
             {
               description: 'Hangar',
+              source: 'buildings',
               value: 2
             },
             {
               description: 'Centrum dowodzenia',
+              source: 'buildings',
               value: 2
             }
           ],
@@ -224,6 +226,7 @@ const User =
           requirements: [
             {
               description: 'Fabryka robotów',
+              source: 'buildings',
               value: 10
             }
           ],
@@ -277,14 +280,17 @@ const User =
           requirements: [
             {
               description: 'Fabryka robotów',
+              source: 'buildings',
               value: 10
             },
             {
               description: 'Fabryka nanitów',
+              source: 'buildings',
               value: 2
             },
             {
               description: 'Centrum dowodzenia',
+              source: 'buildings',
               value: 5
             },
           ],
@@ -315,6 +321,7 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 1
             },
           ],
@@ -344,10 +351,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 2
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 3
             },
           ],
@@ -377,10 +386,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 3
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
           ],
@@ -410,10 +421,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 4
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 1
             },
           ],
@@ -443,10 +456,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 5
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 3
             },
           ],
@@ -476,6 +491,7 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 3
             },
           ],
@@ -505,10 +521,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 1
             },
           ],
@@ -538,10 +556,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 7
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 2
             },
           ],
@@ -571,14 +591,17 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 5
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 2
             },
             {
               description: 'Technologia nadprzestrzenna',
+              source: 'tests',
               value: 3
             }
           ],
@@ -608,18 +631,22 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 5
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 2
             },
             {
               description: 'Technologia nadprzestrzenna',
+              source: 'tests',
               value: 3
             },
             {
               description: 'Technologia ochronna',
+              source: 'tests',
               value: 2
             }
           ],
@@ -649,10 +676,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
           ],
@@ -682,14 +711,17 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia laserowa',
+              source: 'tests',
               value: 2
             },
           ],
@@ -719,18 +751,22 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia laserowa',
+              source: 'tests',
               value: 2
             },
             {
               description: 'Technologia jonowa',
+              source: 'tests',
               value: 3
             }
           ],
@@ -760,18 +796,22 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia komputerowa',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia nadprzestrzenna',
+              source: 'tests',
               value: 3
             }
           ],
@@ -962,10 +1002,12 @@ const User =
           requirements: [
             {
               description: 'Hangar',
+              source: 'buildings',
               value: 2
             },
             {
               description: 'Centrum dowodzenia',
+              source: 'buildings',
               value: 2
             }
           ],
@@ -999,6 +1041,7 @@ const User =
           requirements: [
             {
               description: 'Fabryka robotów',
+              source: 'buildings',
               value: 10
             }
           ],
@@ -1052,14 +1095,17 @@ const User =
           requirements: [
             {
               description: 'Fabryka robotów',
+              source: 'buildings',
               value: 10
             },
             {
               description: 'Fabryka nanitów',
+              source: 'buildings',
               value: 2
             },
             {
               description: 'Centrum dowodzenia',
+              source: 'buildings',
               value: 5
             },
           ],
@@ -1090,6 +1136,7 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 1
             },
           ],
@@ -1119,10 +1166,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 2
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 3
             },
           ],
@@ -1152,10 +1201,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 3
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
           ],
@@ -1185,10 +1236,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 4
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 1
             },
           ],
@@ -1218,10 +1271,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 5
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 3
             },
           ],
@@ -1251,6 +1306,7 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 3
             },
           ],
@@ -1280,10 +1336,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 1
             },
           ],
@@ -1313,10 +1371,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 7
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 2
             },
           ],
@@ -1346,14 +1406,17 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 5
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 2
             },
             {
               description: 'Technologia nadprzestrzenna',
+              source: 'tests',
               value: 3
             }
           ],
@@ -1383,18 +1446,22 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 5
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 2
             },
             {
               description: 'Technologia nadprzestrzenna',
+              source: 'tests',
               value: 3
             },
             {
               description: 'Technologia ochronna',
+              source: 'tests',
               value: 2
             }
           ],
@@ -1424,10 +1491,12 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
           ],
@@ -1457,14 +1526,17 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia laserowa',
+              source: 'tests',
               value: 2
             },
           ],
@@ -1494,18 +1566,22 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia laserowa',
+              source: 'tests',
               value: 2
             },
             {
               description: 'Technologia jonowa',
+              source: 'tests',
               value: 3
             }
           ],
@@ -1535,18 +1611,22 @@ const User =
           requirements: [
             {
               description: 'Labolatorium',
+              source: 'buildings',
               value: 6
             },
             {
               description: 'Technologia energetyczna',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia komputerowa',
+              source: 'tests',
               value: 4
             },
             {
               description: 'Technologia nadprzestrzenna',
+              source: 'tests',
               value: 3
             }
           ],

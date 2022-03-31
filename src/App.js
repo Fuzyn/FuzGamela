@@ -11,6 +11,7 @@ import Buildings from './components/buildings';
 import Tests from './components/tests';
 import PlanetChanger from './components/planetChanger';
 import Tech from './components/tech';
+import QuickEmpire from './components/quickEmpire';
 import {checkRequirements} from './components/requirements'
 
 function App() {
@@ -89,6 +90,7 @@ function App() {
       <PlanetChanger user={user} planet={planet} handleChange={handleChange.bind(this)} />
       <NavBar />
       <ResourcesBar planet={planet} />
+      <QuickEmpire planet={planet} />
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
         <Route path='empire' element={<Empire user={user} />} />

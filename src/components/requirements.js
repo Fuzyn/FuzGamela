@@ -9,27 +9,29 @@ const checkRequireLoop = (planet, section) => {
 }
 
 export const checkRequirements = (planet, section) => {
+    let updatePlanet = planet
     const table = checkRequireLoop(planet, section)
     for (let i = 0; i < table.length; i++) {
-        const element = document.getElementById(table + '-req')
-        if (element.children[0].style.color === 'grey') {
+        const index = planet[section].findIndex(name => name.name === table[i])
+        if (planet[section][index].requirements.length === 0) {
         }
-        const tableCheckRequire = []
-        if (element.children[0].style.color !== 'grey') {
-            for (let j = 0; j < element.children.length; j++) {
-                if (element.children[j].style.color === 'red') {
-                    tableCheckRequire.push(false)
-                }
-                if (element.children[j].style.color === 'green') {
+        if (planet[section][index].requirements.length > 0 && planet[section][index].available === false) {
+            const tableCheckRequire = []
+            for (let j = 0; j < planet[section][index].requirements.length; j++) {
+                const indexRequire = planet[planet[section][index].requirements[j].source].findIndex(name => name.name === planet[section][index].requirements[j].description)
+                if (planet[section][index].requirements[j].value <= planet[planet[section][index].requirements[j].source][indexRequire].level) {
                     tableCheckRequire.push(true)
+                }
+                else {
+                    tableCheckRequire.push(false)
                 }
             }
             const generalRequire = tableCheckRequire.every(v => v === true)
             if (generalRequire === true) {
-                const changeAvailable = update(planet, { [section]: { [i]: { available: { $set: 'true' } } } })
-                console.log(changeAvailable)
-                return changeAvailable
+                updatePlanet = update(planet, { [section]: { [i]: { available: { $set: 'true' } } } })
+            } else {
             }
         }
     }
-}
+    return updatePlanet
+} 

@@ -640,11 +640,6 @@ const User =
               value: 2
             },
             {
-              description: 'Technologia nadprzestrzenna',
-              source: 'tests',
-              value: 3
-            },
-            {
               description: 'Technologia ochronna',
               source: 'tests',
               value: 2
@@ -1453,11 +1448,6 @@ const User =
               description: 'Technologia energetyczna',
               source: 'tests',
               value: 2
-            },
-            {
-              description: 'Technologia nadprzestrzenna',
-              source: 'tests',
-              value: 3
             },
             {
               description: 'Technologia ochronna',

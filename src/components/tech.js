@@ -39,7 +39,7 @@ const Tech = (props) => {
                     <div className='tech-name'>
                         {build.name}:
                     </div>
-                    <div id={build.name + '-req'} className="tech-req">
+                    <div className="tech-req">
                         {Require(build)}
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const Tech = (props) => {
                     <div className='tech-name'>
                         {test.name}:
                     </div>
-                    <div id={test.name + '-req'} className="tech-req">
+                    <div className="tech-req">
                         {Require(test)}
                     </div>
                 </div>

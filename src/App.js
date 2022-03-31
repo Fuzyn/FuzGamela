@@ -47,9 +47,10 @@ function App() {
          updateValue = update(updateValue, { [section]: { [index]: { function: { [i]: { value: { $apply: function (x) { return x * planet[section][index].factor; } }}}}}});
       } return updateValue
     }
-    setPlanet(updateFunction())
-    refreshChosenPlanet(updateFunction())
-    console.log(checkRequirements(updateFunction(), 'buildings'))
+    const checkReuireBuildings = checkRequirements(updateFunction(), 'buildings')
+    const checkReuireTests = checkRequirements(checkReuireBuildings, 'tests')
+    setPlanet(checkReuireTests)
+    refreshChosenPlanet(checkReuireTests)
   }
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona

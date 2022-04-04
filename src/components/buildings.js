@@ -1,5 +1,4 @@
 import { imgBuilding } from './importImages';
-import { useEffect } from 'react';
 
 
 const Buildings = (props) => {

@@ -15,7 +15,7 @@ export const checkRequirements = (planet, section) => {
         const index = planet[section].findIndex(name => name.name === table[i])
         if (planet[section][index].requirements.length === 0) {
         }
-        if (planet[section][index].requirements.length > 0 && planet[section][index].available === false) {
+        if (planet[section][index].requirements.length > 0) {
             const tableCheckRequire = []
             for (let j = 0; j < planet[section][index].requirements.length; j++) {
                 const indexRequire = planet[planet[section][index].requirements[j].source].findIndex(name => name.name === planet[section][index].requirements[j].description)
@@ -28,8 +28,10 @@ export const checkRequirements = (planet, section) => {
             }
             const generalRequire = tableCheckRequire.every(v => v === true)
             if (generalRequire === true) {
-                updatePlanet = update(planet, { [section]: { [i]: { available: { $set: 'true' } } } })
-            } else {
+                updatePlanet = update(updatePlanet, { [section]: { [i]: { available: { $set: 'true' } } } })
+            } 
+            if (generalRequire === false && planet[section][index].available === 'true'){
+                updatePlanet = update(updatePlanet, { [section]: { [i]: { available: { $set: 'false' } } } })
             }
         }
     }

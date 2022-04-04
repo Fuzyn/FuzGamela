@@ -5,21 +5,33 @@ const Tests = (props) => {
     const [chosenTest, setChosenTest] = useState(props.planet.tests[0]);
 
     useEffect(() => {
-        let id = chosenTest.id-1;
+        let id = chosenTest.id - 1;
         let refreshChosenTest = props.planet.tests[id];
         setChosenTest(refreshChosenTest)
     }, [chosenTest.id, props.planet.tests]);
 
-    const handleUp = (e, section) => {
-        props.handleUp(e, section)
+    const handleUp = (e, section, metal, cristal, deuter) => {
+        if (
+            metal <= props.user.planet[props.planet.id - 1].resources.metal &&
+            cristal <= props.user.planet[props.planet.id - 1].resources.cristal &&
+            deuter <= props.user.planet[props.planet.id - 1].resources.deuter) {
+            props.handleUp(e, section)
+        } else {
+            alert('Brak zasobów')
+        }
     };
 
     const handleDown = (e, section) => {
         props.handleDown(e, section)
     };
 
-
-
+    function changeAvailabla(index) {
+        if (`${props.user.planet[props.planet.id - 1].tests[index].available}` === 'true') {
+          return true
+        } else {
+          return false
+        }
+      }
 
     return (
         <div className="content">
@@ -38,8 +50,8 @@ const Tests = (props) => {
                                 </div>
                                 <div className='test-time'>Czas badania: {Math.round(chosenTest.time)} s</div>
                             </div>
-                            <div className={chosenTest.available ? 'test-button' : 'test-button-false'}>
-                                <button className='test_button-up' onClick={() => handleUp(chosenTest.id - 1, 'tests')}>
+                            <div className={changeAvailabla(chosenTest.id - 1) ? 'test-button' : 'test-button-false'}>
+                                <button className='test_button-up' onClick={() => handleUp(chosenTest.id - 1, 'tests', chosenTest.cost.metal, chosenTest.cost.cristal, chosenTest.cost.deuter)}>
                                     up
                                 </button>
                                 <button className='test_button-down' onClick={() => handleDown(chosenTest.id - 1, 'tests')}>
@@ -58,12 +70,12 @@ const Tests = (props) => {
             </div>
             <div className="test-map_container">
                 {props.planet.tests.map((test, index) => (
-                    <div id={test.name} key={test.name} className={test.available ? "test-map_single" : "test-map_single-false"}>
+                    <div id={test.name} key={test.name} className={changeAvailabla(index) ? "test-map_single" : "test-map_single-false"}>
                         <div className="test-map_level">{test.level}</div>
                         <img src={imgTest[index]} alt={test.name} className='test-map_img' onClick={() => setChosenTest(props.planet.tests[index])} />
                         <p>{test.name}</p>
                         <div className="test-map_button">
-                            <button onClick={() => handleUp(index, 'tests')}>up</button>
+                            <button onClick={() => handleUp(index, 'tests', test.cost.metal, test.cost.cristal, test.cost.deuter)}>up</button>
                             <button onClick={() => handleDown(index, 'tests')}>down</button>
                         </div>
                     </div>

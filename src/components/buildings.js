@@ -1,20 +1,36 @@
 import { imgBuilding } from './importImages';
+import { useEffect } from 'react';
 
 
 const Buildings = (props) => {
 
-  const handleUp = (e, section) => {
-    props.handleUp(e, section)
+  const handleUp = (e, section, metal, cristal, deuter) => {
+    if (
+      metal <= props.user.planet[props.planet.id - 1].resources.metal &&
+      cristal <= props.user.planet[props.planet.id - 1].resources.cristal &&
+      deuter <= props.user.planet[props.planet.id - 1].resources.deuter) {
+      props.handleUp(e, section)
+    } else {
+      alert('Brak zasobów')
+    }
   };
 
   const handleDown = (e, section) => {
     props.handleDown(e, section)
   };
 
+  function changeAvailabla(index) {
+    if (`${props.user.planet[props.planet.id - 1].buildings[index].available}` === 'true') {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <div className="content">
-      {props.planet.buildings.map((build, index) => (
-        <div id={build.name} key={index} className={build.available ? 'building' : 'building-false'}>
+      {props.user.planet[props.planet.id - 1].buildings.map((build, index) => (
+        <div id={build.name} key={index} className={changeAvailabla(index) ? 'buildings' : 'building-false'}>
           <div>
             <div className='building-name'>{build.name}</div>
             <div className='building-title'>
@@ -26,6 +42,7 @@ const Buildings = (props) => {
                 </div>
                 <div className='building-cost'>
                   <p>Metal: {Math.round(build.cost.metal)}</p>
+                  {/* <p>{test(index)}</p> */}
                   <p>Kryształ: {Math.round(build.cost.cristal)}</p>
                   <p>Deuter: {Math.round(build.cost.deuter)}</p>
                 </div>
@@ -33,7 +50,7 @@ const Buildings = (props) => {
 
               </div>
               <div className='building-button'>
-                <button className='building_button-up' onClick={() => handleUp(index, 'buildings')}>
+                <button className='building_button-up' onClick={() => handleUp(index, 'buildings', build.cost.metal, build.cost.cristal, build.cost.deuter)}>
                   up
                 </button>
                 <button className='building_button-down' onClick={() => handleDown(index, 'buildings')}>

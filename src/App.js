@@ -31,7 +31,7 @@ function App() {
 
   //Funkcja odpowiedzialna za zwiększanie poziomu, puki co nie skończona
   const handleUp = (index, section) => {
-    let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } });
+    let updateLevel = update(user.planet[planet.id - 1], { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } });
     let updateMetal = update(updateLevel, { resources: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal; } } } });
     let updateCristal = update(updateMetal, { resources: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal; } } } });
     let updateDeuter = update(updateCristal, { resources: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter; } } } });
@@ -57,9 +57,28 @@ function App() {
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
   const handleDown = (index, section) => {
     if (planet[section][index].level !== 0) {
-      const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
-      setPlanet(newLevel)
-      refreshChosenPlanet(newLevel)
+      const newLevel = update(user.planet[planet.id - 1], { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
+      let updateMetalCost = update(newLevel, { [section]: { [index]: { cost: { metal: { $apply: function (x) { return x / planet[section][index].factor; } } } } } });
+      let updateCristalCost = update(updateMetalCost, { [section]: { [index]: { cost: { cristal: { $apply: function (x) { return x / planet[section][index].factor; } } } } } });
+      let updateDeuterCost = update(updateCristalCost, { [section]: { [index]: { cost: { deuter: { $apply: function (x) { return x / planet[section][index].factor; } } } } } });
+      let updateEnergyCost = update(updateDeuterCost, { [section]: { [index]: { cost: { energy: { $apply: function (x) { return x / planet[section][index].factor; } } } } } });
+      let updatePoints = update(updateEnergyCost, { [section]: { [index]: { points: { $apply: function (x) { return x / planet[section][index].factor; } } } } });
+      let updateTime = update(updatePoints, { [section]: { [index]: { time: { $apply: function (x) { return x / planet[section][index].factor; } } } } });
+      let updateFunction = () => {
+        let updateValue = updateTime
+        for (let i = 0; i < updateTime[section][index].function.length; i++) {
+          updateValue = update(updateValue, { [section]: { [index]: { function: { [i]: { value: { $apply: function (x) { return x / planet[section][index].factor; } } } } } } });
+        } return updateValue
+      }
+
+
+      const checkReuireBuildings = checkRequirements(updateFunction(), 'buildings')
+      const checkReuireTests = checkRequirements(checkReuireBuildings, 'tests')
+
+
+      
+      setPlanet(checkReuireTests)
+      refreshChosenPlanet(checkReuireTests)
     }
   }
 
@@ -81,12 +100,12 @@ function App() {
     <div className='main'>
       <PlanetChanger user={user} planet={planet} handleChange={handleChange.bind(this)} />
       <NavBar />
-      <ResourcesBar planet={planet} user={user}/>
-      <QuickEmpire planet={planet} />
+      <ResourcesBar planet={planet} user={user} />
+      <QuickEmpire planet={planet} user={user} />
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
         <Route path='empire' element={<Empire user={user} />} />
-        <Route path='buildings' element={<Buildings planet={planet} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
+        <Route path='buildings' element={<Buildings planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tech' element={<Tech planet={planet} />} />
         <Route

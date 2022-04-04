@@ -35,7 +35,9 @@ const ResourcerBar = (props) => {
         <img alt='energy-logo' src={energyImg} />
         <div className="value">
           <p>Energia:</p>
-          <p>{Math.round(props.user.planet[props.planet.id-1].resources.energy)}</p>
+          {props.user.planet[props.planet.id-1].resources.energy > 0 ? 
+          <p>{Math.round(props.user.planet[props.planet.id-1].resources.energy)}</p> : 
+          <p style={{color: 'red'}}>{Math.round(props.user.planet[props.planet.id-1].resources.energy)}</p>}
         </div>
       </div >
     </div >

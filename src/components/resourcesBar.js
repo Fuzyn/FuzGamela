@@ -1,83 +1,9 @@
-// import { useEffect, useState } from "react"
-// import update from "react-addons-update";
 import metalImg from '../assets/metal.png'
 import cristalImg from '../assets/cristal.png'
 import deuterImg from '../assets/deuter.png'
 import energyImg from '../assets/energy.png'
 
 const ResourcerBar = (props) => {
-
-
-
-  // const [metal, setMetal] = useState(props.planet.metal)
-  // const [cristal, setCristal] = useState(props.planet.cristal)
-  // const [deuter, setDeuter] = useState(props.planet.deuter)
-
-  // const bonus = 10
-
-  // const metalB = () => {
-  //   const metalBonus = setInterval(() => setMetal(metal + bonus), 2000)
-
-  //   return () => clearInterval(metalBonus)
-  // }
-
-  // const cristalB = () => {
-  //   const cristalBonus = setInterval(() => setCristal(cristal + bonus), 2000)
-
-  //   return () => clearInterval(cristalBonus)
-  // }
-
-  // const deuterB = () => {
-  //   const deuterBonus = setInterval(() => setDeuter(deuter + bonus), 2000)
-
-  //   return () => clearInterval(deuterBonus)
-  // }
-
-  // useEffect(() => {
-  //   {metalB()};
-  //   {cristalB()};
-  //   {deuterB()}
-  // },[])
-
-  // useEffect(() => {
-  //   const metalBonus = setInterval(() => setMetal(metal + bonus), 2000)
-
-  //   return () => clearInterval(metalBonus)
-  // });
-
-  // useEffect(() => {
-  //   const cristalBonus = setInterval(() => setCristal(cristal + bonus), 2000)
-
-  //   return () => clearInterval(cristalBonus)
-  // });
-
-  // useEffect(() => {
-  //   const deuterBonus = setInterval(() => setDeuter(deuter + bonus), 2000)
-
-  //   return () => clearInterval(deuterBonus)
-  // });
-
-  // console.log(metal)
-  // console.log(cristal)
-  // console.log(deuter)
-
-  // const bonus = 10;
-
-  // const metalB = props.planet.metal + bonus
-
-  // const metalInterval = () => {
-  //   const metalBonus = update(props.planet, {metal: {$set: metalB}})
-  //   console.log(metalBonus)
-  //   const bonus = setInterval(() => metalBonus, 2000)
-  //   console.log(bonus)
-  //   return () => clearInterval(bonus)
-  // }
-
-  // useEffect(() => {
-  //   metalInterval()
-  //   console.log(metalInterval)
-  // })
-
 
   return (
     <div className="resources">
@@ -86,7 +12,7 @@ const ResourcerBar = (props) => {
         <div className="value">
           <p>Metal:</p>
           {/* {metal} */}
-          <p>{Math.round(props.planet.resources.metal)}</p>
+          <p>{Math.round(props.user.planet[props.planet.id-1].resources.metal)}</p>
         </div>
       </div>
       <div className="resource">
@@ -94,7 +20,7 @@ const ResourcerBar = (props) => {
         <div className="value">
           <p>Kryształ:</p>
           {/* {cristal} */}
-          <p>{Math.round(props.planet.resources.cristal)}</p>
+          <p>{Math.round(props.user.planet[props.planet.id-1].resources.cristal)}</p>
         </div>
       </div>
       <div className="resource">
@@ -102,14 +28,14 @@ const ResourcerBar = (props) => {
         <div className="value">
           <p>Deuter:</p>
           {/* {deuter} */}
-          <p>{Math.round(props.planet.resources.deuter)}</p>
+          <p>{Math.round(props.user.planet[props.planet.id-1].resources.deuter)}</p>
         </div>
       </div >
       <div className="resource">
         <img alt='energy-logo' src={energyImg} />
         <div className="value">
           <p>Energia:</p>
-          <p>{Math.round(props.planet.resources.energy)}</p>
+          <p>{Math.round(props.user.planet[props.planet.id-1].resources.energy)}</p>
         </div>
       </div >
     </div >

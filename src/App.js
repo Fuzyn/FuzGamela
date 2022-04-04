@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import update from "react-addons-update";
 import User from './components/user'
 import './App.css';
@@ -12,7 +12,7 @@ import Tests from './components/tests';
 import PlanetChanger from './components/planetChanger';
 import Tech from './components/tech';
 import QuickEmpire from './components/quickEmpire';
-import {checkRequirements} from './components/requirements'
+import { checkRequirements } from './components/requirements'
 
 function App() {
 
@@ -31,21 +31,21 @@ function App() {
 
   //Funkcja odpowiedzialna za zwiększanie poziomu, puki co nie skończona
   const handleUp = (index, section) => {
-    let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; }}}}});
-    let updateMetal = update(updateLevel, { resources: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal; }}}});
-    let updateCristal = update(updateMetal, { resources: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal; }}}});
-    let updateDeuter = update(updateCristal, { resources: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter; }}}});
-    let updateEnergy = update(updateDeuter, { resources: { energy: { $apply: function (x) { return x - planet[section][index].cost.energy; }}}});
-    let updateMetalCost = update(updateEnergy, { [section]: { [index]: { cost: { metal: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
-    let updateCristalCost = update(updateMetalCost, { [section]: { [index]: { cost: { cristal: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
-    let updateDeuterCost = update(updateCristalCost, { [section]: { [index]: { cost: { deuter: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
-    let updateEnergyCost = update(updateDeuterCost, { [section]: { [index]: { cost: { energy: { $apply: function (x) { return x * planet[section][index].factor; }}}}}});
-    let updatePoints = update(updateEnergyCost, { [section]: { [index]: { points: { $apply: function (x) { return x * planet[section][index].factor; }}}}});
-    let updateTime = update(updatePoints, { [section]: { [index]: { time: { $apply: function (x) { return x * planet[section][index].factor; }}}}});
+    let updateLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x + 1; } } } } });
+    let updateMetal = update(updateLevel, { resources: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal; } } } });
+    let updateCristal = update(updateMetal, { resources: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal; } } } });
+    let updateDeuter = update(updateCristal, { resources: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter; } } } });
+    let updateEnergy = update(updateDeuter, { resources: { energy: { $apply: function (x) { return x - planet[section][index].cost.energy; } } } });
+    let updateMetalCost = update(updateEnergy, { [section]: { [index]: { cost: { metal: { $apply: function (x) { return x * planet[section][index].factor; } } } } } });
+    let updateCristalCost = update(updateMetalCost, { [section]: { [index]: { cost: { cristal: { $apply: function (x) { return x * planet[section][index].factor; } } } } } });
+    let updateDeuterCost = update(updateCristalCost, { [section]: { [index]: { cost: { deuter: { $apply: function (x) { return x * planet[section][index].factor; } } } } } });
+    let updateEnergyCost = update(updateDeuterCost, { [section]: { [index]: { cost: { energy: { $apply: function (x) { return x * planet[section][index].factor; } } } } } });
+    let updatePoints = update(updateEnergyCost, { [section]: { [index]: { points: { $apply: function (x) { return x * planet[section][index].factor; } } } } });
+    let updateTime = update(updatePoints, { [section]: { [index]: { time: { $apply: function (x) { return x * planet[section][index].factor; } } } } });
     let updateFunction = () => {
       let updateValue = updateTime
-      for(let i = 0; i < updateTime[section][index].function.length; i++){
-         updateValue = update(updateValue, { [section]: { [index]: { function: { [i]: { value: { $apply: function (x) { return x * planet[section][index].factor; } }}}}}});
+      for (let i = 0; i < updateTime[section][index].function.length; i++) {
+        updateValue = update(updateValue, { [section]: { [index]: { function: { [i]: { value: { $apply: function (x) { return x * planet[section][index].factor; } } } } } } });
       } return updateValue
     }
     const checkReuireBuildings = checkRequirements(updateFunction(), 'buildings')
@@ -56,40 +56,32 @@ function App() {
 
   //Funkcja odpowiedzialna za zmniejszanie poziomu, puki co nie skończona
   const handleDown = (index, section) => {
-    if(planet[section][index].level !== 0){
-    const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
-    setPlanet(newLevel)
-    refreshChosenPlanet(newLevel)
-  }}
-  
+    if (planet[section][index].level !== 0) {
+      const newLevel = update(planet, { [section]: { [index]: { level: { $apply: function (x) { return x - 1; } } } } })
+      setPlanet(newLevel)
+      refreshChosenPlanet(newLevel)
+    }
+  }
 
-  //   const myInterval = setInterval(myTimer, 1000);
-
-  // function myTimer() {
-  //   const date = new Date();
-  //   console.log(date.toLocaleTimeString())
-  // }
-
-  // const UpdateResourcer = () => {
-  //   // for (let i=0; i < user.planet.length; i++) {
-  //     const newUserMetal = update(user, {planet: {0: { metal: { $set: 1 }} }})
-  //     setUser(newUserMetal)
-  //     update(user.planet[0], { metal: { $set: 1 } })
-  //     update(user.planet[0], { cristal: { $set: 1 } })
-  //     update(user.planet[0], { deuter: { $set: 1 } })
-  //   // }
-  // }
-
-  // useEffect(() => {
-  //   {UpdateResourcer()}
-  // }, [myInterval])
-
+  //Hook odpowiedzialny za zwiększanie zasobów
+  useEffect(() => {
+    let id = setInterval(() => {
+      let newUserResources = user
+      for (let i = 0; i < user.planet.length; i++) {
+        newUserResources = update(newUserResources, { planet: { [i]: { resources: { metal: { $apply: function (x) { return x + user.planet[i].buildings[0].function[0].value; } } } } } })
+        newUserResources = update(newUserResources, { planet: { [i]: { resources: { cristal: { $apply: function (x) { return x + user.planet[i].buildings[1].function[0].value; } } } } } })
+        newUserResources = update(newUserResources, { planet: { [i]: { resources: { deuter: { $apply: function (x) { return x + user.planet[i].buildings[2].function[0].value; } } } } } })
+        setUser(newUserResources);
+      } return newUserResources
+    }, 1000);
+    return () => clearInterval(id);
+  }, [user]);
 
   return (
     <div className='main'>
       <PlanetChanger user={user} planet={planet} handleChange={handleChange.bind(this)} />
       <NavBar />
-      <ResourcesBar planet={planet} />
+      <ResourcesBar planet={planet} user={user}/>
       <QuickEmpire planet={planet} />
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />

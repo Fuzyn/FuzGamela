@@ -12,6 +12,11 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
+            <Link to='resources'>
+              SUROWCE
+            </Link>
+          </li>
+          <li>
             <Link to='empire'>
               IMPERIUM
             </Link>

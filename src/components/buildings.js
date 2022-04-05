@@ -5,9 +5,9 @@ const Buildings = (props) => {
 
   const handleUp = (e, section, metal, cristal, deuter) => {
     if (
-      metal <= props.user.planet[props.planet.id - 1].resources.metal &&
-      cristal <= props.user.planet[props.planet.id - 1].resources.cristal &&
-      deuter <= props.user.planet[props.planet.id - 1].resources.deuter) {
+      metal <= props.user.planet[props.planet.id - 1].resources[0].metal &&
+      cristal <= props.user.planet[props.planet.id - 1].resources[1].cristal &&
+      deuter <= props.user.planet[props.planet.id - 1].resources[2].deuter) {
       props.handleUp(e, section)
     } else {
       alert('Brak zasobów')

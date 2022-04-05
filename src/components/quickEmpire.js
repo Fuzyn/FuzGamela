@@ -4,8 +4,16 @@ import { planetImg } from './importImages'
 
 const QuickEmpire = (props) => {
     const [showEmpire, setShowEmpire] = useState(false)
-    const resourceTable = ['Metal', 'Kryształ', 'Deuter', 'Energia']
-    const resourcePlanet = ['metal', 'cristal', 'deuter', 'energy']
+    const resourceTable = ['Metal', 'Kryształ', 'Deuter']
+    const resourcePlanet = ['metal', 'cristal', 'deuter']
+    
+    const energyValue =
+    props.user.planet[props.planet.id - 1].resources[3].energy +
+    props.user.planet[props.planet.id - 1].buildings[3].function[0].value * 
+    props.user.planet[props.planet.id - 1].resources[3].factor -
+    props.user.planet[props.planet.id - 1].buildings[0].cost.energy -
+    props.user.planet[props.planet.id - 1].buildings[1].cost.energy -
+    props.user.planet[props.planet.id - 1].buildings[2].cost.energy;
 
     return (
         <div className={showEmpire ? "quick-empire open" : "quick-empire"} onClick={() => setShowEmpire(!showEmpire)}>
@@ -13,8 +21,9 @@ const QuickEmpire = (props) => {
                 <div>
                     <img src={planetImg[props.planet.id - 1]} alt='planet.img' />
                     {resourceTable.map((resource, index) => (
-                        <p className="quick-resources" key={index}>{resource}: {Math.round(props.user.planet[props.planet.id - 1].resources[resourcePlanet[index]])}</p>
+                        <p className="quick-resources" key={index}>{resource}: {Math.round(props.user.planet[props.planet.id - 1].resources[index][resourcePlanet[index]])}</p>
                     ))}
+                    <p className="quick-resources">Energia: {Math.round(energyValue)}</p>
                     <hr />
                     <h1>Budynki:</h1>
                     {props.user.planet[props.planet.id - 1].buildings.map((build, index) => (

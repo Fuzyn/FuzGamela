@@ -63,7 +63,7 @@
   transform: scale(1.1);
 }
 
-/*                             RESOURCER */
+/*                             RESOURCER BAR */
 
 .resources {
   display: flex;
@@ -239,6 +239,41 @@
 
 .points-main_point {
   text-align: center;
+}
+
+/*                             RESOURCES */
+
+.res td, .res th {
+  border: 1px solid #000;
+  background-color: rgba(4, 0, 58, 0.5);
+}
+
+.res td:not(:first-child) {
+  text-align: center;
+  width: 12%;
+}
+
+.res td:first-child {
+  width: 40%;
+}
+
+.res table {
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 0;
+}
+
+.resources-title {
+  text-align: center;
+}
+
+.table {
+  margin: 2% 10%;
+  width: 80%;
+}
+
+.progress_bar {
+  width: 25vw;
 }
 
 /*                             EMPIRE */

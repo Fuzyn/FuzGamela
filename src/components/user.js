@@ -8,12 +8,24 @@ const User =
       id: 1,
       name: 'Khan',
       resources:
-        {
-          metal: 2000,
-          cristal: 2000,
-          deuter: 2000,
-          energy: 1000
-        },
+        [
+          {
+            metal: 2000,
+            factor: 1
+          },
+          {
+            cristal: 2000,
+            factor: 1
+          },
+          {
+            deuter: 2000,
+            factor: 1
+          },
+          {
+            energy: 0,
+            factor: 1
+          }
+        ],
       buildings: [
         {
           id: 1,
@@ -25,7 +37,7 @@ const User =
             metal: 10,
             cristal: 5,
             deuter: 0,
-            energy: 10
+            energy: 7
           },
           function: [
             {
@@ -49,7 +61,7 @@ const User =
             metal: 13,
             cristal: 7,
             deuter: 0,
-            energy: 12
+            energy: 9
           },
           function: [
             {
@@ -73,8 +85,8 @@ const User =
             metal: 15,
             cristal: 10,
             deuter: 0,
-            energy: 18
-        },
+            energy: 12
+          },
           function: [
             {
               description: 'Wydobycie deuteru: ',
@@ -97,12 +109,12 @@ const User =
             metal: 15,
             cristal: 10,
             deuter: 0,
-            energy: -18
+            energy: 0
           },
           function: [
             {
               description: 'Produkcja energii: ',
-              value: 10
+              value: 40
             }
           ],
           time: 2,
@@ -146,7 +158,7 @@ const User =
             cristal: 22,
             deuter: 12,
             energy: 0
-        },
+          },
           function: [
             {
               description: 'Czas budowy floty: ',
@@ -818,12 +830,24 @@ const User =
       id: 2,
       name: 'Whan',
       resources:
-        {
-          metal: 2000,
-          cristal: 2000,
-          deuter: 2000,
-          energy: 1000
-        },
+        [
+          {
+            metal: 2000,
+            factor: 1
+          },
+          {
+            cristal: 2000,
+            factor: 1
+          },
+          {
+            deuter: 2000,
+            factor: 1
+          },
+          {
+            energy: 0,
+            factor: 1
+          }
+        ],
       buildings: [
         {
           id: 1,
@@ -835,7 +859,7 @@ const User =
             metal: 10,
             cristal: 5,
             deuter: 0,
-            energy: 10
+            energy: 7
           },
           function: [
             {
@@ -859,7 +883,7 @@ const User =
             metal: 13,
             cristal: 7,
             deuter: 0,
-            energy: 12
+            energy: 9
           },
           function: [
             {
@@ -883,8 +907,8 @@ const User =
             metal: 15,
             cristal: 10,
             deuter: 0,
-            energy: 18
-        },
+            energy: 12
+          },
           function: [
             {
               description: 'Wydobycie deuteru: ',
@@ -907,12 +931,12 @@ const User =
             metal: 15,
             cristal: 10,
             deuter: 0,
-            energy: -18
+            energy: 0
           },
           function: [
             {
               description: 'Produkcja energii: ',
-              value: 10
+              value: 40
             }
           ],
           time: 2,
@@ -956,7 +980,7 @@ const User =
             cristal: 22,
             deuter: 12,
             energy: 0
-        },
+          },
           function: [
             {
               description: 'Czas budowy floty: ',

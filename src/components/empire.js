@@ -5,6 +5,15 @@ const Empire = (props) => {
     const [openResources, setOpenResources] = useState(false)
     const [openBuildings, setOpenBuildings] = useState(false)
     const [openTests, setOpenTests] = useState(false)
+
+    const energyValue =
+        props.user.planet[props.planet.id - 1].resources[3].energy +
+        props.user.planet[props.planet.id - 1].buildings[3].function[0].value * 
+        props.user.planet[props.planet.id - 1].resources[3].factor -
+        props.user.planet[props.planet.id - 1].buildings[0].cost.energy -
+        props.user.planet[props.planet.id - 1].buildings[1].cost.energy -
+        props.user.planet[props.planet.id - 1].buildings[2].cost.energy;
+
     return (
         <div className="content empire">
             {props.user.planet.map((planet, index) => (
@@ -18,21 +27,22 @@ const Empire = (props) => {
                     </p>
                     {openResources ?
                         <table>
-                            <tbody><tr>
-                                <td>Metal:</td>
-                                <td>{Math.round(planet.resources.metal)} / {planet.buildings[8].function[0].value}</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>Metal:</td>
+                                    <td>{Math.round(planet.resources[0].metal)} / {planet.buildings[8].function[0].value}</td>
+                                </tr>
                                 <tr>
                                     <td>Kryształ:</td>
-                                    <td>{Math.round(planet.resources.cristal)} / {planet.buildings[8].function[0].value}</td>
+                                    <td>{Math.round(planet.resources[1].cristal)} / {planet.buildings[8].function[0].value}</td>
                                 </tr>
                                 <tr>
                                     <td>Deuter:</td>
-                                    <td>{Math.round(planet.resources.deuter)} / {planet.buildings[8].function[0].value}</td>
+                                    <td>{Math.round(planet.resources[2].deuter)} / {planet.buildings[8].function[0].value}</td>
                                 </tr>
                                 <tr>
                                     <td>Energia:</td>
-                                    <td>{Math.round(planet.resources.energy)}</td>
+                                    <td>{Math.round(energyValue)}</td>
                                 </tr>
                             </tbody>
                         </table> : <></>}

@@ -824,6 +824,244 @@ const User =
           ],
 
         },
+      ],
+      fleet: [
+        {
+          id: 1,
+          quantity: 0,
+          points: 6,
+          name: 'Mały transporter',
+          description: 'Transportery mają mniej więcej taką samą wielkość, jak myśliwce nie posiadają jednak wydajnych napędów, ani broni pokładowej, aby zapewnić dużą przestrzeń ładunkową. Ładowność małego transportera wynosi 5000 jednostek surowca. Z powodu małej siły ognia transportery są często eskortowane przez inne statki kosmiczne.',
+          cost: {
+            metal: 10,
+            cristal: 10,
+            deuter: 0,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Satelita słoneczny: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Wahadłowiec: ',
+              value: 4
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Lekki myśliwiec: ',
+              value: 2
+            },
+            {
+              description: 'Szybki ogień od Ciężki myśliwiec: ',
+              value: 3
+            },
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 250
+            },
+            {
+              description: 'Szybki ogień od Pancernik: ',
+              value: 3
+            },
+            {
+              description: 'Szybki ogień od Stacja orbitalna: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 15
+            },
+            {
+              description: 'Szybki ogień od Lotniskowiec: ',
+              value: 800
+            }
+          ],
+          weaponType: 'Broń konwencjonalna',
+          atack: 5,
+          defence: 10,
+          capasity: 5000,
+          speed: 7,
+          fuel: 20,
+        },
+        {
+          id: 2,
+          quantity: 0,
+          points: 10,
+          name: 'Duży transporter',
+          description: 'Ten statek prawie nie ma broni, ani innych zaawansowanych technologii na pokładzie. Z tego powodu nie powinny być one nigdy wysyłane same. Duży transporter dzięki wysoko rozwiniętemu napędowi spalinowemu służy do szybkiego transportu surowców między planetami i zazwyczaj towarzyszy flotom podczas ich ataków na wrogie planety, aby zrabować możliwie jak najwięcej surowców. Czasami zastępowany przez szybsze Małe transportery, pomimo ich mniejszej ładowności.',
+          cost: {
+            metal: 20,
+            cristal: 20,
+            deuter: 0,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Satelita słoneczny: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Wahadłowiec: ',
+              value: 4
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 250
+            },
+            {
+              description: 'Szybki ogień od Pancernik: ',
+              value: 3
+            },
+            {
+              description: 'Szybki ogień od Stacja orbitalna: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 15
+            },
+            {
+              description: 'Szybki ogień od Lotniskowiec: ',
+              value: 300
+            }
+          ],
+          weaponType: 'Broń konwencjonalna',
+          atack: 5,
+          defence: 25,
+          capasity: 25000,
+          speed: 8,
+          fuel: 30,
+        },
+        {
+          id: 3,
+          quantity: 0,
+          points: 5,
+          name: 'Lekki myśliwiec',
+          description: 'Lekki myśliwiec to zwrotny statek, który można zastać na prawie każdej planecie. Jego koszty nie są zbyt wysokie, jednakże jego pole ochronne i ładowność są bardzo małe. Na lekkie myśliwce mawia się popularnie "mięso armatnie" głównie dlatego, iż w walkach biorą udział tysiące lekkich mysliwców, które biorą na siebie ogień floty przeciwnika, dając pole do popisu silniejszym statkom.',
+          cost: {
+            metal: 5,
+            cristal: 5,
+            deuter: 3,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Mały transporter: ',
+              value: 2
+            },
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Satelita słoneczny: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Wahadłowiec: ',
+              value: 4
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Krążownik: ',
+              value: 6
+            },
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 200
+            },
+            {
+              description: 'Szybki ogień od Stacja orbitalna: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 15
+            },
+            {
+              description: 'Szybki ogień od Lotniskowiec: ',
+              value: 850
+            }
+          ],
+          weaponType: 'Broń konwencjonalna',
+          atack: 50,
+          defence: 10,
+          capasity: 50,
+          speed: 10,
+          fuel: 50,
+        },
+        {
+          id: 4,
+          quantity: 0,
+          points: 20,
+          name: 'Ciężki myśliwiec',
+          description: 'Podczas dalszego rozwoju lekkiego myśliwca naukowcy doszli do punktu, w którym konwencjonalne napędy nie dostarczały już wystarczającej mocy. Aby nowy statek mógł się optymalnie poruszać, po raz pierwszy został użyty napęd impulsowy. Podwyższył on wprawdzie koszty, jednak dał także nowe możliwości. Poprzez zastosowanie tego napędu pozostało więcej energii dla broni i powłoki ochronnej. Poza tym w tego typu myśliwcach zostały zastosowane materiały o wyższej jakości.',
+          cost: {
+            metal: 15,
+            cristal: 10,
+            deuter: 7,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Mały transporter: ',
+              value: 3
+            },
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Satelita słoneczny: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień przeciw Wahadłowiec: ',
+              value: 4
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 100
+            },
+            {
+              description: 'Szybki ogień od Pancernik: ',
+              value: 4
+            },
+            {
+              description: 'Szybki ogień od Stacja orbitalna: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 15
+            },
+            {
+              description: 'Szybki ogień od Lotniskowiec: ',
+              value: 400
+            }
+          ],
+          weaponType: 'Broń konwencjonalna',
+          atack: 150,
+          defence: 25,
+          capasity: 100,
+          speed: 12,
+          fuel: 75,
+        },
       ]
     },
     {

@@ -586,9 +586,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10%;
-  margin-top: 1%;
+  padding: 0.5% 10%;
   width: 80%;
+  border-top: rgb(85, 85, 85) solid 1px;
   background: linear-gradient(90deg, rgba(9,9,121,0) 0%, rgba(0,0,0,1) 50%, rgba(9,9,121,0) 100%);
 }
 
@@ -616,6 +616,7 @@
 .tech-req p {
   font-size: 1vw;
   padding-left: 1vw;
+  margin: 0;
 }
 
 .tech-req_simple {

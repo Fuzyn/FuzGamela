@@ -5,6 +5,8 @@ const Empire = (props) => {
     const [openResources, setOpenResources] = useState(false)
     const [openBuildings, setOpenBuildings] = useState(false)
     const [openTests, setOpenTests] = useState(false)
+    const [openFleet, setOpenFleet] = useState(false)
+    const [openDefence, setOpenDefence] = useState(false)
 
     const energyValue =
         props.user.planet[props.planet.id - 1].resources[3].energy +
@@ -74,6 +76,38 @@ const Empire = (props) => {
                                     <tr>
                                         <td>{test.name}</td>
                                         <td>{test.level}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        )) : <></>}
+                        <p
+                        onClick={() => setOpenFleet((prev) => !prev)}
+                        className={openFleet ? 'empire_title-is-open' : 'empire_title'}>
+                        Flota:
+                    </p>
+                    {openFleet ?
+                        planet.fleet.map((ship, index) => (
+                            <table key={index}>
+                                <tbody>
+                                    <tr>
+                                        <td>{ship.name}</td>
+                                        <td>{ship.quantity}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        )) : <></>}
+                        <p
+                        onClick={() => setOpenDefence((prev) => !prev)}
+                        className={openDefence ? 'empire_title-is-open' : 'empire_title'}>
+                        Obrona:
+                    </p>
+                    {openDefence ?
+                        planet.defence.map((defence, index) => (
+                            <table key={index}>
+                                <tbody>
+                                    <tr>
+                                        <td>{defence.name}</td>
+                                        <td>{defence.quantity}</td>
                                     </tr>
                                 </tbody>
                             </table>

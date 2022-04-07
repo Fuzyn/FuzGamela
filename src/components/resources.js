@@ -131,7 +131,7 @@ const Resources = (props) => {
                     {resourceTable.map((res, index) =>
                         <tr key={index}>
                             <td>{res}</td>
-                            <td>{Math.round((props.user.planet[props.planet.id - 1].resources[index][resourcePlanet[index]] / props.user.planet[props.planet.id - 1].buildings[8].function[0].value * 100))}</td>
+                            <td>{Math.round((props.user.planet[props.planet.id - 1].resources[index][resourcePlanet[index]] / props.user.planet[props.planet.id - 1].buildings[8].function[0].value * 100))} %</td>
                             <td className="progress_bar">
                                 <div style={{ width: '25vw', height: '1vh' }}>
                                     <div style={{ backgroundColor: 'green', width: `${props.user.planet[props.planet.id - 1].resources[index][resourcePlanet[index]] / props.user.planet[props.planet.id - 1].buildings[8].function[0].value * 100}%`, height: '100%' }} />

@@ -62,7 +62,6 @@ import Def7 from "../assets/defence/d7.png"
 import Def8 from "../assets/defence/d8.png"
 import Def9 from "../assets/defence/d9.png"
 import Def10 from "../assets/defence/d10.png"
-import Def11 from "../assets/defence/d11.png"
 
 import planetOneImg from '../assets/planet1.jpg';
 import planetTwoImg from '../assets/planet2.jpg';
@@ -70,5 +69,5 @@ import planetTwoImg from '../assets/planet2.jpg';
 export const imgBuilding = [Building1, Building2, Building3, Building4, Building5, Building6, Building7, Building8, Building9, Building10, Building11];
 export const imgTest = [Test1, Test2, Test3, Test4, Test5, Test6, Test7, Test8, Test9, Test10, Test11, Test12, Test13, Test14, Test15, Test16, Test17];
 export const imgFleet = [Ship1, Ship2, Ship3, Ship4, Ship5, Ship6, Ship7, Ship8, Ship9, Ship10, Ship11, Ship12, Ship13, Ship14, Ship15, Ship16, Ship17, Ship18, Ship19, Ship20, Ship21, Ship22, Ship23];
-export const imgDefence = [Def1, Def2, Def3, Def4, Def5, Def6, Def7, Def8, Def9, Def10, Def11];
+export const imgDefence = [Def1, Def2, Def3, Def4, Def5, Def6, Def7, Def8, Def9, Def10];
 export const planetImg = [planetOneImg, planetTwoImg];

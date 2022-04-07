@@ -878,7 +878,7 @@ const User =
           id: 16,
           level: 0,
           points: 50,
-          name: '	Technologia Antymaterii',
+          name: 'Technologia antymaterii',
           description: 'Antymaterię i zwykłą materię jaką znamy z codziennego życia różni jedynie znak ładunku elektrycznego. Ta specyficzna właściwość powoduje, że podczas kontaktu obu rodzajów cząstek ulegają one procesowi Anihilacji, która doprowadza do zamiany ich na promieniowanie o sumarycznej energii równoważnej ich masom.',
           cost: {
             metal: 30,
@@ -932,7 +932,7 @@ const User =
           id: 17,
           level: 0,
           points: 50,
-          name: 'Strumień Dezintegracyjny',
+          name: 'Strumień dezintegracyjny',
           description: 'Przy wykorzystaniu zaawansowanych Technologii możliwe jest wygenerowanie niebezpiecznego strumienia, który po napotkaniu jakiejkolwiek materii rozrywa wiązania między wszystkimi atomami. Powoduje to natychmiastową zapaść cząsteczek i rozbicie ich na wolne atomy pierwiastków.',
           cost: {
             metal: 35,
@@ -1846,7 +1846,7 @@ const User =
           id: 11,
           quantity: 0,
           points: 2,
-          name: '	Satelita słoneczny',
+          name: 'Satelita słoneczny',
           description: 'Satelity słoneczne to proste platformy pokryte ogniwami słonecznymi, które znajdują się wysoko na stałej orbicie. Gromadzą światło słoneczne i przekazują je dalej przez laser do stacji naziemnej.',
           cost: {
             metal: 0,
@@ -2649,7 +2649,7 @@ const User =
               value: 6
             },
             {
-              description: 'Technologia Antymaterii',
+              description: 'Technologia antymaterii',
               source: 'tests',
               value: 5
             },
@@ -3194,7 +3194,7 @@ const User =
               value: 20
             },
             {
-              description: 'Technologia Antymaterii',
+              description: 'Technologia antymaterii',
               source: 'tests',
               value: 6
             },
@@ -3314,7 +3314,7 @@ const User =
               value: 22
             },
             {
-              description: 'Strumień Dezintegracyjny',
+              description: 'Strumień dezintegracyjny',
               source: 'tests',
               value: 2
             }
@@ -3762,7 +3762,7 @@ const User =
           available: false,
           requirements: [
             {
-              description: 'Silos Rakietowy',
+              description: 'Silos rakietowy',
               source: 'buildings',
               value: 1
             }
@@ -3789,7 +3789,7 @@ const User =
           available: false,
           requirements: [
             {
-              description: 'Silos Rakietowy',
+              description: 'Silos rakietowy',
               source: 'buildings',
               value: 6
             }
@@ -4671,7 +4671,7 @@ const User =
           id: 16,
           level: 0,
           points: 50,
-          name: '	Technologia Antymaterii',
+          name: 'Technologia Antymaterii',
           description: 'Antymaterię i zwykłą materię jaką znamy z codziennego życia różni jedynie znak ładunku elektrycznego. Ta specyficzna właściwość powoduje, że podczas kontaktu obu rodzajów cząstek ulegają one procesowi Anihilacji, która doprowadza do zamiany ich na promieniowanie o sumarycznej energii równoważnej ich masom.',
           cost: {
             metal: 30,
@@ -5639,7 +5639,7 @@ const User =
           id: 11,
           quantity: 0,
           points: 2,
-          name: '	Satelita słoneczny',
+          name: 'Satelita słoneczny',
           description: 'Satelity słoneczne to proste platformy pokryte ogniwami słonecznymi, które znajdują się wysoko na stałej orbicie. Gromadzą światło słoneczne i przekazują je dalej przez laser do stacji naziemnej.',
           cost: {
             metal: 0,
@@ -6442,7 +6442,7 @@ const User =
               value: 6
             },
             {
-              description: 'Technologia Antymaterii',
+              description: 'Technologia antymaterii',
               source: 'tests',
               value: 5
             },
@@ -6987,7 +6987,7 @@ const User =
               value: 20
             },
             {
-              description: 'Technologia Antymaterii',
+              description: 'Technologia antymaterii',
               source: 'tests',
               value: 6
             },
@@ -7107,7 +7107,7 @@ const User =
               value: 22
             },
             {
-              description: 'Strumień Dezintegracyjny',
+              description: 'Strumień dezintegracyjny',
               source: 'tests',
               value: 2
             }

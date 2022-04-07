@@ -6,7 +6,7 @@ const QuickEmpire = (props) => {
     const [showEmpire, setShowEmpire] = useState(false)
     const resourceTable = ['Metal', 'Kryształ', 'Deuter']
     const resourcePlanet = ['metal', 'cristal', 'deuter']
-    
+   
     const energyValue =
     props.user.planet[props.planet.id - 1].resources[3].energy +
     props.user.planet[props.planet.id - 1].buildings[3].function[0].value * 
@@ -38,6 +38,22 @@ const QuickEmpire = (props) => {
                         <div key={index} className='box'>
                             <p>{test.name}{' ⇒ '}{test.level}</p>
                             <p>M: {Math.round(test.cost.metal)}{' '}K: {Math.round(test.cost.cristal)}{' '}D: {Math.round(test.cost.deuter)}{' '}E: {Math.round(test.cost.energy)}</p>
+                        </div>
+                    ))}
+                    <hr />
+                    <h1>Flota:</h1>
+                    {props.user.planet[props.planet.id - 1].fleet.map((ship, index) => (
+                        <div key={index} className='box'>
+                            <p>{ship.name}{' ⇒ '}{ship.quantity}</p>
+                            <p>M: {Math.round(ship.cost.metal)}{' '}K: {Math.round(ship.cost.cristal)}{' '}D: {Math.round(ship.cost.deuter)}{' '}</p>
+                        </div>
+                    ))}
+                    <hr />
+                    <h1>Obrona:</h1>
+                    {props.user.planet[props.planet.id - 1].defence.map((defence, index) => (
+                        <div key={index} className='box'>
+                            <p>{defence.name}{' ⇒ '}{defence.quantity}</p>
+                            <p>M: {Math.round(defence.cost.metal)}{' '}K: {Math.round(defence.cost.cristal)}{' '}D: {Math.round(defence.cost.deuter)}{' '}</p>
                         </div>
                     ))}
                 </div> :

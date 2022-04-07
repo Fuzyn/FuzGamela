@@ -6,7 +6,7 @@ const Tech = (props) => {
             return (
                 element.requirements.map((req, index) => (
                     <div key={index} className='tech-req_simple' style={getStyleRequirement(req.description, req.source, req.value)}>
-                        <p>{req.description}: {req.value}</p>
+                        <p>{req.description} ( Poziom: {getRequireElement(req.description, req.source)[0].level} / {req.value} )</p>
                     </div>
                 )))
         }
@@ -16,7 +16,11 @@ const Tech = (props) => {
     }
 
     const getStyleRequirement = (req, source, level) => {
+        console.log(req)
+        console.log(source)
+        console.log(level)
         const requireElement = getRequireElement(req, source)
+        console.log(requireElement)
         if (requireElement[0].level >= level) {
             return { color: 'green' }
         } else if (requireElement[0].level < level) {
@@ -43,7 +47,6 @@ const Tech = (props) => {
                         {Require(build)}
                     </div>
                 </div>
-
             ))}
             <h2 className="tech-title-h2">Badania:</h2>
             {props.planet.tests.map((test, index) => (
@@ -55,7 +58,28 @@ const Tech = (props) => {
                         {Require(test)}
                     </div>
                 </div>
-
+            ))}
+            <h2 className="tech-title-h2">Flota:</h2>
+            {props.planet.fleet.map((ship, index) => (
+                <div key={index} className='tech'>
+                    <div className='tech-name'>
+                        {ship.name}:
+                    </div>
+                    <div className="tech-req">
+                        {Require(ship)}
+                    </div>
+                </div>
+            ))}
+            <h2 className="tech-title-h2">Obrona:</h2>
+            {props.planet.defence.map((defence, index) => (
+                <div key={index} className='tech'>
+                    <div className='tech-name'>
+                        {defence.name}:
+                    </div>
+                    <div className="tech-req">
+                        {Require(defence)}
+                    </div>
+                </div>
             ))}
         </div>
     )

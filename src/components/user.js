@@ -266,7 +266,6 @@ const User =
           factor: 1.10,
           available: true,
           requirements: []
-
         },
         {
           id: 10,
@@ -306,6 +305,29 @@ const User =
               value: 5
             },
           ],
+        },
+        {
+          id: 11,
+          level: 0,
+          points: 15,
+          name: 'Silos rakietowy',
+          description: '	Silos rakietowy pełni rolę magazynu i wyrzutni dla rakiet międzyplanetarnych oraz przeciwrakiet.',
+          cost: {
+            metal: 40,
+            cristal: 10,
+            deuter: 25,
+            energy: 0
+          },
+          function: [
+            {
+              description: 'Ilość rakiet: ',
+              value: 50
+            },
+          ],
+          time: 5,
+          factor: 2,
+          available: true,
+          requirements: [],
         },
       ],
       tests: [
@@ -3295,6 +3317,481 @@ const User =
               description: 'Strumień Dezintegracyjny',
               source: 'tests',
               value: 2
+            }
+          ],
+        },
+      ],
+      defence: [
+        {
+          id: 1,
+          quantity: 0,
+          points: 20,
+          name: 'Wyrzutnia rakiet',
+          description: 'Wyrzutnia rakiet to prosta i korzystna cenowo możliwość obrony.',
+          cost: {
+            metal: 100,
+            cristal: 0,
+            deuter: 0,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Krążownik: ',
+              value: 10
+            },
+            {
+              description: 'Szybki ogień od Okręt wojenny: ',
+              value: 8
+            },
+            {
+              description: 'Szybki ogień od Bombowiec: ',
+              value: 20
+            },
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 200
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 30
+            },
+            {
+              description: 'Szybki ogień od Bombowiec Hadronowy: ',
+              value: 150
+            },
+          ],
+          weaponType: 'Broń konwencjonalna',
+          atack: 80,
+          defence: 20,
+          time: 2,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 1
+            }
+          ],
+        },
+        {
+          id: 2,
+          quantity: 0,
+          points: 30,
+          name: 'Lekkie działo laserowe',
+          description: 'Przez skoncentrowany ostrzał wybranego celu fotonami można wyrządzić znacznie większe szkody niż przy pomocy zwykłej broni balistycznej.',
+          cost: {
+            metal: 75,
+            cristal: 25,
+            deuter: 0,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Bombowiec: ',
+              value: 20
+            },
+            {
+              description: 'Szybki ogień od Niszczyciel: ',
+              value: 10
+            },
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 200
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 30
+            },
+            {
+              description: 'Szybki ogień od Bombowiec Hadronowy: ',
+              value: 150
+            },
+            {
+              description: 'Szybki ogień od Okręt Plazmowy: ',
+              value: 6
+            },
+            {
+              description: 'Szybki ogień od Niszczyciel Protonowy: ',
+              value: 25
+            }
+          ],
+          weaponType: 'Miotacze laserowe',
+          atack: 100,
+          defence: 25,
+          time: 3,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 1
+            },
+            {
+              description: 'Technologia energetyczna',
+              source: 'tests',
+              value: 2
+            },
+            {
+              description: 'Technologia laserowa',
+              source: 'tests',
+              value: 3
+            }
+          ],
+        },
+        {
+          id: 3,
+          quantity: 0,
+          points: 30,
+          name: 'Ciężkie działo laserowe',
+          description: 'Ciężkie działo laserowe to następca lekkiego lasera.',
+          cost: {
+            metal: 150,
+            cristal: 50,
+            deuter: 0,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Bombowiec: ',
+              value: 10
+            },
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 100
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 10
+            },
+            {
+              description: 'Szybki ogień od Bombowiec Hadronowy: ',
+              value: 75
+            },
+            {
+              description: 'Szybki ogień od Niszczyciel Protonowy: ',
+              value: 15
+            }
+          ],
+          weaponType: 'Miotacze laserowe',
+          atack: 250,
+          defence: 100,
+          time: 4,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 2
+            },
+            {
+              description: 'Technologia energetyczna',
+              source: 'tests',
+              value: 3
+            },
+            {
+              description: 'Technologia laserowa',
+              source: 'tests',
+              value: 6
+            }
+          ],
+        },
+        {
+          id: 4,
+          quantity: 0,
+          points: 50,
+          name: 'Działo Gaussa',
+          description: 'Działo Gaussa przyspiesza kilkutonowe pociski, wykorzystując przy tym gigantyczną ilość energii.',
+          cost: {
+            metal: 350,
+            cristal: 200,
+            deuter: 100,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 50
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 5
+            },
+            {
+              description: 'Szybki ogień od Bombowiec Hadronowy: ',
+              value: 30
+            },
+            {
+              description: 'Szybki ogień od Niszczyciel Protonowy: ',
+              value: 5
+            }
+          ],
+          weaponType: 'Broń konwencjonalna',
+          atack: 1100,
+          defence: 200,
+          time: 5,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 6
+            },
+            {
+              description: 'Technologia energetyczna',
+              source: 'tests',
+              value: 6
+            },
+            {
+              description: 'Technologia bojowa',
+              source: 'tests',
+              value: 3
+            },
+            {
+              description: 'Technologia ochronna',
+              source: 'tests',
+              value: 1
+            }
+          ],
+        },
+        {
+          id: 5,
+          quantity: 0,
+          points: 30,
+          name: 'Działo jonowe',
+          description: 'Działo jonowe przyśpiesza jony skierowane na cel ataku. Destabilizują one powłokę ochronną i w skutek zmian elektromagnetycznych uszkadzają elektronikę.',
+          cost: {
+            metal: 50,
+            cristal: 150,
+            deuter: 0,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Bombowiec: ',
+              value: 10
+            },
+            {
+              description: 'Szybki ogień od Gwiazda Śmierci: ',
+              value: 100
+            },
+            {
+              description: 'Szybki ogień od Annihilator: ',
+              value: 10
+            },
+            {
+              description: 'Szybki ogień od Bombowiec Hadronowy: ',
+              value: 75
+            },
+            {
+              description: 'Szybki ogień od Niszczyciel Protonowy: ',
+              value: 15
+            }
+          ],
+          weaponType: 'Działa jonowe',
+          atack: 150,
+          defence: 500,
+          time: 3,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 4
+            },
+            {
+              description: 'Technologia jonowa',
+              source: 'tests',
+              value: 4
+            }
+          ],
+        },
+        {
+          id: 6,
+          quantity: 0,
+          points: 100,
+          name: 'Wyrzutnia plazmy',
+          description: 'W tym czasie technologia laserowa była już prawie perfekcyjna, technologia jonowa była w jej końcowym stadium rozwoju.',
+          cost: {
+            metal: 400,
+            cristal: 250,
+            deuter: 100,
+            energy: 0
+          },
+          quickGunPlus: [
+            {
+              description: 'Szybki ogień przeciw Sonda szpiegowska: ',
+              value: 5
+            }
+          ],
+          quickGunMinus: [
+            {
+              description: 'Szybki ogień od Bombowiec Hadronowy: ',
+              value: 7
+            }
+          ],
+          weaponType: 'Miotacze plazmy',
+          atack: 3000,
+          defence: 300,
+          time: 3,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 8
+            },
+            {
+              description: 'Technologia plazmowa',
+              source: 'tests',
+              value: 7
+            }
+          ],
+        },
+        {
+          id: 7,
+          quantity: 0,
+          points: 1500,
+          name: 'Mała powłoka ochronna',
+          description: 'Mała powłoka ochronna osłania całą planetę polem, które może absorbować znaczne ilości energii.',
+          cost: {
+            metal: 1000,
+            cristal: 1000,
+            deuter: 1000,
+            energy: 0
+          },
+          quickGunPlus: [],
+          quickGunMinus: [],
+          weaponType: 'Broń konwencjonalna',
+          atack: 1,
+          defence: 2000,
+          time: 3,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 2
+            },
+            {
+              description: 'Technologia ochronna',
+              source: 'tests',
+              value: 2
+            }
+          ],
+        },
+        {
+          id: 8,
+          quantity: 0,
+          points: 7500,
+          name: 'Duża powłoka ochronna',
+          description: 'Stanowi dalszy rozwój małej powłoki ochronnej i może pochłonąć znacznie większe ilości energii.',
+          cost: {
+            metal: 5000,
+            cristal: 5000,
+            deuter: 5000,
+            energy: 0
+          },
+          quickGunPlus: [],
+          quickGunMinus: [],
+          weaponType: 'Broń konwencjonalna',
+          atack: 1,
+          defence: 15000,
+          time: 3,
+          available: false,
+          requirements: [
+            {
+              description: 'Hangar',
+              source: 'buildings',
+              value: 4
+            },
+            {
+              description: 'Technologia ochronna',
+              source: 'tests',
+              value: 6
+            }
+          ],
+        },
+        {
+          id: 9,
+          quantity: 0,
+          points: 50,
+          name: 'Przeciwrakieta',
+          description: 'Przeciwrakiety niszczą atakujące międzyplanetarne rakiety przeciwnika.',
+          cost: {
+            metal: 100,
+            cristal: 25,
+            deuter: 75,
+            energy: 0
+          },
+          quickGunPlus: [],
+          quickGunMinus: [],
+          weaponType: 'Broń konwencjonalna',
+          atack: 1,
+          defence: 1,
+          time: 2,
+          available: false,
+          requirements: [
+            {
+              description: 'Silos Rakietowy',
+              source: 'buildings',
+              value: 1
+            }
+          ],
+        },
+        {
+          id: 10,
+          quantity: 0,
+          points: 50,
+          name: 'Rakieta międzyplanetarna',
+          description: 'Rakiety międzyplanetarne niszczą systemy obronne przeciwnika.',
+          cost: {
+            metal: 300,
+            cristal: 50,
+            deuter: 150,
+            energy: 0
+          },
+          quickGunPlus: [],
+          quickGunMinus: [],
+          weaponType: 'Broń konwencjonalna',
+          atack: 12000,
+          defence: 1,
+          time: 10,
+          available: false,
+          requirements: [
+            {
+              description: 'Silos Rakietowy',
+              source: 'buildings',
+              value: 6
             }
           ],
         },

@@ -41,7 +41,6 @@ const Buildings = (props) => {
                 </div>
                 <div className='building-cost'>
                   <p>Metal: {Math.round(build.cost.metal)}</p>
-                  {/* <p>{test(index)}</p> */}
                   <p>Kryształ: {Math.round(build.cost.cristal)}</p>
                   <p>Deuter: {Math.round(build.cost.deuter)}</p>
                 </div>
@@ -50,10 +49,10 @@ const Buildings = (props) => {
               </div>
               <div className='building-button'>
                 <button className='building_button-up' onClick={() => handleUp(index, 'buildings', build.cost.metal, build.cost.cristal, build.cost.deuter)}>
-                  up
+                  ⥣
                 </button>
                 <button className='building_button-down' onClick={() => handleDown(index, 'buildings')}>
-                  down
+                  ⥥
                 </button>
               </div>
             </div>

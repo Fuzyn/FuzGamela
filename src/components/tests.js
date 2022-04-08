@@ -27,11 +27,11 @@ const Tests = (props) => {
 
     function changeAvailabla(index) {
         if (`${props.user.planet[props.planet.id - 1].tests[index].available}` === 'true') {
-          return true
+            return true
         } else {
-          return false
+            return false
         }
-      }
+    }
 
     return (
         <div className="content">
@@ -52,10 +52,10 @@ const Tests = (props) => {
                             </div>
                             <div className={changeAvailabla(chosenTest.id - 1) ? 'test-button' : 'test-button-false'}>
                                 <button className='test_button-up' onClick={() => handleUp(chosenTest.id - 1, 'tests', chosenTest.cost.metal, chosenTest.cost.cristal, chosenTest.cost.deuter)}>
-                                    up
+                                    ⥣
                                 </button>
                                 <button className='test_button-down' onClick={() => handleDown(chosenTest.id - 1, 'tests')}>
-                                    down
+                                    ⥥
                                 </button>
                             </div>
                         </div>
@@ -75,8 +75,8 @@ const Tests = (props) => {
                         <img src={imgTest[index]} alt={test.name} className='test-map_img' onClick={() => setChosenTest(props.planet.tests[index])} />
                         <p>{test.name}</p>
                         <div className="test-map_button">
-                            <button onClick={() => handleUp(index, 'tests', test.cost.metal, test.cost.cristal, test.cost.deuter)}>up</button>
-                            <button onClick={() => handleDown(index, 'tests')}>down</button>
+                            <button onClick={() => handleUp(index, 'tests', test.cost.metal, test.cost.cristal, test.cost.deuter)}>⥣</button>
+                            <button onClick={() => handleDown(index, 'tests')}>⥥</button>
                         </div>
                     </div>
                 ))}

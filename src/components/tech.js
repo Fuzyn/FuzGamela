@@ -16,11 +16,7 @@ const Tech = (props) => {
     }
 
     const getStyleRequirement = (req, source, level) => {
-        console.log(req)
-        console.log(source)
-        console.log(level)
         const requireElement = getRequireElement(req, source)
-        console.log(requireElement)
         if (requireElement[0].level >= level) {
             return { color: 'green' }
         } else if (requireElement[0].level < level) {

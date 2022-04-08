@@ -32,15 +32,15 @@ const Empire = (props) => {
                             <tbody>
                                 <tr>
                                     <td>Metal:</td>
-                                    <td>{Math.round(planet.resources[0].metal)} / {planet.buildings[8].function[0].value}</td>
+                                    <td>{Math.round(planet.resources[0].metal)}</td>
                                 </tr>
                                 <tr>
                                     <td>Kryształ:</td>
-                                    <td>{Math.round(planet.resources[1].cristal)} / {planet.buildings[8].function[0].value}</td>
+                                    <td>{Math.round(planet.resources[1].cristal)}</td>
                                 </tr>
                                 <tr>
                                     <td>Deuter:</td>
-                                    <td>{Math.round(planet.resources[2].deuter)} / {planet.buildings[8].function[0].value}</td>
+                                    <td>{Math.round(planet.resources[2].deuter)}</td>
                                 </tr>
                                 <tr>
                                     <td>Energia:</td>

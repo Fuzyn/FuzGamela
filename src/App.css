@@ -105,7 +105,7 @@
 .quick-empire {
   position: fixed;
   right: 0;
-  top: 10vh;
+  top: 5vh;
   font-size: 2vw;
   color: #fff;
   text-align: center;
@@ -118,15 +118,22 @@
 }
 
 .open {
-  max-width: 12.5vw;
+  max-width: 17vw;
   max-height: 50vh;
   overflow-y: scroll;
   font-size: 0.7vw;
   text-align: left;
 }
 
-.open img {
+.quick-empire_header:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+}
+
+.open img {
+  width: 60%;
 }
 
 .open h1 {
@@ -137,11 +144,18 @@
 .quick-resources {
   font-size: 1vw;
   margin: 0;
-  padding-left: 2vw;
 }
 
 .box {
+  display: flex;
+  align-items: center;
   padding-top: 1vh ;
+}
+
+.box img {
+  width: 2.5vw;
+  height: 2.5vw;
+  margin-right: 0.5vw;
 }
 
 ::-webkit-scrollbar {
@@ -168,7 +182,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  margin: 3% 20% 0 20%;
+  margin: 3% 30% 0 20%;
   color: #fff;
   background: rgba(0, 0, 0, 0.7);
   padding-bottom: 5%;
@@ -196,7 +210,7 @@
 }
 
 .chosen-planet_img {
-  width: 35%;
+  width: 20vw;
   border-radius: 2vw;
 }
 
@@ -298,15 +312,20 @@
 
 .empire-column table {
   width: 100%;
+  border-spacing: 0;
 }
 
 .empire-column tr {
+  border-top: rgb(102, 102, 102) solid 1px;
+  border-bottom: rgb(102, 102, 102) solid 1px;
+  padding: 0.2vw 0;
+  margin-right: 1vw;
   display: flex;
   justify-content: space-between;
 }
 
 .empire-column td {
-  font-size: 1vw;
+  font-size: 0.7vw;
   padding: 0 1vw;
 }
 
@@ -614,7 +633,7 @@
 }
 
 .tech-req p {
-  font-size: 1vw;
+  font-size: 0.8vw;
   padding-left: 1vw;
   margin: 0;
 }

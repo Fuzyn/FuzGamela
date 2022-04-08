@@ -664,6 +664,191 @@
   box-shadow: none;
 }
 
+/*                             FLEET AND DEFENCE */
+
+/* .equip {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.equip-main {
+  width: 80%;
+  margin: 0.5vw 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0.5vw;
+  border-radius: 1vw;
+}
+
+.equip-false {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+  font-size: 0.8vw;
+  transition: all 0.5s;
+}
+
+.equip-false_description {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.equip-false_description-paragraf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 23vw;
+}
+
+.equip-false_description img {
+  height: 100%;
+  border-radius: 0.5vw;
+}
+
+.equip-false_description p {
+  padding-left: 3vw;
+  margin: 0;
+}
+
+.equip-false input {
+  height: 1.3vw;
+  width: 5vw;
+}
+
+.equip-false button {
+  height: 1.3vw;
+}
+
+.equip-true {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  transition: all 0.5s;
+}
+
+.equip-true_description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.equip-true_title {
+  display: flex;
+  width: 100%;
+}
+
+.equip-true_title img {
+  width: 10vw;
+  height: 10vw;
+} */
+
+.equip-main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.equip-true {
+  display: flex;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0.5vw 0.5vw 0 0;
+  height: 30vh;
+  padding: 0.5vw;
+  width: 100%;
+  transition: all 1s;
+}
+
+.equip-false {
+  display: flex;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0.5vw 0.5vw 0 0;
+  height: 5vh;
+  padding: 0.5vw;
+  width: 100%;
+  transition: all 1s;
+}
+
+.equip-true img {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 0.5vw;
+  transition: all 1s;
+}
+
+.equip-false img {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 0.5vw;
+  transition: all 1s;
+}
+
+.equip_description-true {
+  transition: all 1s;
+}
+
+.equip_description-false {
+  transition: all 1s;
+}
+
+.equip_title-true {
+  width: 30vw;
+  margin-left: 1vw;
+}
+
+.equip_title-false {
+  width: 20vw;
+  margin-left: 1vw;
+}
+
+.equip_title-true h1 {
+  font-size: 1vw;
+  transition: all 1s;
+}
+
+.equip_title-false h1 {
+  font-size: 0.8vw;
+  transition: all 1s;
+}
+
+.equip_details-true {
+  display: flex;
+  justify-content: space-between;
+}
+
+.equip_gun-true {
+  width: 20vw;
+}
+
+.quick-gun {
+  display: flex;
+}
+
+.quick-gun p:first-child {
+  margin-right: 0.5vw;
+}
+
+.equip_cost-true p {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.equip_input-true,
+.equip_input-false {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5vh 1vw;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0 0 0.5vw 0.5vw;
+  margin-bottom: 1vh;
+}
+
+
+
 /*                             TECH */
 
 .tech {

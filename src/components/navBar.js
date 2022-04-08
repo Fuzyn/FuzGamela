@@ -32,6 +32,11 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
+            <Link to='dock'>
+              STOCZNIA
+            </Link>
+          </li>
+          <li>
             <Link to='tech'>
               TECHNOLOGIA
             </Link>

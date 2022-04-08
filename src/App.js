@@ -13,6 +13,7 @@ import PlanetChanger from './components/planetChanger';
 import Tech from './components/tech';
 import QuickEmpire from './components/quickEmpire';
 import Resources from './components/resources';
+import Dock from './components/dock';
 import { checkRequirements } from './components/requirements'
 
 function App() {
@@ -120,6 +121,7 @@ function App() {
         <Route path='empire' element={<Empire user={user} planet={planet} />} />
         <Route path='buildings' element={<Buildings planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
+        <Route path='dock' element={<Dock planet={planet} user={user}/>} />
         <Route path='tech' element={<Tech planet={planet} />} />
         <Route
           path="*"

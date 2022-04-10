@@ -8,7 +8,7 @@ const Simil = (props) => {
         setShowSimil(state)
         props.reorganizeTools([false, state, false])
     }
-    
+
     return (
         <div className={props.tools[1] ? "quick-simil open simil" : "quick-simil"} onClick={() => changeToolsSimil(!showSimil)}>
             {props.tools[1]
@@ -16,7 +16,7 @@ const Simil = (props) => {
                 <div className="simil-main">
                     {props.simil.map((el, index) => (
                         <div className="simil-column">
-                            <img src={typeof el.speed === 'number' ? imgFleet[props.simil[index].id - 1] : imgDefence[props.simil[index].id - 1]}/>
+                            <img src={typeof el.speed === 'number' ? imgFleet[props.simil[index].id - 1] : imgDefence[props.simil[index].id - 1]} alt={el.name}/>
                             <h1>{el.name}</h1>
                         </div>
                     ))}

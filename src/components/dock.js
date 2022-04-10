@@ -3,59 +3,18 @@ import { imgFleet } from "./importImages"
 
 const Dock = (props) => {
 
-    // const DockElement = (el, index) => {
-    //     const [details, setDetails] = useState(false)
-    //     return (
-    //         <div className='equip-main'>
-    //             {details ?
-    //                 <div className="equip-true">
-    //                     <div onClick={() => setDetails(!details)} className='equip-true_description'>
-    //                         <div className='equip-true_title'>
-    //                             <img src={imgFleet[index]} alt={el.name} />
-    //                             <div>
-    //                                 <p>{el.name} (Ilość: {el.quantity})</p>
-    //                                 <p>{el.description}</p>
-    //                                 <div>
-    //                                     <p>Metal: {el.cost.metal}</p>
-    //                                     <p>Kryształ: {el.cost.cristal}</p>
-    //                                     <p>Deuter: {el.cost.deuter}</p>
-    //                                 </div>
-    //                             </div>
-    //                         </div>
-
-    //                     </div>
-    //                     <input />
-    //                     <button>Buduj</button>
-
-    //                 </div> :
-    //                 <div className="equip-false">
-    //                     <div className="equip-false_description" onClick={() => setDetails(!details)}>
-    //                         <img src={imgFleet[index]} alt={el.name} />
-    //                         <div className="equip-false_description-paragraf">
-    //                             <p>{el.name} (Ilość: {el.quantity})</p>
-    //                             <div>
-    //                                 <p>Metal: {el.cost.metal}</p>
-    //                                 <p>Kryształ: {el.cost.cristal}</p>
-    //                                 <p>Deuter: {el.cost.deuter}</p>
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <div>
-    //                         <input />
-    //                         <button>Buduj</button>
-    //                     </div>
-    //                 </div>}
-    //         </div>
-    //     )
-    // }
-
-
     const DockElement = (el, index) => {
         const [details, setDetails] = useState(false)
         const [quickGuns, setQuickGuns] = useState(false)
+
+        const addSimil = (object) => {
+            props.addSimil(object)
+          };
+
         return (
             <div className='equip-main'>
                 <div className={details ? 'equip-true' : 'equip-false'}>
+                    <div className="equip-simil" onClick={() => addSimil(el)}>⚖</div>
                     <img src={imgFleet[index]} alt={el.name} />
                     <div className={details ? 'equip_description-true' : 'equip_description-false'}>
                         {details ?

@@ -7,6 +7,11 @@ const QuickEmpire = (props) => {
     const resourceTable = ['Metal', 'Kryształ', 'Deuter']
     const resourcePlanet = ['metal', 'cristal', 'deuter']
 
+    const changeToolsEmpire = (state) => {
+        setShowEmpire(state)
+        props.reorganizeTools([state, false, false])
+    }
+
     const energyValue =
         props.user.planet[props.planet.id - 1].resources[3].energy +
         props.user.planet[props.planet.id - 1].buildings[3].function[0].value *
@@ -16,8 +21,8 @@ const QuickEmpire = (props) => {
         props.user.planet[props.planet.id - 1].buildings[2].cost.energy;
 
     return (
-        <div className={showEmpire ? "quick-empire open" : "quick-empire"} onClick={() => setShowEmpire(!showEmpire)}>
-            {showEmpire ?
+        <div className={props.tools[0] ? "quick-empire open" : "quick-empire"} onClick={() => changeToolsEmpire(!showEmpire)}>
+            {props.tools[0] ?
                 <div>
                     <div className="quick-empire_header">
                         <img src={planetImg[props.planet.id - 1]} alt='planet.img' />

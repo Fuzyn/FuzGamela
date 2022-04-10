@@ -11,7 +11,7 @@ import Buildings from './components/buildings';
 import Tests from './components/tests';
 import PlanetChanger from './components/planetChanger';
 import Tech from './components/tech';
-import QuickEmpire from './components/quickEmpire';
+import QuickComponent from './components/quickComponent';
 import Resources from './components/resources';
 import Dock from './components/dock';
 import { checkRequirements } from './components/requirements'
@@ -20,6 +20,7 @@ function App() {
 
   const [user, setUser] = useState(User);
   const [planet, setPlanet] = useState(user.planet[0])
+  const [simil, setSimil] = useState([])
 
   // Odpala się gdy zmienia się cokolwiek w konkretnej planecie
   const refreshChosenPlanet = (updatePlanet) => {
@@ -31,9 +32,19 @@ function App() {
     setPlanet(user.planet[value])
   }
 
+  //Zmiana procentowa wydobycia wybranej kopalni lub elektrowni
   const handleChangeExtract = (val, building) => {
     const newValue = update(user.planet[planet.id - 1], { resources: { [building]: { factor: { $set: val } } } });
     refreshChosenPlanet(newValue)
+  }
+
+  //Dodaje do porównywarki
+  const addSimil = (object) => {
+    const oldSimil = simil;
+    const checkOldSimil = oldSimil.indexOf(object)
+    if (checkOldSimil === -1) {
+      setSimil(oldSimil.concat(object))
+    }
   }
 
   const zero = 0;
@@ -114,14 +125,14 @@ function App() {
       <PlanetChanger user={user} planet={planet} handleChange={handleChange.bind(this)} />
       <NavBar />
       <ResourcesBar planet={planet} user={user} />
-      <QuickEmpire planet={planet} user={user} />
+      <QuickComponent planet={planet} user={user} simil={simil} />
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
         <Route path='resources' element={<Resources planet={planet} user={user} handleChangeExtract={handleChangeExtract} />} />
         <Route path='empire' element={<Empire user={user} planet={planet} />} />
         <Route path='buildings' element={<Buildings planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
-        <Route path='dock' element={<Dock planet={planet} user={user}/>} />
+        <Route path='dock' element={<Dock planet={planet} user={user} addSimil={addSimil.bind(this)} />} />
         <Route path='tech' element={<Tech planet={planet} />} />
         <Route
           path="*"

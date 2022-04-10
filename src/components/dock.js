@@ -58,11 +58,11 @@ const Dock = (props) => {
                     <img src={imgFleet[index]} alt={el.name} />
                     <div className={details ? 'equip_description-true' : 'equip_description-false'}>
                         {details ?
-                            <div className={details ? 'equip_title-true' : 'equip_title-false'}>
+                            <div className='equip_title-true'>
                                 <h1>{el.name} (Ilość: {el.quantity})</h1>
                                 <p>{el.description}</p>
                             </div> :
-                            <div className={details ? 'equip_title-true' : 'equip_title-false'}>
+                            <div className='equip_title-false'>
                                 <h1>{el.name} (Ilość: {el.quantity})</h1>
                             </div>
                         }
@@ -70,7 +70,7 @@ const Dock = (props) => {
                             <div className='equip_details-true'>
                                 <div className='equip_gun-true'>
                                     {el.quickGunPlus.map((gun, index) => (
-                                        <div className="quick-gun"><p key={index}>{gun.description}</p><p> {gun.value}</p></div>
+                                        <div className="quick-gun"><p key={index}>{gun.description}</p><p>{gun.value}</p></div>
                                         
                                     ))}
                                 </div>

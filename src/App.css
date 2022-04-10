@@ -468,6 +468,7 @@
 }
 
 .building-function {
+  font-size: 0.7vw;
   width: 100%;
   padding: 1% 5%;
 }
@@ -648,12 +649,12 @@
   margin: 0 1%;
 }
 
-.test-map_button button:first-child {
+.test-map_button button:last-child {
   color: red;
   box-shadow: 0.05vw 0.05vw red;
 }
 
-.test-map_button button:last-child {
+.test-map_button button:first-child {
   color: green;
   box-shadow: 0.05vw 0.05vw green;
 }
@@ -795,6 +796,7 @@
 
 .equip_title-true {
   width: 30vw;
+  height: 10vw;
   margin-left: 1vw;
 }
 
@@ -805,6 +807,12 @@
 
 .equip_title-true h1 {
   font-size: 1vw;
+  transition: all 1s;
+}
+
+.equip_title-true p {
+  text-align: justify;
+  font-size: 0.7vw;
   transition: all 1s;
 }
 
@@ -826,8 +834,9 @@
   display: flex;
 }
 
-.quick-gun p:first-child {
-  margin-right: 0.5vw;
+.quick-gun p {
+  padding-right: 0.5vw;
+  margin: 0;
 }
 
 .equip_cost-true p {

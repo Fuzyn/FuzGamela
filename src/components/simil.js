@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { imgDefence, imgFleet } from "./importImages";
 
 const Simil = (props) => {

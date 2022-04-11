@@ -730,6 +730,10 @@
 
 /*                             FLEET AND DEFENCE */
 
+.equip:last-child {
+  margin-bottom: 10vh;
+}
+
 .equip-main {
   display: flex;
   position: relative;
@@ -747,11 +751,15 @@
   cursor: pointer;
 }
 
+.equip-simil:hover {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
 .equip-true {
   display: flex;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 0.5vw 0.5vw 0 0;
-  height: 25vh;
   padding: 0.5vw;
   width: 100%;
   transition: all 1s;
@@ -761,39 +769,41 @@
   display: flex;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 0.5vw 0.5vw 0 0;
-  height: 5vh;
   padding: 0.5vw;
   width: 100%;
   transition: all 1s;
 }
 
-.equip-true img {
-  width: 10vw;
-  height: 10vw;
-  border-radius: 0.5vw;
+.equip-img_false-div {
+  width: 10%;
   transition: all 1s;
 }
 
-.equip-false img {
-  width: 3vw;
-  height: 3vw;
-  border-radius: 0.5vw;
+.equip-img_true-div {
+  width: 20%;
   transition: all 1s;
 }
 
-.equip_title-true {
-  width: 30vw;
-  margin-left: 1vw;
+.equip-img_false-div img, 
+.equip-img_true-div img {
+  width: 100%;
+  border-radius: 0.5vw;
 }
 
-.equip_title-false {
-  width: 20vw;
-  margin-left: 1vw;
+.equip_description-false {
+  padding: 0 1vw 1vw 1vw;
+  width: 90%;
+}
+
+.equip_description-true {
+  padding: 0 1vw 1vw 1vw;
+  width: 80%;
 }
 
 .equip_title-true h1 {
   cursor: pointer;
   font-size: 1vw;
+  margin-bottom: 1vw;
   transition: all 1s;
 }
 
@@ -805,7 +815,7 @@
 
 .equip_title-false h1 {
   cursor: pointer;
-  font-size: 0.8vw;
+  font-size: 1.1vw;
   transition: all 1s;
 }
 
@@ -816,11 +826,11 @@
 
 .equip_gun-true {
   position: relative;
-  width: 20vw;
 }
 
 .quick-gun_relase {
   display: inline;
+  font-size: 1vw;
   cursor: pointer;
   padding-left: 1vw;
 }
@@ -831,11 +841,9 @@
   background-color: #0f0f3d;
   padding: 0.2vw 0.9vw 1vw 0.5vw;
   border-radius: 0 1vw 1vw 1vw;
-  left: 8vw;
+  left: 100%;
   top: -0.3vw;
   width: 20vw;
-  height: 20vh;
-  overflow-y: scroll;
   font-size: 0.8vw;
 }
 
@@ -850,6 +858,7 @@
 
 .equip_cost-true p {
   display: flex;
+  font-size: 0.8vw;
   justify-content: flex-end;
   margin: 0;
 }
@@ -863,6 +872,18 @@
   background: rgba(0, 0, 0, 0.9);
   border-radius: 0 0 0.5vw 0.5vw;
   margin-bottom: 1vh;
+}
+
+.equip_input-true input,
+.equip_input-false input {
+  font-size: 1vw;
+  width: 10%;
+}
+
+.equip_input-true button,
+.equip_input-false button {
+  font-size: 1vw;
+  width: 10%;
 }
 
 

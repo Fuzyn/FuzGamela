@@ -15,7 +15,7 @@ const Dock = (props) => {
             <div className='equip-main'>
                 <div className={details ? 'equip-true' : 'equip-false'}>
                     <div className="equip-simil" onClick={() => addSimil(el)}>⚖</div>
-                    <img src={imgFleet[index]} alt={el.name} />
+                    <div className={details ? "equip-img_true-div" : "equip-img_false-div"}><img src={imgFleet[index]} alt={el.name} /></div>
                     <div className={details ? 'equip_description-true' : 'equip_description-false'}>
                         {details ?
                             <div className='equip_title-true'>

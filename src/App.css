@@ -102,6 +102,11 @@
 
 /*                             QUICK EMPIRE */
 
+.simil-closed {
+  margin: 0;
+  font-size: 2vw;
+}
+
 .quick-component {
   position: fixed;
   display: flex;
@@ -139,7 +144,7 @@
   height: 4vw;
 }
 
-.quick-simil p {
+.simil-main p {
   font-size: 2vw;
   margin: 0;
 }
@@ -148,18 +153,51 @@
   font-size: 0.8vw;
 }
 
+.quick-simil_close-false {
+  position: absolute;
+  text-align: end;
+  right: 0;
+  top: 3vw;
+  font-size: 0;
+  padding-right: 3vw;
+  color: green;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.quick-simil_close {
+  position: absolute;
+  text-align: end;
+  right: 0;
+  top: 1.5vw;
+  font-size: 3vw;
+  padding-right: 3vw;
+  color: green;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
 .open {
   width: 17vw;
-  height: 50vh;
+  height: 60vmin;
   padding: 1vw;
-  overflow-y: scroll;
   font-size: 0.7vw;
   text-align: left;
   transition: width 1s, height 1s;
+  overflow-y: scroll;
 }
 
 .simil {
+  cursor: default;
   width: 40vw;
+  height: 33vw;
+  font-size: 0.4vw;
+  transition: width 1s, height 1s;
+  overflow-x: scroll;
 }
 
 .quick-empire_header:first-child {
@@ -186,7 +224,7 @@
 .box {
   display: flex;
   align-items: center;
-  padding-top: 1vh ;
+  padding-top: 1vh;
 }
 
 .box img {
@@ -195,10 +233,10 @@
   margin-right: 0.5vw;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 1vw;
   background: rgba(1, 0, 36, 0.8);
-}
+} */
 
 .box p {
   margin: 0;
@@ -216,28 +254,54 @@
 
 .simil-main {
   display: flex;
-  overflow-y: scroll;
-  overflow-x: scroll;
+  align-items: center;
+  height: 100%;
+}
+
+.legend {
+  position: fixed;
+  padding: 1vh 0;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .simil-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-right: 1vw;
+  min-width: 10vw;
+  height: 100%;
 }
 
-.simil-column img {
+.simil-column:first-child {
+  margin-left: 7vw;
+}
+
+.simil-column_img {
   width: 6vw;
   height: 6vw;
 }
 
+.legend h1,
 .simil-column h1 {
   font-size: 1vw;
 }
 
+.legend hr,
+.simil-column hr {
+  width: 90%;
+}
+
+.legend p,
 .simil-column p {
   font-size: 0.8vw;
+}
+
+.simil-column_close {
+  cursor: pointer;
+  color: red;
+  font-size: 3vh;
 }
 
 /*                             CONTENT */
@@ -320,7 +384,12 @@
 
 /*                             RESOURCES */
 
-.res td, .res th {
+.res h1 {
+  font-size: 1.5vw;
+}
+
+.res td,
+.res th {
   border: 1px solid #000;
   background-color: rgba(4, 0, 58, 0.5);
 }
@@ -335,6 +404,7 @@
 }
 
 .res table {
+  font-size: 0.8vw;
   border-collapse: separate;
   text-indent: initial;
   border-spacing: 0;
@@ -351,6 +421,10 @@
 
 .progress_bar {
   width: 25vw;
+}
+
+.res-select {
+  font-size: 0.8vw;
 }
 
 /*                             EMPIRE */
@@ -596,6 +670,7 @@
   display: flex;
   margin: 2% 5%;
 }
+
 .test-button-false,
 .test-button {
   display: flex;
@@ -660,6 +735,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .test-map_single-false,
 .test-map_single {
   display: flex;
@@ -784,7 +860,7 @@
   transition: all 1s;
 }
 
-.equip-img_false-div img, 
+.equip-img_false-div img,
 .equip-img_true-div img {
   width: 100%;
   border-radius: 0.5vw;
@@ -897,7 +973,7 @@
   padding: 0.5% 10%;
   width: 80%;
   border-top: rgb(85, 85, 85) solid 1px;
-  background: linear-gradient(90deg, rgba(9,9,121,0) 0%, rgba(0,0,0,1) 50%, rgba(9,9,121,0) 100%);
+  background: linear-gradient(90deg, rgba(9, 9, 121, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(9, 9, 121, 0) 100%);
 }
 
 .tech-title-h1 {

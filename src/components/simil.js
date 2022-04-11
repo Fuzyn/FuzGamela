@@ -2,29 +2,78 @@ import { useState } from "react";
 import { imgDefence, imgFleet } from "./importImages";
 
 const Simil = (props) => {
-    const [showSimil, setShowSimil] = useState(false)
 
     const changeToolsSimil = (state) => {
-        setShowSimil(state)
         props.reorganizeTools([false, state, false])
     }
 
+    const deleteSimil = (object) => {
+        props.deleteSimil(object)
+    }
+
     return (
-        <div className={props.tools[1] ? "quick-simil open simil" : "quick-simil"} onClick={() => changeToolsSimil(!showSimil)}>
+        <div className={props.tools[1] ? "quick-simil simil" : "quick-simil"}>
+            <p className={props.tools[1] ? "quick-simil_close" : 'quick-simil_close-false'} onClick={() => changeToolsSimil(false)}>⇥</p>
             {props.tools[1]
                 ?
                 <div className="simil-main">
                     {props.simil.map((el, index) => (
-                        <div className="simil-column">
-                            <img src={typeof el.speed === 'number' ? imgFleet[props.simil[index].id - 1] : imgDefence[props.simil[index].id - 1]} alt={el.name}/>
+                        <div key={index} className="simil-column">
+                            <img className="simil-column_img" src={typeof el.speed === 'number' ? imgFleet[props.simil[index].id - 1] : imgDefence[props.simil[index].id - 1]} alt={el.name} />
                             <h1>{el.name}</h1>
+                            <hr />
+                            <p>{el.cost.metal}</p>
+                            <hr />
+                            <p>{el.cost.cristal}</p>
+                            <hr />
+                            <p>{el.cost.deuter}</p>
+                            <hr />
+                            <p>{el.weaponType}</p>
+                            <hr />
+                            <p>{el.fuelType}</p>
+                            <hr />
+                            <p>{el.atack}</p>
+                            <hr />
+                            <p>{el.defence}</p>
+                            <hr />
+                            <p>{el.capasity}</p>
+                            <hr />
+                            <p>{el.speed}</p>
+                            <hr />
+                            <p>{el.fuel}</p>
+                            <div className="simil-column_close" onClick={() => deleteSimil(el)}>✗</div>
                         </div>
                     ))}
+                    <div className="legend">
+                        <div className="simil-column_img" />
+                        <h1>Legenda</h1>
+                        <hr />
+                        <p>Metal:</p>
+                        <hr />
+                        <p>Kryształ:</p>
+                        <hr />
+                        <p>Deuter:</p>
+                        <hr />
+                        <p>Typ broni:</p>
+                        <hr />
+                        <p>Typ napędu:</p>
+                        <hr />
+                        <p>Wartość ataku:</p>
+                        <hr />
+                        <p>Wartość obrony:</p>
+                        <hr />
+                        <p>Ładowność:</p>
+                        <hr />
+                        <p>Szybkość:</p>
+                        <hr />
+                        <p>Spalanie:</p>
+                        <div className="simil-column_close">ℱ</div>
+                    </div>
                 </div>
                 :
-                <div>
-                    <p>⚖</p>
-                    <p>({props.simil.length})</p>
+                <div onClick={() => changeToolsSimil(true)}>
+                    <p className="simil-closed">⚖</p>
+                    <p className="simil-closed">({props.simil.length})</p>
                 </div>
             }
         </div>

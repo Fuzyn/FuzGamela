@@ -47,6 +47,13 @@ function App() {
     }
   }
 
+  const deleteSimil = (object) => {
+    const oldSimil = simil;
+    const checkOldSimil = oldSimil.indexOf(object);
+    oldSimil.splice(checkOldSimil, 1)
+    setSimil(oldSimil)
+  }
+
   const zero = 0;
   const one = 1;
   const two = 2;
@@ -125,7 +132,7 @@ function App() {
       <PlanetChanger user={user} planet={planet} handleChange={handleChange.bind(this)} />
       <NavBar />
       <ResourcesBar planet={planet} user={user} />
-      <QuickComponent planet={planet} user={user} simil={simil} />
+      <QuickComponent planet={planet} user={user} simil={simil} deleteSimil={deleteSimil.bind(this)}/>
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
         <Route path='resources' element={<Resources planet={planet} user={user} handleChangeExtract={handleChangeExtract} />} />

@@ -16,7 +16,7 @@ const Resources = (props) => {
     }
     const select = (building) => {
         return (
-            <select onChange={handleChangeExtract.bind(this, building)}>
+            <select className="res-select" onChange={handleChangeExtract.bind(this, building)}>
                 {[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map((value, index) => (
                     <option key={index} value={`${value / 10}`}>
                         {value * 10}%

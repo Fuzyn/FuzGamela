@@ -1,3 +1,7 @@
+hr {
+  background-color: #fff;
+}
+
 .main {
   background-image: url('./assets/background.jpg');
   background-attachment: fixed;
@@ -807,6 +811,11 @@
 
 /*                             FLEET AND DEFENCE */
 
+.equip-title {
+  font-size: 2.5vw;
+  text-align: center;
+}
+
 .equip:last-child {
   margin-bottom: 10vh;
 }
@@ -914,7 +923,7 @@
 
 .quick-gun_main {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   background-color: #0f0f3d;
   padding: 0.2vw 0.9vw 1vw 0.5vw;
   border-radius: 0 1vw 1vw 1vw;
@@ -1057,7 +1066,7 @@
 
   .open {
     width: 38vw;
-    height: 50vw;
+    height: 80vw;
   }
 
   .open h1 {
@@ -1079,7 +1088,7 @@
 
   .simil {
     width: 70vw;
-    height: 70vw;
+    height: 80vw;
   }
 
   .quick-simil_close {
@@ -1182,17 +1191,43 @@
     width: 70%;
   }
 
-  /* .points-main {
-    display: flex;
-    flex-wrap: wrap;
-  } */
-
   .points-main p {
-    font-size: 3vw;
+    font-size: 4vw;
+    margin: 1vw;
   }
 
   .points-main_table {
-    font-size: 1.2vw;
+    display: flex;
+    font-size: 2vw;
+    justify-content: center;
+  }
+
+  .planet-group {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .planet-single {
+    width: 20%;
+    font-size: 2vw;
+  }
+
+  /*                             RESOURCES */
+
+  .res h1 {
+    font-size: 3vw;
+  }
+
+  .res table {
+    font-size: 1.5vw;
+  }
+
+  .table {
+    margin: 2% 5%;
+    width: 90%;
+  }
+
+  .res-select {
+    font-size: 1.5vw;
   }
 
   /*                             EMPIRE */
@@ -1217,5 +1252,188 @@
 
   .empire-column td {
     font-size: 1.3vw;
+  }
+
+  /*                             BUILDING */
+
+  .building-name {
+    font-size: 4vw;
+    padding-bottom: 1vw;
+  }
+
+  .building-img {
+    width: 30%;
+    height: 30%;
+  }
+
+  .building-level {
+    font-size: 4vw;
+    padding: 1%;
+  }
+
+  .building-middle {
+    width: 60%;
+  }
+
+  .building-description {
+    text-align: justify;
+    font-size: 1.5vw;
+  }
+
+  .building-cost {
+    margin: 1vw 0;
+  }
+
+  .building-cost p {
+    font-size: 1.5vw;
+  }
+
+  .building-time {
+    font-size: 1.5vw;
+  }
+
+  .building-function {
+    font-size: 1.5vw;
+  }
+
+  .building-button {
+    padding-left: 1vw;
+    width: 20%;
+  }
+
+  .building_button-up,
+  .building_button-down {
+    font-size: 6vw;
+  }
+
+  /*                             TESTS */
+
+  .test h1 {
+    font-size: 3vw;
+  }
+
+  .test-img {
+    width: 40%;
+  }
+
+  .test-level {
+    padding: 1%;
+    font-size: 4vw;
+  }
+
+  .test-middle {
+    width: 50%;
+    font-size: 2vw;
+  }
+
+  .test_button-up,
+  .test_button-down {
+    font-size: 5vw;
+  }
+
+  .test-description {
+    text-align: justify;
+    font-size: 2vw;
+  }
+
+  .test-function {
+    font-size: 2.5vw;
+  }
+
+  .test-map_single-false,
+  .test-map_single {
+    width: 25%;
+  }
+
+  .test-map_level {
+    font-size: 2.5vw;
+  }
+
+  .test-map_single-false p,
+  .test-map_single p {
+    font-size: 2vw;
+  }
+
+  .test-map_button button {
+    font-size: 2vw;
+  }
+
+  /*                             FLEET AND DEFENCE */
+
+  .equip-title {
+    font-size: 4vw;
+  }
+
+  .equip-img_false-div {
+    width: 20%;
+  }
+
+  .equip_title-false h1 {
+    font-size: 2.5vw;
+  }
+
+  .equip-simil {
+    font-size: 3vw;
+  }
+
+  .equip_input-true input,
+  .equip_input-false input,
+  .equip_input-true button,
+  .equip_input-false button {
+    width: 20%;
+    font-size: 2vw;
+  }
+
+  .equip-img_true-div {
+    width: 40%;
+  }
+
+  .equip-img_false-div img,
+  .equip-img_true-div img {
+    border-radius: 2vw;
+  }
+
+  .equip_description-true {
+    width: 60%;
+  }
+
+  .equip_title-true h1 {
+    font-size: 2vw;
+  }
+
+  .equip_title-true p {
+    font-size: 1.5vw;
+  }
+
+  .quick-gun_relase {
+    font-size: 2vw;
+    padding-left: 0;
+  }
+
+  .equip_cost-true p {
+    font-size: 1.5vw;
+  }
+
+  .quick-gun_main {
+    width: 30vw;
+  }
+
+  .quick-gun p {
+    font-size: 1.5vw;
+  }
+
+  /*                             TECH */
+
+  .tech-name {
+    width: 40%;
+    font-size: 2vw;
+  }
+
+  .tech-req {
+    width: 60%;
+  }
+
+  .tech-req p {
+    font-size: 1.5vw;
   }
 }

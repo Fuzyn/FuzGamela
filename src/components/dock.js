@@ -67,7 +67,7 @@ const Dock = (props) => {
 
     return (
         <div className="content">
-            <h1>Stocznia</h1>
+            <h1 className="equip-title">Stocznia</h1>
             {props.planet.fleet.map((ship, index) => (
                 <div key={index} className='equip'>{DockElement(ship, index)}</div>
             ))}

@@ -2,11 +2,6 @@ import { useState } from "react";
 import { planetImg } from "./importImages";
 
 const Empire = (props) => {
-    const [openResources, setOpenResources] = useState(false)
-    const [openBuildings, setOpenBuildings] = useState(false)
-    const [openTests, setOpenTests] = useState(false)
-    const [openFleet, setOpenFleet] = useState(false)
-    const [openDefence, setOpenDefence] = useState(false)
 
     const energyValue =
         props.user.planet[props.planet.id - 1].resources[3].energy +
@@ -16,10 +11,15 @@ const Empire = (props) => {
         props.user.planet[props.planet.id - 1].buildings[1].cost.energy -
         props.user.planet[props.planet.id - 1].buildings[2].cost.energy;
 
-    return (
-        <div className="content empire">
-            {props.user.planet.map((planet, index) => (
-                <div key={index} className='empire-column'>
+    const Planet = (planet, index) => {
+        const [openResources, setOpenResources] = useState(false)
+        const [openBuildings, setOpenBuildings] = useState(false)
+        const [openTests, setOpenTests] = useState(false)
+        const [openFleet, setOpenFleet] = useState(false)
+        const [openDefence, setOpenDefence] = useState(false)
+
+        return (
+            <div key={index} className='empire-column'>
                     <img alt="planet" src={planetImg[index]} />
                     <h1>{planet.name}</h1>
                     <p
@@ -113,6 +113,13 @@ const Empire = (props) => {
                             </table>
                         )) : <></>}
                 </div>
+        )
+    }
+
+    return (
+        <div className="content empire">
+            {props.user.planet.map((planet, index) => (
+                Planet(planet, index)
             ))}
         </div>
     )

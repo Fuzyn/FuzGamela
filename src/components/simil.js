@@ -9,7 +9,7 @@ const Simil = (props) => {
     const deleteSimil = (object) => {
         props.deleteSimil(object)
     }
-    console.log(props.simil[0].fuelType)
+    
     return (
         <div className={props.tools[1] ? "quick-simil simil" : "quick-simil"}>
             <p className={props.tools[1] ? "quick-simil_close" : 'quick-simil_close-false'} onClick={() => changeToolsSimil(false)}>⇥</p>

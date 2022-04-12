@@ -14,6 +14,7 @@ import Tech from './components/tech';
 import QuickComponent from './components/quickComponent';
 import Resources from './components/resources';
 import Dock from './components/dock';
+import Defence from './components/defence';
 import { checkRequirements } from './components/requirements'
 
 function App() {
@@ -141,6 +142,7 @@ function App() {
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='dock' element={<Dock planet={planet} user={user} addSimil={addSimil.bind(this)} />} />
         <Route path='tech' element={<Tech planet={planet} />} />
+        <Route path='defence' element={<Defence planet={planet} user={user} addSimil={addSimil.bind(this)} />} />
         <Route
           path="*"
           element={

@@ -41,6 +41,11 @@ const NavBar = () => {
               TECHNOLOGIA
             </Link>
           </li>
+          <li>
+            <Link to='defence'>
+              OBRONA
+            </Link>
+          </li>
         </ul>
       </div>
     )

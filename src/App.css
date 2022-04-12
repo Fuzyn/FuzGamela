@@ -198,7 +198,7 @@ hr {
 .simil {
   cursor: default;
   width: 40vw;
-  height: 33vw;
+  height: 35vw;
   font-size: 0.4vw;
   transition: width 1s, height 1s;
   overflow-x: scroll;
@@ -289,6 +289,10 @@ hr {
 
 .legend h1,
 .simil-column h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5vw;
   font-size: 1vw;
 }
 
@@ -1424,6 +1428,14 @@ hr {
 
   /*                             TECH */
 
+  .tech-title-h1 {
+    font-size: 4vw;
+  }
+
+  .tech-title-h2 {
+    font-size: 3vw;
+  }
+
   .tech-name {
     width: 40%;
     font-size: 2vw;
@@ -1434,6 +1446,6 @@ hr {
   }
 
   .tech-req p {
-    font-size: 1.5vw;
+    font-size: 1.4vw;
   }
 }

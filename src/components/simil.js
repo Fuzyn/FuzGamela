@@ -9,7 +9,7 @@ const Simil = (props) => {
     const deleteSimil = (object) => {
         props.deleteSimil(object)
     }
-
+    console.log(props.simil[0].fuelType)
     return (
         <div className={props.tools[1] ? "quick-simil simil" : "quick-simil"}>
             <p className={props.tools[1] ? "quick-simil_close" : 'quick-simil_close-false'} onClick={() => changeToolsSimil(false)}>⇥</p>
@@ -29,17 +29,17 @@ const Simil = (props) => {
                             <hr />
                             <p>{el.weaponType}</p>
                             <hr />
-                            <p>{el.fuelType}</p>
+                            {typeof el.fuelType === 'undefined' ? <p style={{color: 'grey'}}>Nie dotyczy</p> : <p>{el.fuelType}</p>}
                             <hr />
                             <p>{el.atack}</p>
                             <hr />
                             <p>{el.defence}</p>
                             <hr />
-                            <p>{el.capasity}</p>
+                            {typeof el.capasity === 'undefined' ? <p style={{color: 'grey'}}>Nie dotyczy</p> : <p>{el.capasity}</p>}
                             <hr />
-                            <p>{el.speed}</p>
+                            {typeof el.speed === 'undefined' ? <p style={{color: 'grey'}}>Nie dotyczy</p> : <p>{el.speed}</p>}
                             <hr />
-                            <p>{el.fuel}</p>
+                            {typeof el.fuel === 'undefined' ? <p style={{color: 'grey'}}>Nie dotyczy</p> : <p>{el.fuel}</p>}
                             <div className="simil-column_close" onClick={() => deleteSimil(el)}>✗</div>
                         </div>
                     ))}

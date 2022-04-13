@@ -15,7 +15,7 @@ import QuickComponent from './components/quickComponent';
 import Resources from './components/resources';
 import Dock from './components/dock';
 import Defence from './components/defence';
-import { checkRequirements } from './components/requirements'
+import { checkRequirements } from './components/requirements';
 
 function App() {
 
@@ -43,7 +43,6 @@ function App() {
   const addSimil = (object) => {
     const oldSimil = simil;
     const checkOldSimil = oldSimil.map((el) => el.name.indexOf(object.name))
-    console.log(checkOldSimil)
     if (checkOldSimil.every((x) => x === -1)) {
       setSimil(oldSimil.concat(object))
     }

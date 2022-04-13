@@ -1,15 +1,40 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { imgFleet } from "./importImages"
 
 const Dock = (props) => {
 
+    const maxBuild = (el) => {
+        const maxMetal = Math.floor(props.user.planet[props.planet.id - 1].resources[0].metal / el.cost.metal)
+        const maxCristal = Math.floor(props.user.planet[props.planet.id - 1].resources[1].cristal / el.cost.cristal)
+        const maxDeuter = Math.floor(props.user.planet[props.planet.id - 1].resources[2].deuter / el.cost.deuter)
+        const maxTable = [maxMetal, maxCristal, maxDeuter]
+        return Math.min.apply(null, maxTable)
+    }
+
     const DockElement = (el, index) => {
         const [details, setDetails] = useState(false)
         const [quickGuns, setQuickGuns] = useState(false)
+        const [maxElement, setMaxElement] = useState()
+
+        useEffect(() => (
+            setMaxElement()
+        ), [maxElement])
 
         const addSimil = (object) => {
             props.addSimil(object)
           };
+
+        const equipBuild = (e, element) => {
+            if (maxBuild(element) === 0) {
+               alert('Brak środków!')
+            } else if (e[0].value >= maxBuild(element)) {
+                props.buildEquip(maxBuild(element), element.id - 1, 'fleet')
+            } else if (e[0].value <= maxBuild(element)) {
+                props.buildEquip(e[0].value, element.id - 1, 'fleet')
+            }
+            e[0].value = ''
+        }
+
 
         return (
             <div className='equip-main'>
@@ -55,10 +80,19 @@ const Dock = (props) => {
                             <></>}
                     </div>
                 </div>
-                <div className={details ? 'equip_input-true' : 'equip_input-false'}>
-                    <input />
-                    <button>Buduj</button>
-                </div>
+                <form className='equip_input'>
+                    <p onClick={() => setMaxElement(maxBuild(el))}>max</p>
+                    <input
+                        name={el.name}
+                        type='number'
+                        value={maxElement}
+                    />
+                    <input
+                        type="button"
+                        value='Buduj'
+                        onClick={() => equipBuild(document.getElementsByName(el.name), el)}
+                    />
+                </form>
             </div>
         )
     }

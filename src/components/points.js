@@ -31,6 +31,14 @@ const PointsTable = (props) => {
                         <td>Badania:</td>
                         <td className="points-main_point">{Math.round(pointFlatSum(testPoints))}</td>
                     </tr>
+                    <tr>
+                        <td>Flota:</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(props.user.planet.map((planet) => planet.fleet.map((fleet) => fleet.sumPoints))))}</td>
+                    </tr>
+                    <tr>
+                        <td>Obrona:</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(props.user.planet.map((planet) => planet.defence.map((defence) => defence.sumPoints))))}</td>
+                    </tr>
                 </tbody>
             </table>
             <p>Punkty za planetę:</p>
@@ -47,6 +55,14 @@ const PointsTable = (props) => {
                     <tr>
                         <td>Badania:</td>
                         <td className="points-main_point">{Math.round(pointFlatSum(testPoints[props.planet.id - 1]))}</td>
+                    </tr>
+                    <tr>
+                        <td>Flota:</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(props.user.planet[props.planet.id - 1].fleet.map((fleet) => fleet.sumPoints)))}</td>
+                    </tr>
+                    <tr>
+                        <td>Obrona:</td>
+                        <td className="points-main_point">{Math.round(pointFlatSum(props.user.planet[props.planet.id - 1].defence.map((defence) => defence.sumPoints)))}</td>
                     </tr>
                 </tbody>
             </table>

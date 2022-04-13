@@ -988,6 +988,7 @@ const User =
           id: 1,
           quantity: 0,
           points: 6,
+          sumPoints: 0,
           name: 'Mały transporter',
           description: 'Transportery mają mniej więcej taką samą wielkość, jak myśliwce nie posiadają jednak wydajnych napędów, ani broni pokładowej, aby zapewnić dużą przestrzeń ładunkową. Ładowność małego transportera wynosi 5000 jednostek surowca. Z powodu małej siły ognia transportery są często eskortowane przez inne statki kosmiczne.',
           cost: {
@@ -1061,6 +1062,7 @@ const User =
           id: 2,
           quantity: 0,
           points: 10,
+          sumPoints: 0,
           name: 'Duży transporter',
           description: 'Ten statek prawie nie ma broni, ani innych zaawansowanych technologii na pokładzie. Z tego powodu nie powinny być one nigdy wysyłane same. Duży transporter dzięki wysoko rozwiniętemu napędowi spalinowemu służy do szybkiego transportu surowców między planetami i zazwyczaj towarzyszy flotom podczas ich ataków na wrogie planety, aby zrabować możliwie jak najwięcej surowców. Czasami zastępowany przez szybsze Małe transportery, pomimo ich mniejszej ładowności.',
           cost: {
@@ -1131,6 +1133,7 @@ const User =
           id: 3,
           quantity: 0,
           points: 5,
+          sumPoints: 0,
           name: 'Lekki myśliwiec',
           description: 'Lekki myśliwiec to zwrotny statek, który można zastać na prawie każdej planecie. Jego koszty nie są zbyt wysokie, jednakże jego pole ochronne i ładowność są bardzo małe. Na lekkie myśliwce mawia się popularnie "mięso armatnie" głównie dlatego, iż w walkach biorą udział tysiące lekkich mysliwców, które biorą na siebie ogień floty przeciwnika, dając pole do popisu silniejszym statkom.',
           cost: {
@@ -1210,6 +1213,7 @@ const User =
           id: 4,
           quantity: 0,
           points: 20,
+          sumPoints: 0,
           name: 'Ciężki myśliwiec',
           description: 'Podczas dalszego rozwoju lekkiego myśliwca naukowcy doszli do punktu, w którym konwencjonalne napędy nie dostarczały już wystarczającej mocy. Aby nowy statek mógł się optymalnie poruszać, po raz pierwszy został użyty napęd impulsowy. Podwyższył on wprawdzie koszty, jednak dał także nowe możliwości. Poprzez zastosowanie tego napędu pozostało więcej energii dla broni i powłoki ochronnej. Poza tym w tego typu myśliwcach zostały zastosowane materiały o wyższej jakości.',
           cost: {
@@ -1294,6 +1298,7 @@ const User =
           id: 5,
           quantity: 0,
           points: 23,
+          sumPoints: 0,
           name: 'Krążownik',
           description: 'Krążownik jest prawie trzy razy lepiej opancerzony niż ciężki myśliwiec i dysponuje ponad dwa razy większą siłą ognia. W dodatku jest bardzo szybki.',
           cost: {
@@ -1386,6 +1391,7 @@ const User =
           id: 6,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Okręt wojenny',
           description: 'Okręty wojenne tworzą trzon floty. Ich ciężkie działa, duża prędkość i pojemność ładunkowa robią z nich naprawdę groźych przeciwników.',
           cost: {
@@ -1472,6 +1478,7 @@ const User =
           id: 7,
           quantity: 0,
           points: 20,
+          sumPoints: 0,
           name: 'Statek kolonizacyjny',
           description: 'Niezamieszkałe planety mogą być kolonizowane przy pomocy tych statków.',
           cost: {
@@ -1542,6 +1549,7 @@ const User =
           id: 8,
           quantity: 0,
           points: 40,
+          sumPoints: 0,
           name: 'Recykler',
           description: 'Za pomocą recyklerów można odzyskać surowce z pól zniszczeń.',
           cost: {
@@ -1617,6 +1625,7 @@ const User =
           id: 9,
           quantity: 0,
           points: 2,
+          sumPoints: 0,
           name: 'Sonda szpiegowska',
           description: 'Sondy szpiegowskie to małe, zwrotne statki bezzałogowe, które przez oddalenie się na duże odległości dostarczają informacji o obcych flotach i planetach.',
           cost: {
@@ -1747,6 +1756,7 @@ const User =
           id: 10,
           quantity: 0,
           points: 60,
+          sumPoints: 0,
           name: 'Bombowiec',
           description: 'Bombowiec został stworzony, aby niszczyć systemy obronne innych planet.',
           cost: {
@@ -1846,6 +1856,7 @@ const User =
           id: 11,
           quantity: 0,
           points: 2,
+          sumPoints: 0,
           name: 'Satelita słoneczny',
           description: 'Satelity słoneczne to proste platformy pokryte ogniwami słonecznymi, które znajdują się wysoko na stałej orbicie. Gromadzą światło słoneczne i przekazują je dalej przez laser do stacji naziemnej.',
           cost: {
@@ -1950,6 +1961,7 @@ const User =
           id: 12,
           quantity: 0,
           points: 60,
+          sumPoints: 0,
           name: 'Niszczyciel',
           description: 'Niszczyciel to król wśród statków wojennych. Posiada wielorzędowe falangi dział jonowych, plazmowych i Gaussa.',
           cost: {
@@ -2037,6 +2049,7 @@ const User =
           id: 13,
           quantity: 0,
           points: 500,
+          sumPoints: 0,
           name: 'Gwiazda śmierci',
           description: 'Gwiazda śmierci jest uzbrojona w ogromne działo grawitonowe, które może niszczyć statki tak duże jak niszczyciele a nawet księżyce.',
           cost: {
@@ -2185,6 +2198,7 @@ const User =
           id: 14,
           quantity: 0,
           points: 60,
+          sumPoints: 0,
           name: 'Pancernik',
           description: 'Ten statek jest technologicznym cackiem, śmiertelnie niebezpiecznym dla wrogiej floty.',
           cost: {
@@ -2289,6 +2303,7 @@ const User =
           id: 15,
           quantity: 0,
           points: 400,
+          sumPoints: 0,
           name: 'Stacja orbitalna',
           description: 'Stacja orbitalna to wyspecjalizowany system zautomatyzowanych miotaczy plazmowych oraz działek laserowych , który nie traci energii strzału tak jak inne systemy obronne, ze względu na to, że znajduje się na orbicie planety. Dzięki temu osiąga ogromną moc, która może zmieść statki wroga z orbity w kilka sekund.',
           cost: {
@@ -2414,6 +2429,7 @@ const User =
           id: 16,
           quantity: 0,
           points: 63,
+          sumPoints: 0,
           name: 'Mega transporter',
           description: 'Coraz większe zapotrzebowanie na ładowność statków wykorzystywanych przez kolonie górnicze do transportu wydobytych surowców zmusiło naukowców do opracowania zupełnie nowego typu transportera. Dzięki zastosowaniu miniaturyzacji oraz nanotechnologii możliwe było stworzenie tego ogromnego pojazdu. Zastosowano w nim także najnowsze silniki nadprzestrzenne by skrócić czas podróży.',
           cost: {
@@ -2494,6 +2510,7 @@ const User =
           id: 17,
           quantity: 0,
           points: 200,
+          sumPoints: 0,
           name: 'Annihilator',
           description: 'Odkrycie sposobu wytwarzania Antymaterii poprzez specjalne reakcje termojądrowe z wykorzystaniem wysokoenergerycznych laserów pozwoliło na opracowanie specjalnego rodzaju rakiety krótkiego zasięgu, która bezpośrednio przed zderzeniem z obiektem doprowadza do Anihilacji kilku ton cząstek skompresowanego wodoru i antywodoru, wytwarzając przy tym ogromne ilości Energii.',
           cost: {
@@ -2664,6 +2681,7 @@ const User =
           id: 18,
           quantity: 0,
           points: 10,
+          sumPoints: 0,
           name: 'Wahadłowiec',
           description: 'W XX i XXI wieku ludzie zaczęli podbój kosmosu. Dzięki stworzeniu tego typu statku, mogli wielokrotnie wysyłać ludzi i ładunek na orbitę okołoziemską, ale zużywali na to ogromne ilości paliwa rakietowego, zaś sam statek był bardzo wolny.',
           cost: {
@@ -2770,6 +2788,7 @@ const User =
           id: 19,
           quantity: 0,
           points: 250,
+          sumPoints: 0,
           name: 'Lotniskowiec',
           description: 'Lotniskowiec to ogromny okręt, którego zadaniem jest transport mniejszych, szybszych i skuteczniejszych jednostek. W swoim hangarze potrafi zmieścić i przygotować do walki setki myśliwców, które z łatwością radzą sobie z dużymi ilościami mniejszych jednostek.',
           cost: {
@@ -2892,6 +2911,7 @@ const User =
           id: 20,
           quantity: 0,
           points: 220,
+          sumPoints: 0,
           name: 'Bombowiec Hadronowy',
           description: 'Dzięki wykorzystaniu zjawiska rozpadu hadronowego możliwe było skonstruowanie idealnej broni przeciwko instalacjom powierzchniowym. Odpowiednio skonstruowane drony, dzięki zastosowaniu sztucznej inteligencji, osiągają skuteczność trafień na poziomie 99%.',
           cost: {
@@ -2983,6 +3003,7 @@ const User =
           id: 21,
           quantity: 0,
           points: 260,
+          sumPoints: 0,
           name: 'Okręt Plazmowy',
           description: 'Pojazd ten jest wyposażony w wiele wysokoenergetycznych dział pulsacyjno-plazmowych. Każdy dobry dowódca doceni ich wysoką skuteczność przeciwko dobrze opancerzonym jednostkom wrogich flot bojowych. Niestety, salwy plazmowe nie są dostatecznie szybkie, by mniejsze, lecz bardziej zwrotne statki nie mogły im umknąć.',
           cost: {
@@ -3098,6 +3119,7 @@ const User =
           id: 22,
           quantity: 0,
           points: 280,
+          sumPoints: 0,
           name: 'Niszczyciel Protonowy',
           description: 'Kolejny przykład znakomitego wykorzystania technologii anihilacyjnej. Wystrzelenie skoncentrowanego strumienia antyprotonów we wrogą jednostkę doprowadza do rozpoczęcia reakcji kaskadowych w opancerzeniu statku, przez co traci on swoją stabilność i rozpada się pod wpływem dekompresji.',
           cost: {
@@ -3214,6 +3236,7 @@ const User =
           id: 23,
           quantity: 0,
           points: 320,
+          sumPoints: 0,
           name: 'Okręt Dezintegrujący',
           description: 'Jedna z najpotężniejszych jednostek dostępnych w historii Wszechświata. Wykorzystanie śmiercionośnych strumieni dezintegrujących rozrywa wrogie statki w ułamkach sekund na drobne kawałeczki. Jedynym ratunkiem przed tą ogromną mocą jest ucieczka w najdalsze zakamarki kosmosu.',
           cost: {
@@ -3326,6 +3349,7 @@ const User =
           id: 1,
           quantity: 0,
           points: 20,
+          sumPoints: 0,
           name: 'Wyrzutnia rakiet',
           description: 'Wyrzutnia rakiet to prosta i korzystna cenowo możliwość obrony.',
           cost: {
@@ -3383,6 +3407,7 @@ const User =
           id: 2,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Lekkie działo laserowe',
           description: 'Przez skoncentrowany ostrzał wybranego celu fotonami można wyrządzić znacznie większe szkody niż przy pomocy zwykłej broni balistycznej.',
           cost: {
@@ -3454,6 +3479,7 @@ const User =
           id: 3,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Ciężkie działo laserowe',
           description: 'Ciężkie działo laserowe to następca lekkiego lasera.',
           cost: {
@@ -3517,6 +3543,7 @@ const User =
           id: 4,
           quantity: 0,
           points: 50,
+          sumPoints: 0,
           name: 'Działo Gaussa',
           description: 'Działo Gaussa przyspiesza kilkutonowe pociski, wykorzystując przy tym gigantyczną ilość energii.',
           cost: {
@@ -3581,6 +3608,7 @@ const User =
           id: 5,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Działo jonowe',
           description: 'Działo jonowe przyśpiesza jony skierowane na cel ataku. Destabilizują one powłokę ochronną i w skutek zmian elektromagnetycznych uszkadzają elektronikę.',
           cost: {
@@ -3639,6 +3667,7 @@ const User =
           id: 6,
           quantity: 0,
           points: 100,
+          sumPoints: 0,
           name: 'Wyrzutnia plazmy',
           description: 'W tym czasie technologia laserowa była już prawie perfekcyjna, technologia jonowa była w jej końcowym stadium rozwoju.',
           cost: {
@@ -3681,6 +3710,7 @@ const User =
           id: 7,
           quantity: 0,
           points: 1500,
+          sumPoints: 0,
           name: 'Mała powłoka ochronna',
           description: 'Mała powłoka ochronna osłania całą planetę polem, które może absorbować znaczne ilości energii.',
           cost: {
@@ -3713,6 +3743,7 @@ const User =
           id: 8,
           quantity: 0,
           points: 7500,
+          sumPoints: 0,
           name: 'Duża powłoka ochronna',
           description: 'Stanowi dalszy rozwój małej powłoki ochronnej i może pochłonąć znacznie większe ilości energii.',
           cost: {
@@ -3745,6 +3776,7 @@ const User =
           id: 9,
           quantity: 0,
           points: 50,
+          sumPoints: 0,
           name: 'Przeciwrakieta',
           description: 'Przeciwrakiety niszczą atakujące międzyplanetarne rakiety przeciwnika.',
           cost: {
@@ -3772,6 +3804,7 @@ const User =
           id: 10,
           quantity: 0,
           points: 50,
+          sumPoints: 0,
           name: 'Rakieta międzyplanetarna',
           description: 'Rakiety międzyplanetarne niszczą systemy obronne przeciwnika.',
           cost: {
@@ -4671,7 +4704,7 @@ const User =
           id: 16,
           level: 0,
           points: 50,
-          name: 'Technologia Antymaterii',
+          name: 'Technologia antymaterii',
           description: 'Antymaterię i zwykłą materię jaką znamy z codziennego życia różni jedynie znak ładunku elektrycznego. Ta specyficzna właściwość powoduje, że podczas kontaktu obu rodzajów cząstek ulegają one procesowi Anihilacji, która doprowadza do zamiany ich na promieniowanie o sumarycznej energii równoważnej ich masom.',
           cost: {
             metal: 30,
@@ -4725,7 +4758,7 @@ const User =
           id: 17,
           level: 0,
           points: 50,
-          name: 'Strumień Dezintegracyjny',
+          name: 'Strumień dezintegracyjny',
           description: 'Przy wykorzystaniu zaawansowanych Technologii możliwe jest wygenerowanie niebezpiecznego strumienia, który po napotkaniu jakiejkolwiek materii rozrywa wiązania między wszystkimi atomami. Powoduje to natychmiastową zapaść cząsteczek i rozbicie ich na wolne atomy pierwiastków.',
           cost: {
             metal: 35,
@@ -4781,6 +4814,7 @@ const User =
           id: 1,
           quantity: 0,
           points: 6,
+          sumPoints: 0,
           name: 'Mały transporter',
           description: 'Transportery mają mniej więcej taką samą wielkość, jak myśliwce nie posiadają jednak wydajnych napędów, ani broni pokładowej, aby zapewnić dużą przestrzeń ładunkową. Ładowność małego transportera wynosi 5000 jednostek surowca. Z powodu małej siły ognia transportery są często eskortowane przez inne statki kosmiczne.',
           cost: {
@@ -4854,6 +4888,7 @@ const User =
           id: 2,
           quantity: 0,
           points: 10,
+          sumPoints: 0,
           name: 'Duży transporter',
           description: 'Ten statek prawie nie ma broni, ani innych zaawansowanych technologii na pokładzie. Z tego powodu nie powinny być one nigdy wysyłane same. Duży transporter dzięki wysoko rozwiniętemu napędowi spalinowemu służy do szybkiego transportu surowców między planetami i zazwyczaj towarzyszy flotom podczas ich ataków na wrogie planety, aby zrabować możliwie jak najwięcej surowców. Czasami zastępowany przez szybsze Małe transportery, pomimo ich mniejszej ładowności.',
           cost: {
@@ -4924,6 +4959,7 @@ const User =
           id: 3,
           quantity: 0,
           points: 5,
+          sumPoints: 0,
           name: 'Lekki myśliwiec',
           description: 'Lekki myśliwiec to zwrotny statek, który można zastać na prawie każdej planecie. Jego koszty nie są zbyt wysokie, jednakże jego pole ochronne i ładowność są bardzo małe. Na lekkie myśliwce mawia się popularnie "mięso armatnie" głównie dlatego, iż w walkach biorą udział tysiące lekkich mysliwców, które biorą na siebie ogień floty przeciwnika, dając pole do popisu silniejszym statkom.',
           cost: {
@@ -5003,6 +5039,7 @@ const User =
           id: 4,
           quantity: 0,
           points: 20,
+          sumPoints: 0,
           name: 'Ciężki myśliwiec',
           description: 'Podczas dalszego rozwoju lekkiego myśliwca naukowcy doszli do punktu, w którym konwencjonalne napędy nie dostarczały już wystarczającej mocy. Aby nowy statek mógł się optymalnie poruszać, po raz pierwszy został użyty napęd impulsowy. Podwyższył on wprawdzie koszty, jednak dał także nowe możliwości. Poprzez zastosowanie tego napędu pozostało więcej energii dla broni i powłoki ochronnej. Poza tym w tego typu myśliwcach zostały zastosowane materiały o wyższej jakości.',
           cost: {
@@ -5087,6 +5124,7 @@ const User =
           id: 5,
           quantity: 0,
           points: 23,
+          sumPoints: 0,
           name: 'Krążownik',
           description: 'Krążownik jest prawie trzy razy lepiej opancerzony niż ciężki myśliwiec i dysponuje ponad dwa razy większą siłą ognia. W dodatku jest bardzo szybki.',
           cost: {
@@ -5179,6 +5217,7 @@ const User =
           id: 6,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Okręt wojenny',
           description: 'Okręty wojenne tworzą trzon floty. Ich ciężkie działa, duża prędkość i pojemność ładunkowa robią z nich naprawdę groźych przeciwników.',
           cost: {
@@ -5265,6 +5304,7 @@ const User =
           id: 7,
           quantity: 0,
           points: 20,
+          sumPoints: 0,
           name: 'Statek kolonizacyjny',
           description: 'Niezamieszkałe planety mogą być kolonizowane przy pomocy tych statków.',
           cost: {
@@ -5335,6 +5375,7 @@ const User =
           id: 8,
           quantity: 0,
           points: 40,
+          sumPoints: 0,
           name: 'Recykler',
           description: 'Za pomocą recyklerów można odzyskać surowce z pól zniszczeń.',
           cost: {
@@ -5410,6 +5451,7 @@ const User =
           id: 9,
           quantity: 0,
           points: 2,
+          sumPoints: 0,
           name: 'Sonda szpiegowska',
           description: 'Sondy szpiegowskie to małe, zwrotne statki bezzałogowe, które przez oddalenie się na duże odległości dostarczają informacji o obcych flotach i planetach.',
           cost: {
@@ -5540,6 +5582,7 @@ const User =
           id: 10,
           quantity: 0,
           points: 60,
+          sumPoints: 0,
           name: 'Bombowiec',
           description: 'Bombowiec został stworzony, aby niszczyć systemy obronne innych planet.',
           cost: {
@@ -5639,6 +5682,7 @@ const User =
           id: 11,
           quantity: 0,
           points: 2,
+          sumPoints: 0,
           name: 'Satelita słoneczny',
           description: 'Satelity słoneczne to proste platformy pokryte ogniwami słonecznymi, które znajdują się wysoko na stałej orbicie. Gromadzą światło słoneczne i przekazują je dalej przez laser do stacji naziemnej.',
           cost: {
@@ -5743,6 +5787,7 @@ const User =
           id: 12,
           quantity: 0,
           points: 60,
+          sumPoints: 0,
           name: 'Niszczyciel',
           description: 'Niszczyciel to król wśród statków wojennych. Posiada wielorzędowe falangi dział jonowych, plazmowych i Gaussa.',
           cost: {
@@ -5830,6 +5875,7 @@ const User =
           id: 13,
           quantity: 0,
           points: 500,
+          sumPoints: 0,
           name: 'Gwiazda śmierci',
           description: 'Gwiazda śmierci jest uzbrojona w ogromne działo grawitonowe, które może niszczyć statki tak duże jak niszczyciele a nawet księżyce.',
           cost: {
@@ -5978,6 +6024,7 @@ const User =
           id: 14,
           quantity: 0,
           points: 60,
+          sumPoints: 0,
           name: 'Pancernik',
           description: 'Ten statek jest technologicznym cackiem, śmiertelnie niebezpiecznym dla wrogiej floty.',
           cost: {
@@ -6082,6 +6129,7 @@ const User =
           id: 15,
           quantity: 0,
           points: 400,
+          sumPoints: 0,
           name: 'Stacja orbitalna',
           description: 'Stacja orbitalna to wyspecjalizowany system zautomatyzowanych miotaczy plazmowych oraz działek laserowych , który nie traci energii strzału tak jak inne systemy obronne, ze względu na to, że znajduje się na orbicie planety. Dzięki temu osiąga ogromną moc, która może zmieść statki wroga z orbity w kilka sekund.',
           cost: {
@@ -6207,6 +6255,7 @@ const User =
           id: 16,
           quantity: 0,
           points: 63,
+          sumPoints: 0,
           name: 'Mega transporter',
           description: 'Coraz większe zapotrzebowanie na ładowność statków wykorzystywanych przez kolonie górnicze do transportu wydobytych surowców zmusiło naukowców do opracowania zupełnie nowego typu transportera. Dzięki zastosowaniu miniaturyzacji oraz nanotechnologii możliwe było stworzenie tego ogromnego pojazdu. Zastosowano w nim także najnowsze silniki nadprzestrzenne by skrócić czas podróży.',
           cost: {
@@ -6287,6 +6336,7 @@ const User =
           id: 17,
           quantity: 0,
           points: 200,
+          sumPoints: 0,
           name: 'Annihilator',
           description: 'Odkrycie sposobu wytwarzania Antymaterii poprzez specjalne reakcje termojądrowe z wykorzystaniem wysokoenergerycznych laserów pozwoliło na opracowanie specjalnego rodzaju rakiety krótkiego zasięgu, która bezpośrednio przed zderzeniem z obiektem doprowadza do Anihilacji kilku ton cząstek skompresowanego wodoru i antywodoru, wytwarzając przy tym ogromne ilości Energii.',
           cost: {
@@ -6457,6 +6507,7 @@ const User =
           id: 18,
           quantity: 0,
           points: 10,
+          sumPoints: 0,
           name: 'Wahadłowiec',
           description: 'W XX i XXI wieku ludzie zaczęli podbój kosmosu. Dzięki stworzeniu tego typu statku, mogli wielokrotnie wysyłać ludzi i ładunek na orbitę okołoziemską, ale zużywali na to ogromne ilości paliwa rakietowego, zaś sam statek był bardzo wolny.',
           cost: {
@@ -6563,6 +6614,7 @@ const User =
           id: 19,
           quantity: 0,
           points: 250,
+          sumPoints: 0,
           name: 'Lotniskowiec',
           description: 'Lotniskowiec to ogromny okręt, którego zadaniem jest transport mniejszych, szybszych i skuteczniejszych jednostek. W swoim hangarze potrafi zmieścić i przygotować do walki setki myśliwców, które z łatwością radzą sobie z dużymi ilościami mniejszych jednostek.',
           cost: {
@@ -6685,6 +6737,7 @@ const User =
           id: 20,
           quantity: 0,
           points: 220,
+          sumPoints: 0,
           name: 'Bombowiec Hadronowy',
           description: 'Dzięki wykorzystaniu zjawiska rozpadu hadronowego możliwe było skonstruowanie idealnej broni przeciwko instalacjom powierzchniowym. Odpowiednio skonstruowane drony, dzięki zastosowaniu sztucznej inteligencji, osiągają skuteczność trafień na poziomie 99%.',
           cost: {
@@ -6776,6 +6829,7 @@ const User =
           id: 21,
           quantity: 0,
           points: 260,
+          sumPoints: 0,
           name: 'Okręt Plazmowy',
           description: 'Pojazd ten jest wyposażony w wiele wysokoenergetycznych dział pulsacyjno-plazmowych. Każdy dobry dowódca doceni ich wysoką skuteczność przeciwko dobrze opancerzonym jednostkom wrogich flot bojowych. Niestety, salwy plazmowe nie są dostatecznie szybkie, by mniejsze, lecz bardziej zwrotne statki nie mogły im umknąć.',
           cost: {
@@ -6891,6 +6945,7 @@ const User =
           id: 22,
           quantity: 0,
           points: 280,
+          sumPoints: 0,
           name: 'Niszczyciel Protonowy',
           description: 'Kolejny przykład znakomitego wykorzystania technologii anihilacyjnej. Wystrzelenie skoncentrowanego strumienia antyprotonów we wrogą jednostkę doprowadza do rozpoczęcia reakcji kaskadowych w opancerzeniu statku, przez co traci on swoją stabilność i rozpada się pod wpływem dekompresji.',
           cost: {
@@ -7007,6 +7062,7 @@ const User =
           id: 23,
           quantity: 0,
           points: 320,
+          sumPoints: 0,
           name: 'Okręt Dezintegrujący',
           description: 'Jedna z najpotężniejszych jednostek dostępnych w historii Wszechświata. Wykorzystanie śmiercionośnych strumieni dezintegrujących rozrywa wrogie statki w ułamkach sekund na drobne kawałeczki. Jedynym ratunkiem przed tą ogromną mocą jest ucieczka w najdalsze zakamarki kosmosu.',
           cost: {
@@ -7119,6 +7175,7 @@ const User =
           id: 1,
           quantity: 0,
           points: 20,
+          sumPoints: 0,
           name: 'Wyrzutnia rakiet',
           description: 'Wyrzutnia rakiet to prosta i korzystna cenowo możliwość obrony.',
           cost: {
@@ -7176,6 +7233,7 @@ const User =
           id: 2,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Lekkie działo laserowe',
           description: 'Przez skoncentrowany ostrzał wybranego celu fotonami można wyrządzić znacznie większe szkody niż przy pomocy zwykłej broni balistycznej.',
           cost: {
@@ -7247,6 +7305,7 @@ const User =
           id: 3,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Ciężkie działo laserowe',
           description: 'Ciężkie działo laserowe to następca lekkiego lasera.',
           cost: {
@@ -7310,6 +7369,7 @@ const User =
           id: 4,
           quantity: 0,
           points: 50,
+          sumPoints: 0,
           name: 'Działo Gaussa',
           description: 'Działo Gaussa przyspiesza kilkutonowe pociski, wykorzystując przy tym gigantyczną ilość energii.',
           cost: {
@@ -7374,6 +7434,7 @@ const User =
           id: 5,
           quantity: 0,
           points: 30,
+          sumPoints: 0,
           name: 'Działo jonowe',
           description: 'Działo jonowe przyśpiesza jony skierowane na cel ataku. Destabilizują one powłokę ochronną i w skutek zmian elektromagnetycznych uszkadzają elektronikę.',
           cost: {
@@ -7432,6 +7493,7 @@ const User =
           id: 6,
           quantity: 0,
           points: 100,
+          sumPoints: 0,
           name: 'Wyrzutnia plazmy',
           description: 'W tym czasie technologia laserowa była już prawie perfekcyjna, technologia jonowa była w jej końcowym stadium rozwoju.',
           cost: {
@@ -7474,6 +7536,7 @@ const User =
           id: 7,
           quantity: 0,
           points: 1500,
+          sumPoints: 0,
           name: 'Mała powłoka ochronna',
           description: 'Mała powłoka ochronna osłania całą planetę polem, które może absorbować znaczne ilości energii.',
           cost: {
@@ -7506,6 +7569,7 @@ const User =
           id: 8,
           quantity: 0,
           points: 7500,
+          sumPoints: 0,
           name: 'Duża powłoka ochronna',
           description: 'Stanowi dalszy rozwój małej powłoki ochronnej i może pochłonąć znacznie większe ilości energii.',
           cost: {
@@ -7538,6 +7602,7 @@ const User =
           id: 9,
           quantity: 0,
           points: 50,
+          sumPoints: 0,
           name: 'Przeciwrakieta',
           description: 'Przeciwrakiety niszczą atakujące międzyplanetarne rakiety przeciwnika.',
           cost: {
@@ -7555,7 +7620,7 @@ const User =
           available: false,
           requirements: [
             {
-              description: 'Silos Rakietowy',
+              description: 'Silos rakietowy',
               source: 'buildings',
               value: 1
             }
@@ -7565,6 +7630,7 @@ const User =
           id: 10,
           quantity: 0,
           points: 50,
+          sumPoints: 0,
           name: 'Rakieta międzyplanetarna',
           description: 'Rakiety międzyplanetarne niszczą systemy obronne przeciwnika.',
           cost: {
@@ -7582,15 +7648,15 @@ const User =
           available: false,
           requirements: [
             {
-              description: 'Silos Rakietowy',
+              description: 'Silos rakietowy',
               source: 'buildings',
               value: 6
             }
           ],
         },
       ]
-    },
+    }
   ]
-}
+};
 
 export default User;

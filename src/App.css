@@ -347,6 +347,7 @@ hr {
 
 .chosen-planet_img {
   width: 20vw;
+  height: 15vw;
   border-radius: 2vw;
 }
 
@@ -953,8 +954,7 @@ hr {
   margin: 0;
 }
 
-.equip_input-true,
-.equip_input-false {
+.equip_input {
   display: flex;
   justify-content: flex-end;
   padding: 0.5vh 1vw;
@@ -964,18 +964,20 @@ hr {
   margin-bottom: 1vh;
 }
 
-.equip_input-true input,
-.equip_input-false input {
+.equip_input input {
   font-size: 1vw;
   width: 10%;
 }
 
-.equip_input-true button,
-.equip_input-false button {
+.equip_input p {
+  margin: 0 1vw 0 0;
   font-size: 1vw;
-  width: 10%;
+  cursor: pointer;
 }
 
+.equip_input p:hover {
+  text-decoration: underline;
+}
 
 
 /*                             TECH */
@@ -1193,6 +1195,7 @@ hr {
 
   .chosen-planet_img {
     width: 70%;
+    height: auto;
   }
 
   .points-main p {
@@ -1380,11 +1383,12 @@ hr {
     font-size: 3vw;
   }
 
-  .equip_input-true input,
-  .equip_input-false input,
-  .equip_input-true button,
-  .equip_input-false button {
+  .equip_input input {
     width: 20%;
+    font-size: 2vw;
+  }
+
+  .equip_input p {
     font-size: 2vw;
   }
 

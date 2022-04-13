@@ -42,12 +42,14 @@ function App() {
   //Dodaje do porównywarki
   const addSimil = (object) => {
     const oldSimil = simil;
-    const checkOldSimil = oldSimil.indexOf(object)
-    if (checkOldSimil === -1) {
+    const checkOldSimil = oldSimil.map((el) => el.name.indexOf(object.name))
+    console.log(checkOldSimil)
+    if (checkOldSimil.every((x) => x === -1)) {
       setSimil(oldSimil.concat(object))
     }
   }
 
+  //Usuwa z porównywarki
   const deleteSimil = (object) => {
     const oldSimil = simil;
     const checkOldSimil = oldSimil.indexOf(object);
@@ -59,6 +61,17 @@ function App() {
   const one = 1;
   const two = 2;
   const three = 3;
+
+  const buildEquip = (q, index, section) => {
+    let updateQuantity = update(user.planet[planet.id - 1], { [section]: { [index]: { quantity: { $apply: function (x) { return parseInt(x) + parseInt(q); } } } } });
+    let updateMetal = update(updateQuantity, { resources: { [zero]: { metal: { $apply: function (x) { return x - planet[section][index].cost.metal * q; } } } } });
+    let updateCristal = update(updateMetal, { resources: { [one]: { cristal: { $apply: function (x) { return x - planet[section][index].cost.cristal * q; } } } } });
+    let updateDeuter = update(updateCristal, { resources: { [two]: { deuter: { $apply: function (x) { return x - planet[section][index].cost.deuter * q; } } } } });
+    let updateEnergy = update(updateDeuter, { resources: { [three]: { energy: { $apply: function (x) { return x - planet[section][index].cost.energy * q; } } } } });
+    let updatePoints = update(updateEnergy, { [section]: { [index]: { sumPoints: { $apply: function (x) { return x + planet[section][index].points * q; } } } } });
+    setPlanet(updatePoints)
+    refreshChosenPlanet(updatePoints)
+  }
 
   //Funkcja odpowiedzialna za zwiększanie poziomu, puki co nie skończona
   const handleUp = (index, section) => {
@@ -133,16 +146,16 @@ function App() {
       <PlanetChanger user={user} planet={planet} handleChange={handleChange.bind(this)} />
       <NavBar />
       <ResourcesBar planet={planet} user={user} />
-      <QuickComponent planet={planet} user={user} simil={simil} deleteSimil={deleteSimil.bind(this)}/>
+      <QuickComponent planet={planet} user={user} simil={simil} deleteSimil={deleteSimil.bind(this)} />
       <Routes>
         <Route path='/' element={<Preview planet={planet} user={user} handleChange={handleChange.bind(this)} />} />
         <Route path='resources' element={<Resources planet={planet} user={user} handleChangeExtract={handleChangeExtract} />} />
         <Route path='empire' element={<Empire user={user} planet={planet} />} />
         <Route path='buildings' element={<Buildings planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
         <Route path='tests' element={<Tests planet={planet} user={user} handleUp={handleUp.bind(this)} handleDown={handleDown.bind(this)} />} />
-        <Route path='dock' element={<Dock planet={planet} user={user} addSimil={addSimil.bind(this)} />} />
+        <Route path='dock' element={<Dock planet={planet} user={user} addSimil={addSimil.bind(this)} buildEquip={buildEquip.bind(this)}/>} />
         <Route path='tech' element={<Tech planet={planet} />} />
-        <Route path='defence' element={<Defence planet={planet} user={user} addSimil={addSimil.bind(this)} />} />
+        <Route path='defence' element={<Defence planet={planet} user={user} addSimil={addSimil.bind(this)} buildEquip={buildEquip.bind(this)}/>} />
         <Route
           path="*"
           element={

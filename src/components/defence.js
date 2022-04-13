@@ -1,15 +1,39 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { imgDefence } from "./importImages"
 
 const Defence = (props) => {
 
+    const maxBuild = (el) => {
+        const maxMetal = Math.floor(props.user.planet[props.planet.id - 1].resources[0].metal / el.cost.metal)
+        const maxCristal = Math.floor(props.user.planet[props.planet.id - 1].resources[1].cristal / el.cost.cristal)
+        const maxDeuter = Math.floor(props.user.planet[props.planet.id - 1].resources[2].deuter / el.cost.deuter)
+        const maxTable = [maxMetal, maxCristal, maxDeuter]
+        return Math.min.apply(null, maxTable)
+    }
+
     const DefenceElement = (el, index) => {
         const [details, setDetails] = useState(false)
         const [quickGuns, setQuickGuns] = useState(false)
+        const [maxElement, setMaxElement] = useState()
+
+        useEffect(() => (
+            setMaxElement()
+        ), [maxElement])
 
         const addSimil = (object) => {
             props.addSimil(object)
-          };
+        };
+
+        const equipBuild = (e, element) => {
+            if (maxBuild(element) === 0) {
+               alert('Brak środków!')
+            } else if (e[0].value >= maxBuild(element)) {
+                props.buildEquip(maxBuild(element), element.id - 1, 'defence')
+            } else if (e[0].value <= maxBuild(element)) {
+                props.buildEquip(e[0].value, element.id - 1, 'defence')
+            }
+            e[0].value = ''
+        }
 
         return (
             <div className='equip-main'>
@@ -23,26 +47,26 @@ const Defence = (props) => {
                                 <p>{el.description}</p>
                             </div> :
                             <div className='equip_title-false'>
-                                <h1 onClick={() => {setDetails(!details); setQuickGuns(false)}}>{el.name} (Ilość: {el.quantity})</h1>
+                                <h1 onClick={() => { setDetails(!details); setQuickGuns(false) }}>{el.name} (Ilość: {el.quantity})</h1>
                             </div>
                         }
                         {details ?
                             <div className='equip_details-true'>
                                 <div className='equip_gun-true'>
-                                    <p onClick={() => setQuickGuns(!quickGuns)} className='quick-gun_relase' style={quickGuns ? {fontWeight: 500} : {}}>Szybkie działa ➾</p>
+                                    <p onClick={() => setQuickGuns(!quickGuns)} className='quick-gun_relase' style={quickGuns ? { fontWeight: 500 } : {}}>Szybkie działa ➾</p>
                                     {quickGuns ?
                                         <div className="quick-gun_main">
-                                            {el.quickGunPlus.length === 0 ? 
-                                            <p style={{color: 'red', fontWeight: 400}}>Brak szybkich dział przeciwko innym statkom!</p> : 
-                                            el.quickGunPlus.map((gun, index) => (
-                                                <div className="quick-gun"><p key={index}>{gun.description}</p><p style={{color: 'green', fontWeight: 700}}>{gun.value}</p></div>
-                                            ))}
-                                            <hr/>
-                                            {el.quickGunMinus.length === 0 ? 
-                                            <p style={{color: 'green', fontWeight: 400}}>Brak szybkich dział przeciwko {el.name}!</p>:
-                                            el.quickGunMinus.map((gun, index) => (
-                                                <div className="quick-gun"><p key={index}>{gun.description}</p><p style={{color: 'red', fontWeight: 500}}>{gun.value}</p></div>
-                                            ))}
+                                            {el.quickGunPlus.length === 0 ?
+                                                <p style={{ color: 'red', fontWeight: 400 }}>Brak szybkich dział przeciwko innym statkom!</p> :
+                                                el.quickGunPlus.map((gun, index) => (
+                                                    <div className="quick-gun"><p key={index}>{gun.description}</p><p style={{ color: 'green', fontWeight: 700 }}>{gun.value}</p></div>
+                                                ))}
+                                            <hr />
+                                            {el.quickGunMinus.length === 0 ?
+                                                <p style={{ color: 'green', fontWeight: 400 }}>Brak szybkich dział przeciwko {el.name}!</p> :
+                                                el.quickGunMinus.map((gun, index) => (
+                                                    <div className="quick-gun"><p key={index}>{gun.description}</p><p style={{ color: 'red', fontWeight: 500 }}>{gun.value}</p></div>
+                                                ))}
                                         </div> :
                                         <></>}
                                 </div>
@@ -55,10 +79,19 @@ const Defence = (props) => {
                             <></>}
                     </div>
                 </div>
-                <div className={details ? 'equip_input-true' : 'equip_input-false'}>
-                    <input />
-                    <button>Buduj</button>
-                </div>
+                <form className='equip_input'>
+                    <p onClick={() => setMaxElement(maxBuild(el))}>max</p>
+                    <input
+                        name={el.name}
+                        type='number'
+                        value={maxElement}
+                    />
+                    <input
+                        type="button"
+                        value='Buduj'
+                        onClick={() => equipBuild(document.getElementsByName(el.name), el)}
+                    />
+                </form>
             </div>
         )
     }
